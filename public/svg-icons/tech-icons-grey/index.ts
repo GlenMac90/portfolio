@@ -1,0 +1,14 @@
+export { default as cssGrey } from "./css-grey.svg";
+export { default as expressGrey } from "./express-grey.svg";
+export { default as gitGrey } from "./git-grey.svg";
+export { default as githubGrey } from "./github-grey.svg";
+export { default as htmlGrey } from "./html-grey.svg";
+export { default as mongodbGrey } from "./mongodb-grey.svg";
+export { default as motionGrey } from "./motion-grey.svg";
+export { default as nextGrey } from "./next-grey.svg";
+export { default as nodejsGrey } from "./nodejs-grey.svg";
+export { default as reactGrey } from "./react-grey.svg";
+export { default as reduxGrey } from "./redux-grey.svg";
+export { default as sassGrey } from "./sass-grey.svg";
+export { default as tailwindGrey } from "./tailwind-grey.svg";
+export { default as typescriptGrey } from "./typescript-grey.svg";
