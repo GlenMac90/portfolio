@@ -56,7 +56,7 @@ const MobileNavBar: FC<MobileNavBarProps> = ({
           href={button.path}
           className={`w-full cursor-pointer rounded-lg px-2 py-4 text-sm ${
             pathname === button.path
-              ? "border-primaryLight bg-blue-200 font-semibold text-primaryLight"
+              ? "border-primaryLight bg-blue-200 font-semibold text-primaryLight dark:bg-primaryDark dark:text-white800"
               : "text-white500 dark:text-white800"
           }`}
           onClick={() => setShowMobileNav(false)}
