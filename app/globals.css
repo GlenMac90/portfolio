@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.initial_background {
+  background: conic-gradient(#0252cd, #0252cd54);
+}
