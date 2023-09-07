@@ -29,7 +29,7 @@ const MobileNavBar: FC<MobileNavBarProps> = ({
 }) => {
   return (
     <div
-      className="mx-2 mt-[4.5rem] flex max-h-80 w-full max-w-[30rem] flex-col gap-3 rounded-xl bg-white800 p-4 dark:bg-black300"
+      className="z-50 mx-2 mt-[4.5rem] flex max-h-80 w-full max-w-[30rem] flex-col gap-3 rounded-xl bg-white800 p-4 dark:bg-black300"
       onClick={(e) => e.stopPropagation()}
     >
       <div className="mb-2 flex justify-between">

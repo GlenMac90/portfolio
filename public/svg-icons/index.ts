@@ -6,3 +6,4 @@ export { default as downloadDarkMode } from "./download-dark-mode.svg";
 export { default as menuButtonDarkMode } from "./menu-button-dark-mode.svg";
 export { default as cross } from "./cross.svg";
 export { default as crossDarkMode } from "./cross-dark-mode.svg";
+export { default as frame } from "./frame.svg";
