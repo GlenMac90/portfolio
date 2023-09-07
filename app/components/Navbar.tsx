@@ -86,7 +86,7 @@ const Navbar = () => {
       </nav>
       {showMobileNav && (
         <div
-          className="fixed flex h-screen w-screen justify-center bg-black/30"
+          className="fixed z-40 flex h-screen w-screen justify-center bg-black/30"
           onClick={() => setShowMobileNav(false)}
         >
           <MobileNavBar
