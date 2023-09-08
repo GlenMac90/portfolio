@@ -35,13 +35,13 @@ const Hero = () => {
             <p>glen.mccallum@live.co.uk</p>
             <Image
               src={frame}
-              alt="download image"
+              alt="click to download resume"
               className="h-4 w-4 md:h-5 md:w-5"
             />
           </button>
         </div>
       </div>
-      <div className="z-10 mt-6 flex w-full justify-center xl:absolute xl:right-0 xl:w-auto">
+      <div className="z-10 mt-6 flex w-full justify-end xl:absolute xl:right-0 xl:w-auto xl:justify-center">
         <Image src={temporaryHeroIcon} alt="hero image icon" />
       </div>
     </section>

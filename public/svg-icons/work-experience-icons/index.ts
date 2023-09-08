@@ -1,0 +1,16 @@
+export { default as digitalOceanLogo } from "./digital-ocean-logo.svg";
+export { default as digitalOceanLogoDark } from "./digital-ocean-logo-dark.svg";
+export { default as digitalOceanLogoPrimaryLight } from "./digital-ocean-logo-primary-light.svg";
+export { default as digitalOceanLogoPrimaryDark } from "./digital-ocean-logo-primary-dark.svg";
+export { default as fireboxLogo } from "./firebox-logo.svg";
+export { default as fireboxLogoDark } from "./firebox-logo-dark.svg";
+export { default as fireboxLogoPrimaryLight } from "./firebox-logo-primary-light.svg";
+export { default as fireboxLogoPrimaryDark } from "./firebox-logo-primary-dark.svg";
+export { default as mailchimpLogo } from "./mailchimp-logo.svg";
+export { default as mailchimpLogoDark } from "./mailchimp-logo-dark.svg";
+export { default as mailchimpLogoPrimaryLight } from "./mailchimp-logo-primary-light.svg";
+export { default as mailchimpLogoPrimaryDark } from "./mailchimp-logo-primary-dark.svg";
+export { default as slackLogo } from "./slack-logo.svg";
+export { default as slackLogoDark } from "./slack-logo-dark.svg";
+export { default as slackLogoPrimaryLight } from "./slack-logo-primary-light.svg";
+export { default as slackLogoPrimaryDark } from "./slack-logo-primary-dark.svg";
