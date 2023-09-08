@@ -19,6 +19,19 @@ interface ServicesCardProps {
 const ServicesCard: React.FC<ServicesCardProps> = ({ service }) => {
   const { theme } = useTheme();
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
+
+  let imageSrc;
+
+  if (isMouseOver) {
+    if (theme === "light") {
+      imageSrc = service.imageHoverLight;
+    } else {
+      imageSrc = service.imageHoverDark;
+    }
+  } else {
+    imageSrc = service.imageSrc;
+  }
+
   return (
     <div
       className={`h-[18rem] w-[19rem] rounded-xl  px-6 py-7 shadow-lg  xl:w-full ${
@@ -35,13 +48,7 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ service }) => {
         }`}
       >
         <Image
-          src={
-            isMouseOver
-              ? isMouseOver && theme === "light"
-                ? service.imageHoverLight
-                : service.imageHoverDark
-              : service.imageSrc
-          }
+          src={imageSrc}
           height={24}
           width={24}
           alt="icon for services provided"
