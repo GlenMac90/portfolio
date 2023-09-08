@@ -20,7 +20,7 @@ import { navbarButtons } from "@/constants";
 const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
-  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
   const pathname = usePathname();
 
   useEffect(() => {

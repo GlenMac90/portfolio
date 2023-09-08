@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        cardShadow: "-25px 47px 66px 0px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -23,6 +26,9 @@ module.exports = {
         black200: "#151E2C",
         black300: "#29374C",
         black400: "#778295",
+      },
+      screens: {
+        xs: "400px",
       },
     },
   },
