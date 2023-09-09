@@ -3,6 +3,8 @@ import MySkills from "./components/homepage-components/MySkills";
 import MyServices from "./components/homepage-components/MyServices";
 import WorkExperience from "./components/homepage-components/WorkExperience";
 import FeaturedProjects from "./components/homepage-components/FeaturedProjects";
+import Testimonials from "./components/homepage-components/Testimonials";
+import GetInTouchCard from "./components/homepage-components/GetInTouchCard";
 
 export default function Home() {
   return (
@@ -12,6 +14,10 @@ export default function Home() {
       <MyServices />
       <WorkExperience />
       <FeaturedProjects />
+      <Testimonials />
+      <section className="flex w-full items-center justify-center bg-white900 px-6 py-12 dark:bg-black200 lg:py-[4.5rem]">
+        <GetInTouchCard />
+      </section>
     </main>
   );
 }

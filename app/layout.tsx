@@ -6,9 +6,10 @@ import { Poppins } from "next/font/google";
 
 import Provider from "./providers/Provider";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Provider>
           <Navbar />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>

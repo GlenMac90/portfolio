@@ -1,4 +1,8 @@
 export { default as arrow } from "./arrow.svg";
+export { default as arrowLeft } from "./arrow-left.svg";
+export { default as arrowRight } from "./arrow-right.svg";
+export { default as arrowLeftDark } from "./arrow-left-dark.svg";
+export { default as arrowRightDark } from "./arrow-right-dark.svg";
 export { default as menuButton } from "./menu-button.svg";
 export { default as download } from "./download.svg";
 export { default as lightModeIcon } from "./light-mode-icon.svg";
@@ -20,3 +24,5 @@ export { default as analyticsIconPrimaryDark } from "../svg-icons/services-icons
 export { default as frontEndIconPrimaryDark } from "../svg-icons/services-icons/frontend-icon-primary-dark.svg";
 export { default as backEndIconPrimaryDark } from "../svg-icons/services-icons/backend-icon-primary-dark.svg";
 export { default as webOptimisationIconPrimaryDark } from "../svg-icons/services-icons/web-optimization-icon-primary-dark.svg";
+export { default as star } from "./star.svg";
+export { default as whiteButtonArrow } from "./white-button-arrow.svg";
