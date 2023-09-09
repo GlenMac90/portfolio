@@ -20,7 +20,7 @@ interface WorkExperienceCardProps {
 }
 
 const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({ job }) => {
-  const [isMouseOver, setIsMouseOver] = useState(false);
+  const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
   const { theme } = useTheme();
 
   let imageSrc;

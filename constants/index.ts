@@ -11,6 +11,10 @@ import {
   react,
   tailwind,
   typescript,
+  gitHubIcon,
+  instagramIcon,
+  linkedInIcon,
+  socialMediaIcon,
 } from "@/public/svg-icons/tech-icons";
 
 import {
@@ -56,6 +60,14 @@ import {
   morentDesktopView,
 } from "@/public/png-icons/featured-projects-images";
 
+import { adrianPic, christopherPic, santiagoPic } from "@/public/png-icons";
+
+export const socialMediaIcons = [
+  gitHubIcon,
+  instagramIcon,
+  linkedInIcon,
+  socialMediaIcon,
+];
 export const navbarButtons = [
   {
     label: "Home",
@@ -191,5 +203,29 @@ export const featuredProjectsList = [
     mobileImage: hipnodeMobileView,
     backgroundColour: "#FF6934",
     reverseLayout: false,
+  },
+];
+
+export const testimonials = [
+  {
+    name: "Adrian Hajdin",
+    jobDescription: "Founder & CEO at JS Mastery",
+    image: adrianPic,
+    rating: 5,
+    text: "I had the experience of seeing Glen work while he participated in my 6 month JSMastery Masterclass Experience. He asked a lot of rambling questions that led nowhere and went way overboard with framer motion but other than that he put in a good effort.",
+  },
+  {
+    name: "Christopher Soltis",
+    jobDescription: "Software Engineer and all-round good dude",
+    image: christopherPic,
+    rating: 5,
+    text: "I got the chance to work with Glen while he took part in the JSMastery Masterclass Experience. Apart from the 2000 line pull requests and working on 10 different things instead of the comments I made in the pr, he put in the hours.",
+  },
+  {
+    name: "Santiago Laight",
+    jobDescription: "Full-Stack Developer ",
+    image: santiagoPic,
+    rating: 5,
+    text: "I was Greg's mentor during the masterclass. I have noticeably more grey hair and wrinkles now than I did 6 months ago as a result.",
   },
 ];

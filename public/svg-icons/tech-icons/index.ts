@@ -12,3 +12,7 @@ export { default as redux } from "./redux.svg";
 export { default as sass } from "./sass.svg";
 export { default as tailwind } from "./tailwind.svg";
 export { default as typescript } from "./typescript.svg";
+export { default as gitHubIcon } from "../social-media-icons/github-icon.svg";
+export { default as instagramIcon } from "../social-media-icons/instagram-icon.svg";
+export { default as linkedInIcon } from "../social-media-icons/linked-in-icon.svg";
+export { default as socialMediaIcon } from "../social-media-icons/social-media-icon.svg";
