@@ -37,6 +37,7 @@ const CaseStudyProblemStatement: React.FC<CaseStudyHeaderProps> = ({
               <Image
                 src={mainProject.problemStatementImage}
                 alt="image underlying text in problem statement"
+                layout="responsive"
                 className="w-full rounded md:rounded-xl"
               />
             </div>
@@ -76,6 +77,7 @@ const CaseStudyProblemStatement: React.FC<CaseStudyHeaderProps> = ({
                   <Image
                     src={symbol.image}
                     alt="symbol of working process"
+                    layout="responsive"
                     className="h-[2.25rem] w-[2.25rem] md:h-[3rem] md:w-[3rem]"
                   />
                 </div>
