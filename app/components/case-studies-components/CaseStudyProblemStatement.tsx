@@ -78,7 +78,7 @@ const CaseStudyProblemStatement: React.FC<CaseStudyHeaderProps> = ({
                     src={symbol.image}
                     alt="symbol of working process"
                     layout="responsive"
-                    className="h-[2.25rem] w-[2.25rem] md:h-[3rem] md:w-[3rem]"
+                    className="max-h-[2.25rem] max-w-[2.25rem] md:max-h-[3rem] md:max-w-[3rem]"
                   />
                 </div>
                 <p className="whitespace-nowrap text-center text-sm font-medium text-black300 dark:text-white900 md:text-xl">
