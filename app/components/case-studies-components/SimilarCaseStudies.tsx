@@ -4,7 +4,7 @@ import { CaseStudyHeaderProps } from "@/utils/interfaces";
 
 import { SimilarProjectSmallCard } from ".";
 
-const CaseStudiesSimilarCaseStudies: React.FC<CaseStudyHeaderProps> = ({
+const SimilarCaseStudies: React.FC<CaseStudyHeaderProps> = ({
   similarProjects,
 }) => {
   return (
@@ -26,4 +26,4 @@ const CaseStudiesSimilarCaseStudies: React.FC<CaseStudyHeaderProps> = ({
   );
 };
 
-export default CaseStudiesSimilarCaseStudies;
+export default SimilarCaseStudies;

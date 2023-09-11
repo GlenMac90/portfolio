@@ -10,7 +10,7 @@ import {
   CaseStudyTechStack,
   CaseStudyProblemStatement,
   CaseStudyChallengesAndLearnings,
-  CaseStudiesSimilarCaseStudies,
+  SimilarCaseStudies,
 } from "@/app/components/case-studies-components/index";
 interface CaseStudyProps {
   params: {
@@ -33,7 +33,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ params }) => {
       <CaseStudyTechStack mainProject={mainProject} />
       <CaseStudyProblemStatement mainProject={mainProject} />
       <CaseStudyChallengesAndLearnings mainProject={mainProject} />
-      <CaseStudiesSimilarCaseStudies similarProjects={similarProjects} />
+      <SimilarCaseStudies similarProjects={similarProjects} />
       <GetInTouchCard />
     </main>
   );

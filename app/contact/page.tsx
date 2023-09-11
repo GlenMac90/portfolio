@@ -17,7 +17,7 @@ const Contact = () => {
   };
   return (
     <main className="flex w-full flex-col items-center">
-      <section className="flex w-full justify-center bg-white800 pb-12 pt-[7.5rem] dark:bg-black300 md:pb-20 md:pt-[11.25rem]">
+      <header className="flex w-full justify-center bg-white800 pb-12 pt-[7.5rem] dark:bg-black300 md:pb-20 md:pt-[11.25rem]">
         <div className="flex w-full max-w-3xl flex-col items-center">
           <div className="relative flex w-fit flex-col">
             <p className="z-20 truncate whitespace-nowrap text-[2.625rem] font-bold text-black200 dark:text-white900 md:text-[4rem]">
@@ -29,7 +29,7 @@ const Contact = () => {
             {"Let's Collaborate on Your Next Project"}
           </p>
         </div>
-      </section>
+      </header>
       <section className="flex w-full justify-center bg-white900 p-6 dark:bg-black200 md:py-20">
         <div className="flex w-full max-w-7xl flex-col justify-center lg:flex-row-reverse lg:justify-between">
           <SendMessage setShowSuccess={setShowSuccess} />

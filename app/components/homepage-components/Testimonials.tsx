@@ -2,8 +2,9 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import TestimonialCard from "./TestimonialCard";
 import { useTheme } from "next-themes";
+
+import TestimonialCard from "./TestimonialCard";
 
 import { testimonials } from "@/constants";
 import {

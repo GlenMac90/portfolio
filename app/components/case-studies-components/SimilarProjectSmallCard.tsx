@@ -5,6 +5,8 @@ import Image from "next/image";
 import { truncateString } from "@/utils";
 import { FeaturedProjectCardProps } from "@/utils/interfaces";
 
+import Button from "../Button";
+
 const SimilarProjectSmallCard: React.FC<FeaturedProjectCardProps> = ({
   project,
 }) => {
@@ -34,11 +36,14 @@ const SimilarProjectSmallCard: React.FC<FeaturedProjectCardProps> = ({
             {truncateString(project.caseStudyDescription[0], 150)}
           </p>
         )}
+
         <Link
           href={`/case-studies/${project.caseStudyLink}`}
-          className="mt-4 flex items-center justify-center rounded-full bg-primaryLight py-3.5 text-sm font-semibold text-white900 dark:bg-primaryDark"
+          className="mt-4 flex"
         >
-          See Case Study
+          <Button type="blueButton" additionalStyles="w-full py-3.5 text-sm">
+            See Case Study
+          </Button>
         </Link>
       </div>
     </div>

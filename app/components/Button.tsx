@@ -1,23 +1,40 @@
 import React from "react";
 
 interface ButtonProps {
-  type?: "default" | "blueButton";
+  type?: string;
+  additionalStyles?: string;
+  submit?: boolean;
+  value?: string;
   children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ type = "default", children }) => {
-  let styles = "text-primaryLight dark:text-primaryDark";
+const Button: React.FC<ButtonProps> = ({
+  type = "default",
+  additionalStyles,
+  children,
+  value = "",
+  submit = false,
+}) => {
+  let styles =
+    "text-primaryLight dark:text-primaryDark text:sm md:text-xl font-semibold justify-center gap-1";
 
   if (type === "blueButton") {
-    styles = "bg-primaryLight dark:bg-primaryDark rounded-full py-2";
+    styles =
+      "bg-primaryLight font-semibold text-white900 dark:bg-primaryDark rounded-full py-2 gap-1 justify-center";
+  }
+
+  if (type === "custom") {
+    styles = "";
   }
 
   return (
-    <div
-      className={`flex items-center gap-1 text-sm font-semibold md:text-xl ${styles}`}
+    <button
+      value={value}
+      type={submit === true ? "submit" : "button"}
+      className={`flex items-center ${styles} ${additionalStyles}`}
     >
       {children}
-    </div>
+    </button>
   );
 };
 
