@@ -19,6 +19,8 @@ import React from "react";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 
+import Button from "../Button";
+
 const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ mainProject }) => {
   const { theme } = useTheme();
   return (
@@ -70,7 +72,7 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ mainProject }) => {
         )}
       </div>
       <div className="mb-12 mt-6 flex justify-between gap-10 md:mb-16 md:mt-[4.5rem] md:gap-24">
-        <div className="flex items-center gap-1 text-sm font-semibold text-primaryLight dark:text-primaryDark md:text-xl">
+        <Button>
           <Image
             src={theme === "light" ? demoButtonLight : demoButtonDark}
             alt="Link to live site"
@@ -80,8 +82,8 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ mainProject }) => {
             src={theme === "light" ? arrowlight : arrowDark}
             alt="Link to live site"
           />
-        </div>
-        <div className="flex items-center gap-1 text-sm font-semibold text-primaryLight dark:text-primaryDark md:text-xl">
+        </Button>
+        <Button>
           <Image
             src={theme === "light" ? githubButtonLight : githubButtonDark}
             alt="Link to source code"
@@ -91,7 +93,7 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ mainProject }) => {
             src={theme === "light" ? arrowlight : arrowDark}
             alt="Link to source code"
           />
-        </div>
+        </Button>
       </div>
     </section>
   );

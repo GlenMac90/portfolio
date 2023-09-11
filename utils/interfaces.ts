@@ -5,7 +5,7 @@ interface TechStack {
   text: string;
 }
 
-interface Project {
+export interface Project {
   caseStudyLink?: string;
   title: string;
   description: string;
@@ -32,5 +32,5 @@ export interface FeaturedProjectCardProps {
 
 export interface CaseStudyHeaderProps {
   mainProject?: Project;
-  otherProjects?: Project[];
+  similarProjects?: Project[];
 }

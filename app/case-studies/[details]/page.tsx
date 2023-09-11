@@ -3,12 +3,15 @@
 import React from "react";
 
 import { featuredProjectsList } from "@/constants";
-import CaseStudyHeader from "@/app/components/case-studies-components/CaseStudyHeader";
-import CaseStudyTechStack from "@/app/components/case-studies-components/CaseStudyTechStack";
-import CaseStudyProblemStatement from "@/app/components/case-studies-components/CaseStudyProblemStatement";
-import CaseStudyChallengesAndLearnings from "@/app/components/case-studies-components/CaseStudyChallengesAndLearnings";
-import CaseStudiesOtherCaseStudies from "@/app/components/case-studies-components/CaseStudiesOtherCaseStudies";
 import GetInTouchCard from "@/app/components/homepage-components/GetInTouchCard";
+
+import {
+  CaseStudyHeader,
+  CaseStudyTechStack,
+  CaseStudyProblemStatement,
+  CaseStudyChallengesAndLearnings,
+  CaseStudiesSimilarCaseStudies,
+} from "@/app/components/case-studies-components/index";
 interface CaseStudyProps {
   params: {
     details: string;
@@ -20,7 +23,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ params }) => {
     (project) => project.caseStudyLink === params.details
   );
 
-  const otherProjects = featuredProjectsList.filter(
+  const similarProjects = featuredProjectsList.filter(
     (project) => project.caseStudyLink !== params.details
   );
 
@@ -30,7 +33,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ params }) => {
       <CaseStudyTechStack mainProject={mainProject} />
       <CaseStudyProblemStatement mainProject={mainProject} />
       <CaseStudyChallengesAndLearnings mainProject={mainProject} />
-      <CaseStudiesOtherCaseStudies otherProjects={otherProjects} />
+      <CaseStudiesSimilarCaseStudies similarProjects={similarProjects} />
       <GetInTouchCard />
     </main>
   );
