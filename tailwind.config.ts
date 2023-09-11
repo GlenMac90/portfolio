@@ -20,6 +20,8 @@ module.exports = {
         primaryLight: "#0252CD",
         primaryDark: "#428DFF",
         secondary: "#FFBE62",
+        challengeRed: "#E15A46",
+        learningsGreen: "#02BC7D",
         white500: "#6F74A7",
         white800: "#F3F8FF",
         white900: "#FFFFFF",

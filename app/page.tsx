@@ -15,9 +15,7 @@ export default function Home() {
       <WorkExperience />
       <FeaturedProjects />
       <Testimonials />
-      <section className="flex w-full items-center justify-center bg-white900 px-6 py-12 dark:bg-black200 lg:py-[4.5rem]">
-        <GetInTouchCard />
-      </section>
+      <GetInTouchCard />
     </main>
   );
 }
