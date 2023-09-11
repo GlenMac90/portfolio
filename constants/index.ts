@@ -12,6 +12,10 @@ import {
   tailwind,
   typescript,
   gitHubIcon,
+  gitHubIconWhite,
+  socialMediaIconWhite,
+  linkedInIconWhite,
+  instagramIconWhite,
   instagramIcon,
   linkedInIcon,
   socialMediaIcon,
@@ -68,6 +72,30 @@ export const socialMediaIcons = [
   linkedInIcon,
   socialMediaIcon,
 ];
+
+export const socialMediaButtonsContactPage = [
+  {
+    icon: instagramIcon,
+    iconDark: instagramIconWhite,
+    title: "instagram",
+  },
+  {
+    icon: socialMediaIcon,
+    iconDark: socialMediaIconWhite,
+    title: "X",
+  },
+  {
+    icon: linkedInIcon,
+    iconDark: linkedInIconWhite,
+    title: "LinkedIn",
+  },
+  {
+    icon: gitHubIcon,
+    iconDark: gitHubIconWhite,
+    title: "gitHub",
+  },
+];
+
 export const navbarButtons = [
   {
     label: "Home",
