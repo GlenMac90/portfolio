@@ -25,10 +25,10 @@ const WorkExperienceCard: FC<WorkExperienceCardProps> = ({ job }) => {
 
   let imageSrc;
 
-  if (theme === "light") {
-    imageSrc = isMouseOver ? job.imagePrimaryLight : job.image;
-  } else {
+  if (theme === "dark") {
     imageSrc = isMouseOver ? job.imagePrimaryDark : job.imageDark;
+  } else {
+    imageSrc = isMouseOver ? job.imagePrimaryLight : job.image;
   }
 
   return (

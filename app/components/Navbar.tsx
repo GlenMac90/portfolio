@@ -42,7 +42,7 @@ const Navbar = () => {
           <p className="font-semibold text-white900 md:text-xl">G</p>
         </div>
         <Image
-          src={theme === "light" ? menuButton : menuButtonDarkMode}
+          src={theme === "dark" ? menuButtonDarkMode : menuButton}
           height={24}
           width={24}
           alt="menu button"
@@ -66,7 +66,7 @@ const Navbar = () => {
           {/* Temporary href below so that the link works */}
           <Link href="/" className="flex">
             <Image
-              src={theme === "light" ? download : downloadDarkMode}
+              src={theme === "dark" ? downloadDarkMode : download}
               height={20}
               width={20}
               alt="download"
@@ -75,7 +75,7 @@ const Navbar = () => {
           </Link>
           <div className="h-6 border-l border-white500" />
           <Image
-            src={theme === "light" ? lightModeIcon : darkModeIcon}
+            src={theme === "dark" ? darkModeIcon : lightModeIcon}
             height={20}
             width={20}
             alt="light mode symbol"
