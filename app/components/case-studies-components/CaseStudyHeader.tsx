@@ -53,7 +53,7 @@ const CaseStudyHeader: FC<CaseStudyHeaderProps> = ({ mainProject }) => {
           <Button>
             <Image
               src={theme === "light" ? demoButtonLight : demoButtonDark}
-              alt="Link to live site"
+              alt="Demo Icon"
             />
             <p>Demo Site</p>
             <Image
@@ -66,7 +66,7 @@ const CaseStudyHeader: FC<CaseStudyHeaderProps> = ({ mainProject }) => {
           <Button>
             <Image
               src={theme === "light" ? githubButtonLight : githubButtonDark}
-              alt="Link to source code"
+              alt="Github logo"
             />
             <p>Source Code</p>
             <Image

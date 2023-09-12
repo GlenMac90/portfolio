@@ -1,14 +1,9 @@
-import { FC } from "react";
-
 interface UnderlinedTextProps {
   text: string;
   additionalStyles: string;
 }
 
-const UnderlinedText: FC<UnderlinedTextProps> = ({
-  text,
-  additionalStyles,
-}) => {
+const UnderlinedText = ({ text, additionalStyles }: UnderlinedTextProps) => {
   return (
     <div
       className={`relative ml-4 w-fit flex-col self-center ${additionalStyles}`}
