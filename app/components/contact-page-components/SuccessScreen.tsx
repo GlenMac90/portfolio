@@ -7,9 +7,7 @@ interface SuccessScreenProps {
 }
 
 const SuccessScreen: FC<SuccessScreenProps> = ({ setShowSuccess }) => {
-  const preventCloseOnInnerClick = (
-    e: MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const preventCloseOnInnerClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
@@ -20,14 +18,14 @@ const SuccessScreen: FC<SuccessScreenProps> = ({ setShowSuccess }) => {
     >
       <div
         className="z-40 flex h-fit w-full max-w-xl flex-col items-center justify-between rounded-xl bg-white900 p-6 dark:bg-black300 md:p-9"
-        onClick={() => preventCloseOnInnerClick}
+        onClick={preventCloseOnInnerClick}
       >
         <p className="text-center text-2xl font-semibold text-black200 dark:text-white900 md:text-3xl">
           Thank you for getting in contact
         </p>
         <Image
           src={temporaryHeroIcon}
-          alt="Illustration of me working at a desk with a computer"
+          alt="icon of me working"
           className="h-auto w-full"
         />
         <div className="flex flex-col items-center gap-6">
