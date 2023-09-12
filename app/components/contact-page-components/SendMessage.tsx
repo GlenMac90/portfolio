@@ -50,8 +50,8 @@ const SendMessage: React.FC<SendMessageProps> = ({ setShowSuccess }) => {
 
       if (form.current) {
         emailjs.sendForm(
-          "service_5k4smcw",
-          "template_bsusg0x",
+          process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID as string,
+          process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID as string,
           form.current,
           process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
         );
