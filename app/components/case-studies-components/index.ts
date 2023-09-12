@@ -1,4 +1,4 @@
-import CaseStudiesSimilarCaseStudies from "./CaseStudiesSimilarCaseStudies";
+import SimilarCaseStudies from "./SimilarCaseStudies";
 import CaseStudiesTitleText from "./CaseStudiesTitleText";
 import CaseStudyCard from "./CaseStudyCard";
 import CaseStudyChallengesAndLearnings from "./CaseStudyChallengesAndLearnings";
@@ -9,7 +9,7 @@ import SimilarProjectSmallCard from "./SimilarProjectSmallCard";
 
 export {
   CaseStudiesTitleText,
-  CaseStudiesSimilarCaseStudies,
+  SimilarCaseStudies,
   CaseStudyCard,
   CaseStudyChallengesAndLearnings,
   CaseStudyHeader,

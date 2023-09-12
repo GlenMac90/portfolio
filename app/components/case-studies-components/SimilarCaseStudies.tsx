@@ -1,12 +1,10 @@
-import React from "react";
+import { FC } from "react";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 
 import { SimilarProjectSmallCard } from ".";
 
-const CaseStudiesSimilarCaseStudies: React.FC<CaseStudyHeaderProps> = ({
-  similarProjects,
-}) => {
+const SimilarCaseStudies: FC<CaseStudyHeaderProps> = ({ similarProjects }) => {
   return (
     <section className="flex w-full flex-col items-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">
       <div className="w-full max-w-4xl">
@@ -26,4 +24,4 @@ const CaseStudiesSimilarCaseStudies: React.FC<CaseStudyHeaderProps> = ({
   );
 };
 
-export default CaseStudiesSimilarCaseStudies;
+export default SimilarCaseStudies;

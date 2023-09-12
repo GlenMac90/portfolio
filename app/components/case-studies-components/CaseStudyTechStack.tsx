@@ -1,14 +1,12 @@
 "use client";
-import React from "react";
+import { FC } from "react";
 
 import Image from "next/image";
 import { Tooltip } from "@nextui-org/react";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 
-const CaseStudyTechStack: React.FC<CaseStudyHeaderProps> = ({
-  mainProject,
-}) => {
+const CaseStudyTechStack: FC<CaseStudyHeaderProps> = ({ mainProject }) => {
   const startDate = mainProject?.startDate;
   const endDate = mainProject?.endDate;
   return (

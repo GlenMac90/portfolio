@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import Image from "next/image";
 import { Tooltip } from "@nextui-org/react";
 

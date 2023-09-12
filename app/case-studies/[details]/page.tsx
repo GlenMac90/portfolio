@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import { FC } from "react";
 
 import { featuredProjectsList } from "@/constants";
 import GetInTouchCard from "@/app/components/homepage-components/GetInTouchCard";
@@ -10,7 +10,7 @@ import {
   CaseStudyTechStack,
   CaseStudyProblemStatement,
   CaseStudyChallengesAndLearnings,
-  CaseStudiesSimilarCaseStudies,
+  SimilarCaseStudies,
 } from "@/app/components/case-studies-components/index";
 interface CaseStudyProps {
   params: {
@@ -18,7 +18,7 @@ interface CaseStudyProps {
   };
 }
 
-const CaseStudy: React.FC<CaseStudyProps> = ({ params }) => {
+const CaseStudy: FC<CaseStudyProps> = ({ params }) => {
   const mainProject = featuredProjectsList.find(
     (project) => project.caseStudyLink === params.details
   );
@@ -33,7 +33,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({ params }) => {
       <CaseStudyTechStack mainProject={mainProject} />
       <CaseStudyProblemStatement mainProject={mainProject} />
       <CaseStudyChallengesAndLearnings mainProject={mainProject} />
-      <CaseStudiesSimilarCaseStudies similarProjects={similarProjects} />
+      <SimilarCaseStudies similarProjects={similarProjects} />
       <GetInTouchCard />
     </main>
   );

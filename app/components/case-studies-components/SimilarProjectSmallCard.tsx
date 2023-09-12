@@ -1,13 +1,13 @@
-import React from "react";
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { truncateString } from "@/utils";
 import { FeaturedProjectCardProps } from "@/utils/interfaces";
 
-const SimilarProjectSmallCard: React.FC<FeaturedProjectCardProps> = ({
-  project,
-}) => {
+import Button from "../Button";
+
+const SimilarProjectSmallCard: FC<FeaturedProjectCardProps> = ({ project }) => {
   return (
     <div
       key={project.title}
@@ -34,11 +34,14 @@ const SimilarProjectSmallCard: React.FC<FeaturedProjectCardProps> = ({
             {truncateString(project.caseStudyDescription[0], 150)}
           </p>
         )}
+
         <Link
           href={`/case-studies/${project.caseStudyLink}`}
-          className="mt-4 flex items-center justify-center rounded-full bg-primaryLight py-3.5 text-sm font-semibold text-white900 dark:bg-primaryDark"
+          className="mt-4 flex"
         >
-          See Case Study
+          <Button type="blueButton" additionalStyles="w-full py-3.5 text-sm">
+            See Case Study
+          </Button>
         </Link>
       </div>
     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState, FC } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
@@ -19,7 +19,7 @@ interface WorkExperienceCardProps {
   job: Job;
 }
 
-const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({ job }) => {
+const WorkExperienceCard: FC<WorkExperienceCardProps> = ({ job }) => {
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
   const { theme } = useTheme();
 

@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import React from "react";
+import { FC } from "react";
 
 import { star } from "@/public/svg-icons";
 
@@ -11,9 +11,7 @@ interface Testimonial {
   text: string;
 }
 
-const TestimonialCard: React.FC<{ testimonial: Testimonial }> = ({
-  testimonial,
-}) => {
+const TestimonialCard: FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
   return (
     <div className="flex max-w-xl shrink-0 grow-0 basis-full flex-col p-2 lg:max-w-5xl lg:flex-row">
       <Image

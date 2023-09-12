@@ -1,12 +1,10 @@
 "use client";
+import { FC } from "react";
 
+import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
-import {
-  laptopTemplate,
-  iphoneTemplate,
-} from "@/public/png-icons/featured-projects-images";
 import {
   demoButtonLight,
   demoButtonDark,
@@ -15,13 +13,15 @@ import {
   githubButtonLight,
   githubButtonDark,
 } from "@/public/svg-icons/case-study-icons";
-import React from "react";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 
+import LaptopMockup from "../LaptopMockup";
+import MobileMockup from "../MobileMockup";
+
 import Button from "../Button";
 
-const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ mainProject }) => {
+const CaseStudyHeader: FC<CaseStudyHeaderProps> = ({ mainProject }) => {
   const { theme } = useTheme();
   return (
     <section className="flex w-full flex-col items-center">
@@ -42,58 +42,39 @@ const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ mainProject }) => {
       </div>
       <div className="mt-6 flex lg:mt-[3.5rem]">
         {mainProject?.desktopImage && (
-          <div className="relative z-30 flex h-[10.6rem] w-[17rem] sm:h-[19.5rem] sm:w-[32.35rem]">
-            <Image src={laptopTemplate} alt="laptop template image" />
-            <div className="absolute left-6 top-[0.3rem] flex h-[9.7rem] w-[14.1rem] overflow-hidden rounded sm:left-12 sm:h-[18rem] sm:w-[26.6rem] sm:rounded-t-xl">
-              <Image
-                src={mainProject?.desktopImage}
-                alt="desktop image of project"
-                objectFit="cover"
-                className="h-full"
-              />
-            </div>
-          </div>
+          <LaptopMockup imageSrc={mainProject?.desktopImage} />
         )}
         {mainProject?.mobileImage && (
-          <div className="relative z-20 flex h-28 w-16 -translate-x-4 self-end sm:h-[17rem] sm:w-[7.8rem] sm:-translate-x-6">
-            <Image
-              src={iphoneTemplate}
-              alt="iphone template image"
-              className="z-20"
-            />
-            <div className="absolute left-1 top-1 z-10 flex h-[6.5rem] w-[3.5rem] overflow-hidden rounded-md sm:left-2 sm:top-2 sm:h-[16rem] sm:w-[6.8rem] sm:rounded-2xl">
-              <Image
-                src={mainProject?.mobileImage}
-                alt="mobile image of project"
-                objectFit="cover"
-              />
-            </div>
-          </div>
+          <MobileMockup imageSrc={mainProject?.mobileImage} />
         )}
       </div>
       <div className="mb-12 mt-6 flex justify-between gap-10 md:mb-16 md:mt-[4.5rem] md:gap-24">
-        <Button>
-          <Image
-            src={theme === "light" ? demoButtonLight : demoButtonDark}
-            alt="Link to live site"
-          />
-          <p>Demo Site</p>
-          <Image
-            src={theme === "light" ? arrowlight : arrowDark}
-            alt="Link to live site"
-          />
-        </Button>
-        <Button>
-          <Image
-            src={theme === "light" ? githubButtonLight : githubButtonDark}
-            alt="Link to source code"
-          />
-          <p>Source Code</p>
-          <Image
-            src={theme === "light" ? arrowlight : arrowDark}
-            alt="Link to source code"
-          />
-        </Button>
+        <Link href="/" className="flex">
+          <Button>
+            <Image
+              src={theme === "light" ? demoButtonLight : demoButtonDark}
+              alt="Link to live site"
+            />
+            <p>Demo Site</p>
+            <Image
+              src={theme === "light" ? arrowlight : arrowDark}
+              alt="Link to live site"
+            />
+          </Button>
+        </Link>
+        <Link href="/" className="flex">
+          <Button>
+            <Image
+              src={theme === "light" ? githubButtonLight : githubButtonDark}
+              alt="Link to source code"
+            />
+            <p>Source Code</p>
+            <Image
+              src={theme === "light" ? arrowlight : arrowDark}
+              alt="Link to source code"
+            />
+          </Button>
+        </Link>
       </div>
     </section>
   );

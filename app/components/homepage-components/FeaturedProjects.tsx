@@ -1,10 +1,10 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import { featuredProjectsList } from "@/constants";
 import FeaturedProjectCard from "./FeaturedProjectCard";
 import { whiteButtonArrow } from "@/public/svg-icons";
+import Button from "../Button";
 
 const FeaturedProjects = () => {
   return (
@@ -27,8 +27,11 @@ const FeaturedProjects = () => {
           <FeaturedProjectCard key={project.title} project={project} />
         ))}
       </div>
-      <Link href="/case-studies">
-        <button className="mb-0 mt-6 flex items-center gap-1.5 rounded-full bg-primaryLight px-10 py-5 text-lg font-semibold text-white900 dark:bg-primaryDark lg:mb-14 lg:mt-12">
+      <Link href="/case-studies" className="flex">
+        <Button
+          type="blueButton"
+          additionalStyles="mb-0 mt-6 gap-1.5 px-10 py-5 text-lg lg:mb-14 lg:mt-12"
+        >
           <p>See more case studies</p>
           <Image
             src={whiteButtonArrow}
@@ -36,7 +39,7 @@ const FeaturedProjects = () => {
             width={14}
             alt="link to more info"
           />
-        </button>
+        </Button>
       </Link>
     </section>
   );

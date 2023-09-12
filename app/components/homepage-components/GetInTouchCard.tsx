@@ -1,7 +1,8 @@
-import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { whiteButtonArrow } from "@/public/svg-icons";
+import Button from "../Button";
 
 const GetInTouchCard = () => {
   return (
@@ -10,15 +11,21 @@ const GetInTouchCard = () => {
         <p className="mt-[5rem] max-w-sm text-3xl font-bold text-black200 lg:my-0 lg:max-w-[40rem] lg:text-5xl">
           Have a project in mind that requires technical expertise?
         </p>
-        <button className="z-10 mb-[5rem] mt-4 flex w-full items-center justify-center gap-1.5 rounded-full bg-primaryLight py-3.5 text-lg font-semibold text-white900 dark:bg-primaryDark lg:max-w-[20rem] lg:translate-y-16 lg:self-end lg:font-medium">
-          <p>Get in touch with me</p>
-          <Image
-            src={whiteButtonArrow}
-            height={14}
-            width={14}
-            alt="link to more info"
-          />
-        </button>
+        <Link href="/contact" className="z-10 mb-[5rem] mt-4 flex">
+          <Button
+            type="blueButton"
+            additionalStyles="w-full gap-1.5 py-3.5 text-lg lg:w-[20rem] lg:translate-y-16 lg:self-end lg:font-medium"
+          >
+            <p>Get in touch with me</p>
+            <Image
+              src={whiteButtonArrow}
+              height={14}
+              width={14}
+              alt="link to more info"
+            />
+          </Button>
+        </Link>
+
         {/* Start of background pattern section for small screen */}
         <div className="absolute flex h-full w-full items-center justify-center lg:hidden">
           <div className="absolute h-80 w-80 translate-x-[-1rem] translate-y-[-15.5rem] rounded-full bg-white/10" />

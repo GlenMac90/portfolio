@@ -1,10 +1,12 @@
-import Hero from "./components/homepage-components/Hero";
-import MySkills from "./components/homepage-components/MySkills";
-import MyServices from "./components/homepage-components/MyServices";
-import WorkExperience from "./components/homepage-components/WorkExperience";
-import FeaturedProjects from "./components/homepage-components/FeaturedProjects";
-import Testimonials from "./components/homepage-components/Testimonials";
-import GetInTouchCard from "./components/homepage-components/GetInTouchCard";
+import {
+  Hero,
+  MySkills,
+  MyServices,
+  WorkExperience,
+  FeaturedProjects,
+  Testimonials,
+  GetInTouchCard,
+} from "./components/homepage-components";
 
 export default function Home() {
   return (

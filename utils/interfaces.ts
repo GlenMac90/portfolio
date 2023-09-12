@@ -5,6 +5,10 @@ interface TechStack {
   text: string;
 }
 
+export interface MockupProps {
+  imageSrc: StaticImageData;
+  isHomepage?: boolean;
+}
 export interface Project {
   caseStudyLink?: string;
   title: string;
