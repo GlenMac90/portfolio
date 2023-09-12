@@ -4,25 +4,19 @@ import FormInput from "./FormInput";
 import Button from "../Button";
 import { inputFields } from "@/constants";
 
+type FormData = {
+  user_name: string;
+  user_email: string;
+  message: string;
+  contact_info: string;
+};
 interface SendMessageFormProps {
   form: RefObject<HTMLFormElement>;
   sendEmail: (e: FormEvent<HTMLFormElement>) => void;
   removeErrorMessage: (errorMsg: string) => void;
   errorList: string;
-  formData: {
-    user_name: string;
-    user_email: string;
-    message: string;
-    contact_info: string;
-  };
-  setFormData: Dispatch<
-    SetStateAction<{
-      user_name: string;
-      user_email: string;
-      message: string;
-      contact_info: string;
-    }>
-  >;
+  formData: FormData;
+  setFormData: Dispatch<SetStateAction<FormData>>;
 }
 const SendMessageForm: FC<SendMessageFormProps> = ({
   form,
