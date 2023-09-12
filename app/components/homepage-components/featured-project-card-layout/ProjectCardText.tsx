@@ -1,10 +1,10 @@
-import React from "react";
+import { FC } from "react";
 import Image from "next/image";
 
 import { arrow } from "@/public/svg-icons";
 import { FeaturedProjectCardProps } from "@/utils/interfaces";
 
-const ProjectCardText: React.FC<FeaturedProjectCardProps> = ({ project }) => {
+const ProjectCardText: FC<FeaturedProjectCardProps> = ({ project }) => {
   return (
     <div className="order-1 flex flex-col">
       <div className="flex flex-col">

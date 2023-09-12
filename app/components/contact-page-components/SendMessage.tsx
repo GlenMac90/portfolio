@@ -1,16 +1,25 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import {
+  useRef,
+  useState,
+  FC,
+  SetStateAction,
+  Dispatch,
+  FormEvent,
+} from "react";
 import emailjs from "@emailjs/browser";
-import { ZodError, z } from "zod";
+import { ZodError } from "zod";
 
 import SendMessageForm from "./SendMessageForm";
 
+import { emailFormSchema } from "@/utils";
+
 interface SendMessageProps {
-  setShowSuccess: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowSuccess: Dispatch<SetStateAction<boolean>>;
 }
 
-const SendMessage: React.FC<SendMessageProps> = ({ setShowSuccess }) => {
+const SendMessage: FC<SendMessageProps> = ({ setShowSuccess }) => {
   const [errorList, setErrorList] = useState("");
   const [formData, setFormData] = useState({
     user_name: "",
@@ -21,23 +30,11 @@ const SendMessage: React.FC<SendMessageProps> = ({ setShowSuccess }) => {
 
   const form = useRef<HTMLFormElement>(null);
 
-  const emailFormSchema = z.object({
-    user_name: z.string().nonempty("Name is required"),
-    user_email: z
-      .string()
-      .email("Invalid email format")
-      .nonempty("Email is required"),
-    message: z
-      .string()
-      .min(100, "Message should be at least 100 characters long"),
-    contact_info: z.string().nonempty("Contact information is required"),
-  });
-
   const removeErrorMessage = (errorMsg: string) => {
     setErrorList((prevErrors) => prevErrors.replace(errorMsg, "").trim());
   };
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
@@ -49,13 +46,18 @@ const SendMessage: React.FC<SendMessageProps> = ({ setShowSuccess }) => {
       });
 
       if (form.current) {
-        emailjs.sendForm(
+        const response = await emailjs.sendForm(
           process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID as string,
           process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID as string,
           form.current,
           process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
         );
-        setShowSuccess(true);
+        if (response.status === 200) {
+          console.log("Email successfully sent!");
+          setShowSuccess(true);
+        } else {
+          console.error(`Failed to send email: ${response.text}`);
+        }
       } else {
         console.error("Form reference is null.");
       }

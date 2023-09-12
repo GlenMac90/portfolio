@@ -1,14 +1,14 @@
-import React from "react";
+import { FC, ReactNode } from "react";
 
 interface ButtonProps {
   type?: string;
   additionalStyles?: string;
   submit?: boolean;
   value?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   type = "default",
   additionalStyles,
   children,

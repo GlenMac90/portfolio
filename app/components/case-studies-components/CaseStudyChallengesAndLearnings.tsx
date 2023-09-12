@@ -1,11 +1,11 @@
-import React from "react";
+import { FC } from "react";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 import { challengeIcon, greenTick } from "@/public/svg-icons/case-study-icons";
 
 import ChallengesAndLearningsCard from "./ChallengesAndLearningsCard";
 
-const CaseStudyChallengesAndLearnings: React.FC<CaseStudyHeaderProps> = ({
+const CaseStudyChallengesAndLearnings: FC<CaseStudyHeaderProps> = ({
   mainProject,
 }) => {
   return (

@@ -1,11 +1,11 @@
-import React from "react";
+import { FC } from "react";
 
 interface UnderlinedTextProps {
   text: string;
   additionalStyles: string;
 }
 
-const UnderlinedText: React.FC<UnderlinedTextProps> = ({
+const UnderlinedText: FC<UnderlinedTextProps> = ({
   text,
   additionalStyles,
 }) => {

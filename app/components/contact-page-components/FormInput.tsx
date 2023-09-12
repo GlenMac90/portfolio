@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import ErrorMessage from "./ErrorMessage";
 
 const sharedStyles =
@@ -17,7 +17,7 @@ interface FormInputProps {
   marginTop?: boolean;
 }
 
-const FormInput: React.FC<FormInputProps> = ({
+const FormInput: FC<FormInputProps> = ({
   label,
   input = false,
   email = false,

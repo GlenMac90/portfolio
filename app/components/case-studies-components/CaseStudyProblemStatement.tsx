@@ -1,10 +1,10 @@
-import React from "react";
+import { FC } from "react";
 import Image from "next/image";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 import { workProcessSymbols } from "@/constants";
 
-const CaseStudyProblemStatement: React.FC<CaseStudyHeaderProps> = ({
+const CaseStudyProblemStatement: FC<CaseStudyHeaderProps> = ({
   mainProject,
 }) => {
   return (

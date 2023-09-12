@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 
 interface ChallengesAndLearningsCardProps {
@@ -9,7 +9,7 @@ interface ChallengesAndLearningsCardProps {
   listText?: string[];
 }
 
-const ChallengesAndLearningsCard: React.FC<ChallengesAndLearningsCardProps> = ({
+const ChallengesAndLearningsCard: FC<ChallengesAndLearningsCardProps> = ({
   image,
   additionalStyles,
   textColour,

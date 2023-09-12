@@ -1,4 +1,5 @@
 "use client";
+import { FC } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +13,6 @@ import {
   githubButtonLight,
   githubButtonDark,
 } from "@/public/svg-icons/case-study-icons";
-import React from "react";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 
@@ -21,7 +21,7 @@ import MobileMockup from "../MobileMockup";
 
 import Button from "../Button";
 
-const CaseStudyHeader: React.FC<CaseStudyHeaderProps> = ({ mainProject }) => {
+const CaseStudyHeader: FC<CaseStudyHeaderProps> = ({ mainProject }) => {
   const { theme } = useTheme();
   return (
     <section className="flex w-full flex-col items-center">

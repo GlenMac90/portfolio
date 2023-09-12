@@ -1,10 +1,10 @@
-import React from "react";
+import { FC } from "react";
 
 interface ErrorMessageProps {
   message: string;
 }
 
-const ErrorMessage: React.FC<ErrorMessageProps> = ({ message }) => {
+const ErrorMessage: FC<ErrorMessageProps> = ({ message }) => {
   return (
     <div
       className={`absolute bottom-[-2rem] left-2 text-red-600 transition duration-300 ease-in dark:text-red-400 ${

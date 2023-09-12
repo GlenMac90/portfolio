@@ -1,12 +1,12 @@
-import React from "react";
+import { RefObject, SetStateAction, FC, FormEvent, Dispatch } from "react";
 
 import FormInput from "./FormInput";
 import Button from "../Button";
 import { inputFields } from "@/constants";
 
 interface SendMessageFormProps {
-  form: React.RefObject<HTMLFormElement>;
-  sendEmail: (e: React.FormEvent<HTMLFormElement>) => void;
+  form: RefObject<HTMLFormElement>;
+  sendEmail: (e: FormEvent<HTMLFormElement>) => void;
   removeErrorMessage: (errorMsg: string) => void;
   errorList: string;
   formData: {
@@ -15,8 +15,8 @@ interface SendMessageFormProps {
     message: string;
     contact_info: string;
   };
-  setFormData: React.Dispatch<
-    React.SetStateAction<{
+  setFormData: Dispatch<
+    SetStateAction<{
       user_name: string;
       user_email: string;
       message: string;
@@ -24,7 +24,7 @@ interface SendMessageFormProps {
     }>
   >;
 }
-const SendMessageForm: React.FC<SendMessageFormProps> = ({
+const SendMessageForm: FC<SendMessageFormProps> = ({
   form,
   sendEmail,
   removeErrorMessage,

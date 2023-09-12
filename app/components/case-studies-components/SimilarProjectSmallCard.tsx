@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,9 +7,7 @@ import { FeaturedProjectCardProps } from "@/utils/interfaces";
 
 import Button from "../Button";
 
-const SimilarProjectSmallCard: React.FC<FeaturedProjectCardProps> = ({
-  project,
-}) => {
+const SimilarProjectSmallCard: FC<FeaturedProjectCardProps> = ({ project }) => {
   return (
     <div
       key={project.title}

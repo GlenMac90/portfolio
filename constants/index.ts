@@ -19,6 +19,10 @@ import {
   instagramIcon,
   linkedInIcon,
   socialMediaIcon,
+  call,
+  callWhite,
+  message,
+  messageWhite,
 } from "@/public/svg-icons/tech-icons";
 
 import {
@@ -115,21 +119,40 @@ export const socialMediaButtonsContactPage = [
     icon: instagramIcon,
     iconDark: instagramIconWhite,
     title: "instagram",
+    url: "https://instagram.com",
   },
   {
     icon: socialMediaIcon,
     iconDark: socialMediaIconWhite,
     title: "X",
+    url: "https://x.com",
   },
   {
     icon: linkedInIcon,
     iconDark: linkedInIconWhite,
     title: "LinkedIn",
+    url: "https://linkedin.com",
   },
   {
     icon: gitHubIcon,
     iconDark: gitHubIconWhite,
     title: "gitHub",
+    url: "https://github.com",
+  },
+];
+
+export const contactDetails = [
+  {
+    label: "Phone Number",
+    imageSrc: call,
+    imageSrcDark: callWhite,
+    info: "+44 7984 365789",
+  },
+  {
+    label: "Email Address",
+    imageSrc: message,
+    imageSrcDark: messageWhite,
+    info: "glen.mccallum@live.co.uk",
   },
 ];
 

@@ -1,14 +1,11 @@
-import React from "react";
+import { FC } from "react";
 import Image from "next/image";
 
 import { laptopTemplate } from "@/public/png-icons/featured-projects-images";
 
 import { MockupProps } from "@/utils/interfaces";
 
-const LaptopMockup: React.FC<MockupProps> = ({
-  imageSrc,
-  isHomepage = false,
-}) => {
+const LaptopMockup: FC<MockupProps> = ({ imageSrc, isHomepage = false }) => {
   const parentDivStyles = isHomepage
     ? "h-40 w-64 lg:h-[21rem] lg:w-[34.5rem]"
     : "h-[10.6rem] w-[17rem] sm:h-[19.5rem] sm:w-[32.35rem]";
