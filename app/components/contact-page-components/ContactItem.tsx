@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 import { useTheme } from "next-themes";
 
@@ -11,7 +10,7 @@ interface ContactItemProps {
   };
 }
 
-const ContactItem: FC<ContactItemProps> = ({ contact }) => {
+const ContactItem = ({ contact }: ContactItemProps) => {
   const { theme } = useTheme();
   return (
     <>

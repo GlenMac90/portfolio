@@ -1,7 +1,5 @@
 "use client";
 
-import { FC } from "react";
-
 import { featuredProjectsList } from "@/constants";
 import GetInTouchCard from "@/app/components/homepage-components/GetInTouchCard";
 
@@ -18,7 +16,7 @@ interface CaseStudyProps {
   };
 }
 
-const CaseStudy: FC<CaseStudyProps> = ({ params }) => {
+const CaseStudy = ({ params }: CaseStudyProps) => {
   const mainProject = featuredProjectsList.find(
     (project) => project.caseStudyLink === params.details
   );
