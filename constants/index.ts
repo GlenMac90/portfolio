@@ -453,20 +453,3 @@ export const inputFields = [
     marginTop: true,
   },
 ];
-
-export const laptopMockupStyles = {
-  homepageParent: "h-40 w-64 lg:h-[21rem] lg:w-[34.5rem]",
-  otherPageParent: "h-[10.6rem] w-[17rem] sm:h-[19.5rem] sm:w-[32.35rem]",
-  homepageChild:
-    "top-1 h-36 w-[13.1rem] lg:left-12 lg:h-[19.4rem] lg:w-[28.75rem] lg:rounded-t-xl",
-  otherPageChild:
-    "top-[0.3rem] h-[9.7rem] w-[14.1rem] sm:left-[2.9rem] sm:h-[18rem] sm:w-[26.8rem] sm:rounded-t-xl",
-};
-
-export const mobileMockupStyles = {
-  homepageParent: "lg:h-[17rem] lg:w-[8.7rem] lg:-translate-x-6",
-  otherPageParent: "sm:h-[17rem] sm:w-[7.8rem] sm:-translate-x-6",
-  homepageChild: "lg:left-2 lg:top-2 lg:h-[16rem] lg:w-[7.5rem] lg:rounded-2xl",
-  otherPageChild:
-    "sm:left-2 sm:top-2 sm:h-[16rem] sm:w-[6.8rem] sm:rounded-2xl",
-};
