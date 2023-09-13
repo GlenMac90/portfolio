@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FC } from "react";
+import { useState, FC, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
@@ -23,13 +23,15 @@ const WorkExperienceCard: FC<WorkExperienceCardProps> = ({ job }) => {
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
   const { theme } = useTheme();
 
-  let imageSrc;
+  const [imageSrc, setImageSrc] = useState<string>(job.image);
 
-  if (theme === "light") {
-    imageSrc = isMouseOver ? job.imagePrimaryLight : job.image;
-  } else {
-    imageSrc = isMouseOver ? job.imagePrimaryDark : job.imageDark;
-  }
+  useEffect(() => {
+    if (theme === "dark") {
+      setImageSrc(isMouseOver ? job.imagePrimaryDark : job.imageDark);
+    } else {
+      setImageSrc(isMouseOver ? job.imagePrimaryLight : job.image);
+    }
+  }, [theme, isMouseOver, job]);
 
   return (
     <div
