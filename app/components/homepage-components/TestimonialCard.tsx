@@ -1,4 +1,7 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
 
 import { star } from "@/public/svg-icons";
 
@@ -25,13 +28,22 @@ const TestimonialCard = ({ testimonial }: Testimonial) => {
       <div className="flex flex-col lg:ml-[1.6rem]">
         <div className="mt-10 flex lg:mt-3.5">
           {Array.from({ length: testimonial.rating }).map((_, index) => (
-            <Image
+            <motion.div
               key={index}
-              src={star}
-              height={20}
-              width={20}
-              alt="icon of golden star"
-            />
+              initial={{ y: "25%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                y: { duration: 0.5, delay: index * 0.1 },
+                opacity: { duration: 0.5, delay: index * 0.1 },
+              }}
+            >
+              <Image
+                src={star}
+                height={20}
+                width={20}
+                alt="icon of golden star"
+              />
+            </motion.div>
           ))}{" "}
         </div>
         <p className="mt-4 text-lg font-light text-white500 dark:text-white800 lg:mt-6 lg:text-2xl">

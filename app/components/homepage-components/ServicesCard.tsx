@@ -34,7 +34,7 @@ const ServicesCard = ({ service }: ServicesCardProps) => {
 
   return (
     <div
-      className={`h-[18rem] w-[19rem] rounded-xl  px-6 py-7 shadow-lg  xl:w-full ${
+      className={`w-full rounded-xl px-6 py-7 shadow-lg md:h-[18rem] md:w-[19rem] xl:w-full ${
         isMouseOver
           ? "bg-primaryLight dark:bg-primaryDark"
           : "bg-white800 dark:bg-black300"

@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { socialMediaIcons } from "@/constants";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -9,14 +10,15 @@ const Footer = () => {
         © {new Date().getFullYear()} Glen. All rights reserved.
       </p>
       <div className="mt-4 flex gap-6 lg:mt-0">
-        {socialMediaIcons.map((icon) => (
-          <Image
-            key={icon}
-            src={icon}
-            height={24}
-            width={24}
-            alt="social media icon"
-          />
+        {socialMediaIcons.map((button) => (
+          <Link href={button.url} key={button.title}>
+            <Image
+              src={button.icon}
+              height={24}
+              width={24}
+              alt={`Social media icon for ${button.title}`}
+            />
+          </Link>
         ))}
       </div>
     </footer>

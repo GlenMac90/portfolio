@@ -108,10 +108,10 @@ export const workProcessSymbols = [
 ];
 
 export const socialMediaIcons = [
-  gitHubIcon,
-  instagramIcon,
-  linkedInIcon,
-  socialMediaIcon,
+  { title: "github", icon: gitHubIcon, url: "https://github.com" },
+  { title: "instagram", icon: instagramIcon, url: "https://instagram.com" },
+  { title: "linkedin", icon: linkedInIcon, url: "https://linkedin" },
+  { title: "x", icon: socialMediaIcon, url: "https://x.com" },
 ];
 
 export const socialMediaButtonsContactPage = [

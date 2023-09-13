@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 
 import TestimonialCard from "./TestimonialCard";
+import UnderlinedText from "../UnderlinedText";
 
 import { testimonials } from "@/constants";
 import {
@@ -57,7 +59,12 @@ const Testimonials = () => {
     additionalClassesRight,
   }: ButtonsProps) => (
     <>
-      <button
+      <motion.button
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.1 }}
         onClick={previous}
         className={`absolute ${additionalClassesLeft} self-center rounded-full bg-white900 p-4 dark:bg-black200 `}
       >
@@ -67,8 +74,14 @@ const Testimonials = () => {
           width={24}
           alt="left button click"
         />
-      </button>
-      <button
+      </motion.button>
+
+      <motion.button
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.1 }}
         onClick={next}
         className={`absolute ${additionalClassesRight} rounded-full bg-white900 p-4 dark:bg-black200`}
       >
@@ -78,31 +91,39 @@ const Testimonials = () => {
           width={24}
           alt="right button click"
         />
-      </button>
+      </motion.button>
     </>
   );
 
   return (
     <section className="flex w-full flex-col items-center bg-white800 px-6 py-12 dark:bg-black300 md:py-[4.5rem]">
-      <div className="flex flex-col items-center md:flex-row">
+      <motion.div
+        initial={{ y: "-25%", opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="flex flex-col items-center md:flex-row"
+      >
         <div className="flex">
           <p className="text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
             What
           </p>
-          <div className="relative mx-3 flex w-fit flex-col self-center">
-            <p className="z-20 text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
-              they say
-            </p>
-            <div className="absolute z-10 h-[1rem] w-full translate-y-[1.6rem] bg-orange-200 md:h-[1.358rem] md:translate-y-[1.7rem]" />
-          </div>
+          <UnderlinedText
+            text="they say"
+            additionalStyles="relative mx-3 flex w-fit flex-col self-center"
+          />
         </div>
         <p className="text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
           about me
         </p>
-      </div>
+      </motion.div>
       <div className="relative mt-9 flex w-full flex-col items-center lg:max-w-7xl lg:px-20">
         <div className="relative max-w-xl overflow-hidden lg:max-w-6xl">
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true }}
             className="flex max-w-xl transition-transform duration-1000 ease-out lg:max-w-5xl"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
@@ -112,10 +133,10 @@ const Testimonials = () => {
                 testimonial={testimonial}
               />
             ))}
-          </div>
+          </motion.div>
           <Buttons
-            additionalClassesLeft="right-[4.5rem] top-0 flex lg:hidden"
-            additionalClassesRight="right-0 top-0 flex lg:hidden"
+            additionalClassesLeft="right-[4.5rem] top-1 flex lg:hidden"
+            additionalClassesRight="right-1 top-1 flex lg:hidden"
           />
         </div>
         <Buttons
