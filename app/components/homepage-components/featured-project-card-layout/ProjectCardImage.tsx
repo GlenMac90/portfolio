@@ -1,10 +1,8 @@
-import { FC } from "react";
-
 import { FeaturedProjectCardProps } from "@/utils/interfaces";
 import LaptopMockup from "../../LaptopMockup";
 import MobileMockup from "../../MobileMockup";
 
-const ProjectCardImage: FC<FeaturedProjectCardProps> = ({ project }) => {
+const ProjectCardImage = ({ project }: FeaturedProjectCardProps) => {
   return (
     <div
       className={`order-2 mt-6 flex ${

@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 
 interface ChallengesAndLearningsCardProps {
@@ -9,13 +8,13 @@ interface ChallengesAndLearningsCardProps {
   listText?: string[];
 }
 
-const ChallengesAndLearningsCard: FC<ChallengesAndLearningsCardProps> = ({
+const ChallengesAndLearningsCard = ({
   image,
   additionalStyles,
   textColour,
   text,
   listText,
-}) => {
+}: ChallengesAndLearningsCardProps) => {
   return (
     <div
       className={`flex flex-col rounded-[10px] bg-white800 px-3.5 py-6 dark:bg-black300 md:px-10 md:py-9 ${additionalStyles}`}

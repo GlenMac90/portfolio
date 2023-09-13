@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FC } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
@@ -16,7 +16,7 @@ interface ServicesCardProps {
   service: Service;
 }
 
-const ServicesCard: FC<ServicesCardProps> = ({ service }) => {
+const ServicesCard = ({ service }: ServicesCardProps) => {
   const { theme } = useTheme();
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 

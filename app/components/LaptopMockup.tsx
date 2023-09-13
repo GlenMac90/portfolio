@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Image from "next/image";
 
 import { laptopTemplate } from "@/public/png-icons/featured-projects-images";
@@ -14,7 +13,7 @@ const laptopMockupStyles = {
     "top-[0.3rem] h-[9.7rem] w-[14.1rem] sm:left-[2.9rem] sm:h-[18rem] sm:w-[26.8rem] sm:rounded-t-xl",
 };
 
-const LaptopMockup: FC<MockupProps> = ({ imageSrc, isHomepage = false }) => {
+const LaptopMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
   const { homepageParent, otherPageParent, homepageChild, otherPageChild } =
     laptopMockupStyles;
 

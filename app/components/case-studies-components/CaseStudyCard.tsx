@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { FC } from "react";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 import LaptopMockup from "../LaptopMockup";
 
-const CaseStudyCard: FC<CaseStudyHeaderProps> = ({ mainProject }) => {
+const CaseStudyCard = ({ mainProject }: CaseStudyHeaderProps) => {
   return (
     <Link
       key={mainProject?.title}

@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { useTheme } from "next-themes";
@@ -14,7 +13,7 @@ interface SocialMediaButtonProps {
   };
 }
 
-const SocialMediaButton: FC<SocialMediaButtonProps> = ({ button }) => {
+const SocialMediaButton = ({ button }: SocialMediaButtonProps) => {
   const { theme } = useTheme();
 
   return (

@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Image from "next/image";
 
 import { iphoneTemplate } from "@/public/png-icons/featured-projects-images";
@@ -12,7 +11,7 @@ const mobileMockupStyles = {
     "sm:left-2 sm:top-2 sm:h-[16rem] sm:w-[6.8rem] sm:rounded-2xl",
 };
 
-const MobileMockup: FC<MockupProps> = ({ imageSrc, isHomepage = false }) => {
+const MobileMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
   const { homepageParent, otherPageParent, homepageChild, otherPageChild } =
     mobileMockupStyles;
   const parentDivStyles = isHomepage ? homepageParent : otherPageParent;

@@ -1,4 +1,3 @@
-import { FC } from "react";
 import ErrorMessage from "./ErrorMessage";
 
 const sharedStyles =
@@ -17,7 +16,7 @@ interface FormInputProps {
   marginTop?: boolean;
 }
 
-const FormInput: FC<FormInputProps> = ({
+const FormInput = ({
   label,
   input = false,
   email = false,
@@ -28,7 +27,7 @@ const FormInput: FC<FormInputProps> = ({
   errorList,
   errorMessage,
   marginTop = true,
-}) => {
+}: FormInputProps) => {
   return (
     <div className="relative flex w-full flex-col">
       <label

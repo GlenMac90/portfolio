@@ -1,4 +1,4 @@
-import { FC, Dispatch, SetStateAction, MouseEvent } from "react";
+import { Dispatch, SetStateAction, MouseEvent } from "react";
 import Image from "next/image";
 
 import { temporaryHeroIcon } from "@/public/png-icons";
@@ -6,7 +6,7 @@ interface SuccessScreenProps {
   setShowSuccess: Dispatch<SetStateAction<boolean>>;
 }
 
-const SuccessScreen: FC<SuccessScreenProps> = ({ setShowSuccess }) => {
+const SuccessScreen = ({ setShowSuccess }: SuccessScreenProps) => {
   const preventCloseOnInnerClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
