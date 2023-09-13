@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Tooltip } from "@nextui-org/react";
 
@@ -7,7 +7,7 @@ interface SkillIconProps {
   text: string;
 }
 
-const SkillIcon: FC<SkillIconProps> = ({ src, text }) => {
+const SkillIcon = ({ src, text }: SkillIconProps) => {
   const [colourIcon, setColourIcon] = useState<boolean>(false);
 
   return (

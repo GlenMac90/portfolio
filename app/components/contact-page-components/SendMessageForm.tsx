@@ -1,4 +1,4 @@
-import { RefObject, SetStateAction, FC, FormEvent, Dispatch } from "react";
+import { RefObject, SetStateAction, FormEvent, Dispatch } from "react";
 
 import FormInput from "./FormInput";
 import Button from "../Button";
@@ -18,14 +18,14 @@ interface SendMessageFormProps {
   formData: FormData;
   setFormData: Dispatch<SetStateAction<FormData>>;
 }
-const SendMessageForm: FC<SendMessageFormProps> = ({
+const SendMessageForm = ({
   form,
   sendEmail,
   removeErrorMessage,
   errorList,
   formData,
   setFormData,
-}) => {
+}: SendMessageFormProps) => {
   return (
     <form ref={form} onSubmit={sendEmail} className="flex flex-col lg:w-3/5">
       {inputFields.map((field) => (

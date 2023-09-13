@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import React from "react";
+import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
@@ -18,11 +18,7 @@ export const metadata: Metadata = {
   description: "Glen McCallum's Portfolio",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={poppins.className}>

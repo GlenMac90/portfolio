@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
+import { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
 
 type ProviderProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
-const Provider: React.FC<ProviderProps> = ({ children }) => {
+const Provider = ({ children }: ProviderProps) => {
   return <ThemeProvider attribute="class">{children}</ThemeProvider>;
 };
 

@@ -1,10 +1,8 @@
-import { FC } from "react";
-
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 
 import { SimilarProjectSmallCard } from ".";
 
-const SimilarCaseStudies: FC<CaseStudyHeaderProps> = ({ similarProjects }) => {
+const SimilarCaseStudies = ({ similarProjects }: CaseStudyHeaderProps) => {
   return (
     <section className="flex w-full flex-col items-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">
       <div className="w-full max-w-4xl">

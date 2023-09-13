@@ -1,12 +1,9 @@
-import { FC } from "react";
 import Image from "next/image";
 
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 import { workProcessSymbols } from "@/constants";
 
-const CaseStudyProblemStatement: FC<CaseStudyHeaderProps> = ({
-  mainProject,
-}) => {
+const CaseStudyProblemStatement = ({ mainProject }: CaseStudyHeaderProps) => {
   return (
     <>
       <section className="flex w-full flex-col items-center justify-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">

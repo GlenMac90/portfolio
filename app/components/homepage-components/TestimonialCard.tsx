@@ -1,17 +1,18 @@
 import Image, { StaticImageData } from "next/image";
-import { FC } from "react";
 
 import { star } from "@/public/svg-icons";
 
 interface Testimonial {
-  name: string;
-  jobDescription: string;
-  image: StaticImageData;
-  rating: number;
-  text: string;
+  testimonial: {
+    name: string;
+    jobDescription: string;
+    image: StaticImageData;
+    rating: number;
+    text: string;
+  };
 }
 
-const TestimonialCard: FC<{ testimonial: Testimonial }> = ({ testimonial }) => {
+const TestimonialCard = ({ testimonial }: Testimonial) => {
   return (
     <div className="flex max-w-xl shrink-0 grow-0 basis-full flex-col p-2 lg:max-w-5xl lg:flex-row">
       <Image

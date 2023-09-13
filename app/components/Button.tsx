@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface ButtonProps {
   type?: string;
@@ -8,13 +8,13 @@ interface ButtonProps {
   children: ReactNode;
 }
 
-const Button: FC<ButtonProps> = ({
+const Button = ({
   type = "default",
   additionalStyles,
   children,
   value = "",
   submit = false,
-}) => {
+}: ButtonProps) => {
   let styles =
     "text-primaryLight dark:text-primaryDark text:sm md:text-xl font-semibold justify-center gap-1";
 

@@ -1,13 +1,11 @@
-import { FC } from "react";
-
 import { CaseStudyHeaderProps } from "@/utils/interfaces";
 import { challengeIcon, greenTick } from "@/public/svg-icons/case-study-icons";
 
 import ChallengesAndLearningsCard from "./ChallengesAndLearningsCard";
 
-const CaseStudyChallengesAndLearnings: FC<CaseStudyHeaderProps> = ({
+const CaseStudyChallengesAndLearnings = ({
   mainProject,
-}) => {
+}: CaseStudyHeaderProps) => {
   return (
     <article className="flex w-full flex-col items-center bg-white900 px-6 py-9 dark:bg-black200 md:py-[4.5rem]">
       <div className="flex w-full max-w-4xl flex-col">

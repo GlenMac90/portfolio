@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,13 +19,13 @@ interface MobileNavBarProps {
   setShowMobileNav: (showNavBar: boolean) => void;
 }
 
-const MobileNavBar: FC<MobileNavBarProps> = ({
+const MobileNavBar = ({
   theme,
   pathname,
   currentTheme,
   setTheme,
   setShowMobileNav,
-}) => {
+}: MobileNavBarProps) => {
   return (
     <div
       className="z-50 mx-2 mt-[4.5rem] flex max-h-80 w-full max-w-[30rem] flex-col gap-3 rounded-xl bg-white800 p-4 dark:bg-black300"

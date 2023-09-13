@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, FC } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
@@ -52,10 +52,10 @@ const Testimonials = () => {
   const next = () =>
     setCurrent((index) => (index === testimonials.length - 1 ? 0 : index + 1));
 
-  const Buttons: FC<ButtonsProps> = ({
+  const Buttons = ({
     additionalClassesLeft,
     additionalClassesRight,
-  }) => (
+  }: ButtonsProps) => (
     <>
       <button
         onClick={previous}

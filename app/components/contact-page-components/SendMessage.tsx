@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  useRef,
-  useState,
-  FC,
-  SetStateAction,
-  Dispatch,
-  FormEvent,
-} from "react";
+import { useRef, useState, SetStateAction, Dispatch, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { ZodError } from "zod";
 
@@ -19,7 +12,7 @@ interface SendMessageProps {
   setShowSuccess: Dispatch<SetStateAction<boolean>>;
 }
 
-const SendMessage: FC<SendMessageProps> = ({ setShowSuccess }) => {
+const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
   const [errorList, setErrorList] = useState("");
   const [formData, setFormData] = useState({
     user_name: "",
