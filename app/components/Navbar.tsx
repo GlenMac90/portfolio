@@ -22,6 +22,11 @@ const Navbar = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
   const pathname = usePathname();
+  const [icons, setIcons] = useState({
+    menuIcon: menuButton,
+    downloadIcon: download,
+    lightOrDarkModeIcon: lightModeIcon,
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,6 +40,15 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const newIcons = {
+      menuIcon: theme === "light" ? menuButton : menuButtonDarkMode,
+      downloadIcon: theme === "light" ? download : downloadDarkMode,
+      lightOrDarkModeIcon: theme === "light" ? lightModeIcon : darkModeIcon,
+    };
+    setIcons(newIcons);
+  }, [theme]);
+
   return (
     <>
       <nav className="fixed z-50 flex h-16 w-full items-center justify-between bg-white800 px-6 dark:bg-black300 md:h-24 md:px-20">
@@ -42,7 +56,7 @@ const Navbar = () => {
           <p className="font-semibold text-white900 md:text-xl">G</p>
         </div>
         <Image
-          src={theme === "light" ? menuButton : menuButtonDarkMode}
+          src={icons.menuIcon}
           height={24}
           width={24}
           alt="menu button"
@@ -66,7 +80,7 @@ const Navbar = () => {
           {/* Temporary href below so that the link works */}
           <Link href="/" className="flex">
             <Image
-              src={theme === "light" ? download : downloadDarkMode}
+              src={icons.downloadIcon}
               height={20}
               width={20}
               alt="download"
@@ -75,7 +89,7 @@ const Navbar = () => {
           </Link>
           <div className="h-6 border-l border-white500" />
           <Image
-            src={theme === "light" ? lightModeIcon : darkModeIcon}
+            src={icons.lightOrDarkModeIcon}
             height={20}
             width={20}
             alt="light mode symbol"
