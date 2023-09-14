@@ -57,14 +57,16 @@ const SendMessageForm = ({
           marginTop={field.marginTop}
         />
       ))}
-      <Button
-        submit
-        type="blueButton"
-        additionalStyles="mt-10 flex h-[3.75rem] w-full justify-center text-sm lg:mt-11 lg:h-[4.3rem] lg:w-[11.75rem] lg:self-end lg:text-lg"
-        value="Send"
-      >
-        Send
-      </Button>
+      <motion.div className="flex lg:self-end" whileHover={{ scale: 1.05 }}>
+        <Button
+          submit
+          type="blueButton"
+          additionalStyles="mt-10 flex h-[3.75rem] w-full justify-center text-sm lg:mt-11 lg:h-[4.3rem] lg:w-[11.75rem] lg:text-lg"
+          value="Send"
+        >
+          Send
+        </Button>
+      </motion.div>
     </motion.form>
   );
 };
