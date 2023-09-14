@@ -10,7 +10,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="flex w-full flex-col items-center bg-white800 dark:bg-black300">
+    <main className="flex w-full flex-col items-center overflow-hidden bg-white800 dark:bg-black300">
       <Hero />
       <MySkills />
       <MyServices />

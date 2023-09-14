@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { arrow } from "@/public/svg-icons";
 import { FeaturedProjectCardProps } from "@/utils/interfaces";
@@ -28,12 +29,15 @@ const ProjectCardText = ({ project }: FeaturedProjectCardProps) => {
           </p>
         </div>
       </div>
-      <div className="mt-8 flex items-center">
+      <Link
+        href={`/case-studies/${project?.caseStudyLink}`}
+        className="mt-8 flex w-fit items-center"
+      >
         <p className="text-lg font-semibold text-white900">
           See Detail Project
         </p>
         <Image src={arrow} alt="arrow image" />
-      </div>
+      </Link>
     </div>
   );
 };

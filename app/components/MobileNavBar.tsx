@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,7 +19,8 @@ interface MobileNavBarProps {
   pathname: string;
   currentTheme: string | undefined;
   setTheme: (newTheme: string) => void;
-  setShowMobileNav: (showNavBar: boolean) => void;
+  handleCloseMobileNav: () => void; // Added type for handleCloseMobileNav
+  closeAnimation: boolean;
 }
 
 const MobileNavBar = ({
@@ -24,10 +28,13 @@ const MobileNavBar = ({
   pathname,
   currentTheme,
   setTheme,
-  setShowMobileNav,
+  handleCloseMobileNav,
+  closeAnimation,
 }: MobileNavBarProps) => {
   return (
-    <div
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: closeAnimation ? 0 : 1 }}
       className="z-50 mx-2 mt-[4.5rem] flex max-h-80 w-full max-w-[30rem] flex-col gap-3 rounded-xl bg-white800 p-4 dark:bg-black300"
       onClick={(e) => e.stopPropagation()}
     >
@@ -45,7 +52,7 @@ const MobileNavBar = ({
           height={20}
           width={20}
           alt="close button"
-          onClick={() => setShowMobileNav(false)}
+          onClick={handleCloseMobileNav}
         />
       </div>
 
@@ -58,7 +65,7 @@ const MobileNavBar = ({
               ? "border-primaryLight bg-primaryDark font-semibold text-white800"
               : "text-white500 dark:text-white800"
           }`}
-          onClick={() => setShowMobileNav(false)}
+          onClick={handleCloseMobileNav}
         >
           <p>{button.label}</p>
         </Link>
@@ -74,7 +81,7 @@ const MobileNavBar = ({
           Resume
         </p>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

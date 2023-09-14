@@ -16,7 +16,7 @@ const SkillIcon = ({ src, text }: SkillIconProps) => {
         key={src}
         className={`flex w-fit cursor-pointer items-center justify-stretch rounded-full ${
           colourIcon ? "bg-white900 shadow-lg dark:bg-black300" : "bg-white800"
-        }  p-3.5 dark:bg-black300 md:p-6`}
+        }  p-3.5 dark:bg-black300 sm:p-6`}
         onMouseOver={() => setColourIcon(true)}
         onMouseLeave={() => setColourIcon(false)}
       >
@@ -27,7 +27,7 @@ const SkillIcon = ({ src, text }: SkillIconProps) => {
           alt="Company Icon"
           className={`h-[1.7rem] w-[1.7rem] ${
             !colourIcon && "grayscale"
-          } md:h-[3.1rem] md:w-[3.1rem]`}
+          } sm:h-[3.1rem] sm:w-[3.1rem]`}
         />
       </div>
     </Tooltip>

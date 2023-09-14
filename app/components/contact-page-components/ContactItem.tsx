@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 interface ContactItemProps {
   contact: {
@@ -12,6 +13,14 @@ interface ContactItemProps {
 
 const ContactItem = ({ contact }: ContactItemProps) => {
   const { theme } = useTheme();
+  const [currentImageSrc, setCurrentImageSrc] = useState(contact.imageSrc);
+
+  useEffect(() => {
+    setCurrentImageSrc(
+      theme === "light" ? contact.imageSrc : contact.imageSrcDark
+    );
+  }, [theme, contact.imageSrc, contact.imageSrcDark]);
+
   return (
     <>
       <p className="mt-9 text-lg font-light text-black300 dark:text-white900 md:mt-20 md:text-2xl">
@@ -19,7 +28,7 @@ const ContactItem = ({ contact }: ContactItemProps) => {
       </p>
       <div className="mt-3.5 flex gap-3 md:mt-7">
         <Image
-          src={theme === "light" ? contact.imageSrc : contact.imageSrcDark}
+          src={currentImageSrc}
           alt={contact.label}
           height={30}
           width={30}

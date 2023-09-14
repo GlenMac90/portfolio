@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { truncateString } from "@/utils";
 import { FeaturedProjectCardProps } from "@/utils/interfaces";
@@ -10,7 +13,7 @@ const SimilarProjectSmallCard = ({ project }: FeaturedProjectCardProps) => {
   return (
     <div
       key={project.title}
-      className="flex flex-col rounded-2xl bg-white900 dark:bg-black200 md:w-1/2 md:rounded-3xl"
+      className="flex flex-col rounded-2xl bg-white900 dark:bg-black200 md:rounded-3xl"
     >
       {project.figmaBannerImage && (
         <div className="flex md:h-[16rem]">
@@ -33,14 +36,15 @@ const SimilarProjectSmallCard = ({ project }: FeaturedProjectCardProps) => {
             {truncateString(project.caseStudyDescription[0], 150)}
           </p>
         )}
-
         <Link
           href={`/case-studies/${project.caseStudyLink}`}
           className="mt-4 flex"
         >
-          <Button type="blueButton" additionalStyles="w-full py-3.5 text-sm">
-            See Case Study
-          </Button>
+          <motion.div whileHover={{ scale: 1.05 }} className="flex w-full">
+            <Button type="blueButton" additionalStyles="w-full py-3.5 text-sm">
+              See Case Study
+            </Button>
+          </motion.div>
         </Link>
       </div>
     </div>

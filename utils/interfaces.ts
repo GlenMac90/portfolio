@@ -32,6 +32,7 @@ export interface Project {
 
 export interface FeaturedProjectCardProps {
   project: Project;
+  reverseLayout?: boolean;
 }
 
 export interface CaseStudyHeaderProps {

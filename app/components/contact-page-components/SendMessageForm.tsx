@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { RefObject, SetStateAction, FormEvent, Dispatch } from "react";
 
 import FormInput from "./FormInput";
@@ -27,7 +30,18 @@ const SendMessageForm = ({
   setFormData,
 }: SendMessageFormProps) => {
   return (
-    <form ref={form} onSubmit={sendEmail} className="flex flex-col lg:w-3/5">
+    <motion.form
+      initial={{ y: "15%", opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        y: { duration: 0.5 },
+        opacity: { duration: 0.5 },
+      }}
+      viewport={{ once: true }}
+      ref={form}
+      onSubmit={sendEmail}
+      className="flex flex-col lg:w-3/5"
+    >
       {inputFields.map((field) => (
         <FormInput
           key={field.inputName}
@@ -51,7 +65,7 @@ const SendMessageForm = ({
       >
         Send
       </Button>
-    </form>
+    </motion.form>
   );
 };
 

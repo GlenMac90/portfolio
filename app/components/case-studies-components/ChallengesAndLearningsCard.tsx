@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import Image, { StaticImageData } from "next/image";
 
 interface ChallengesAndLearningsCardProps {
@@ -22,7 +26,17 @@ const ChallengesAndLearningsCard = ({
       <p className={`text-lg font-semibold ${textColour} md:text-xl`}>{text}</p>
       <div className="mt-6 flex flex-col gap-5 md:mt-[1.75rem]">
         {listText?.map((challenge, index) => (
-          <div key={index} className="flex gap-2.5">
+          <motion.div
+            initial={{ x: "25%", opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              x: { duration: 0.5, delay: index * 0.2 + 0.3 },
+              opacity: { duration: 0.5, delay: index * 0.2 + 0.3 },
+            }}
+            viewport={{ once: true }}
+            key={index}
+            className="flex gap-2.5"
+          >
             <Image
               src={image}
               height={20}
@@ -33,7 +47,7 @@ const ChallengesAndLearningsCard = ({
             <p className="text-sm font-light text-white500 dark:text-white800 md:text-lg">
               {challenge}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

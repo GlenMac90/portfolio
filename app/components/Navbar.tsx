@@ -27,6 +27,16 @@ const Navbar = () => {
     downloadIcon: download,
     lightOrDarkModeIcon: lightModeIcon,
   });
+  const [closeAnimation, setCloseAnimation] = useState(false);
+
+  const handleCloseMobileNav = () => {
+    setCloseAnimation(true);
+
+    setTimeout(() => {
+      setShowMobileNav(false);
+      setCloseAnimation(false);
+    }, 400);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -68,6 +78,8 @@ const Navbar = () => {
             <Link href={button.path} key={button.label}>
               <p
                 className={`text-sm ${
+                  (button.path === "/case-studies" &&
+                    pathname.startsWith("/case-studies")) ||
                   pathname === button.path
                     ? "font-semibold text-primaryLight"
                     : "text-white500 dark:text-white800"
@@ -101,14 +113,15 @@ const Navbar = () => {
       {showMobileNav && (
         <div
           className="fixed z-40 flex h-screen w-screen justify-center bg-black/30"
-          onClick={() => setShowMobileNav(false)}
+          onClick={handleCloseMobileNav}
         >
           <MobileNavBar
             theme={theme}
             pathname={pathname}
             currentTheme={currentTheme}
             setTheme={setTheme}
-            setShowMobileNav={setShowMobileNav}
+            handleCloseMobileNav={handleCloseMobileNav}
+            closeAnimation={closeAnimation}
           />
         </div>
       )}
