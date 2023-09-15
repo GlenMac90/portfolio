@@ -36,7 +36,7 @@ const Hero = () => {
           digital experiences with precision, passion and a profound commitment
           to excellence.
         </p>
-        <div className="mt-9 flex flex-col md:flex-row md:justify-between md:gap-4">
+        <div className="mt-9 flex flex-col md:flex-row md:gap-4">
           <Link href="/case-studies">
             <Button
               type="blueButton"
@@ -47,7 +47,7 @@ const Hero = () => {
           </Link>
           <Button
             type="custom"
-            additionalStyles="mt-3.5 w-full justify-between gap-4 rounded-full bg-white900 px-4 py-3.5 text-white500 dark:bg-black200 dark:text-white900 md:mt-0 md:px-6 md:py-5"
+            additionalStyles="mt-3.5 w-full justify-between gap-4 rounded-full bg-white900 px-4 py-3.5 text-white500 dark:bg-black200 dark:text-white900 md:w-[20rem] md:min-w-[20rem] md:mt-0 md:px-6 md:py-5"
           >
             <p>glen.mccallum@live.co.uk</p>
             <Image
