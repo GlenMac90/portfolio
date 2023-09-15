@@ -27,7 +27,7 @@ const GraphicCrosses = () => {
         fill="#287DD1"
       />
       <motion.path
-        animate={{ scale: [1, 1.3, 1] }}
+        animate={{ scale: [1, 1.4, 1] }}
         transition={{
           duration: 5,
           ease: "easeInOut",

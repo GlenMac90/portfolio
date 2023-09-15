@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { frame } from "@/public/svg-icons";
@@ -36,12 +37,14 @@ const Hero = () => {
           to excellence.
         </p>
         <div className="mt-9 flex flex-col md:flex-row md:justify-between md:gap-4">
-          <Button
-            type="blueButton"
-            additionalStyles="w-full py-3.5 text-sm md:w-[15rem] md:py-5 md:text-lg"
-          >
-            My Work
-          </Button>
+          <Link href="/case-studies">
+            <Button
+              type="blueButton"
+              additionalStyles="w-full py-3.5 text-sm md:w-[15rem] md:py-5 md:text-lg"
+            >
+              My Work
+            </Button>
+          </Link>
           <Button
             type="custom"
             additionalStyles="mt-3.5 w-full justify-between gap-4 rounded-full bg-white900 px-4 py-3.5 text-white500 dark:bg-black200 dark:text-white900 md:mt-0 md:px-6 md:py-5"
