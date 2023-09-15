@@ -3,14 +3,15 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { temporaryHeroIcon } from "@/public/png-icons";
 import { frame } from "@/public/svg-icons";
 
 import Button from "../Button";
+import AnimatedComputerGraphic from "../AnimatedComputerGraphic";
+import HeroUnderlinedText from "./HeroUnderlinedText";
 
 const Hero = () => {
   return (
-    <section className="relative mx-4 mt-16 flex w-full max-w-[90rem] flex-col bg-white800 px-5 pt-12 dark:bg-black300 md:mt-24 lg:flex-row lg:justify-between lg:pb-24">
+    <section className="relative mx-4 mt-16 flex w-full max-w-7xl flex-col bg-white800 px-5 pt-12 dark:bg-black300 md:mt-24 lg:flex-row lg:justify-between lg:pb-24">
       <motion.div
         initial={{ x: "-25%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -23,12 +24,9 @@ const Hero = () => {
         <p className="mt-5 text-[2.625rem] font-bold text-black200 dark:text-white900 md:text-[4rem]">
           Professional
         </p>
-        <div className="relative flex w-fit flex-col">
-          <p className="z-20 truncate whitespace-nowrap text-[2.625rem] font-bold text-black200 dark:text-white900 md:text-[4rem]">
-            Web Developer
-          </p>
-          <div className="absolute z-10 h-[1.2rem] w-full translate-y-[2.38rem] bg-orange-200 md:h-[1.8rem] md:translate-y-[3.625rem]" />
-        </div>
+
+        <HeroUnderlinedText />
+
         <p className="text-[2.625rem] font-bold text-black200 dark:text-white900 md:text-[4rem]">
           based in Bulgaria
         </p>
@@ -59,19 +57,12 @@ const Hero = () => {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
-        className="z-10 mt-6 flex h-auto w-full flex-wrap items-center justify-center lg:right-0 lg:w-7/12 lg:justify-end"
+        initial={{ x: "10rem", opacity: 0 }}
+        animate={{ x: "0rem", opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="z-10 mt-6 flex h-auto w-full flex-wrap items-center justify-center lg:right-0 lg:w-7/12 "
       >
-        <Image
-          src={temporaryHeroIcon}
-          alt="hero image icon"
-          style={{
-            objectFit: "cover",
-          }}
-          className="h-auto w-full"
-        />
+        <AnimatedComputerGraphic />
       </motion.div>
     </section>
   );
