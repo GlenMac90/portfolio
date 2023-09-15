@@ -19,7 +19,7 @@ const GetInTouchCard = () => {
         viewport={{ once: true }}
         className="relative flex w-full max-w-xl flex-col overflow-hidden rounded-[1.25rem] bg-secondary px-4 lg:max-w-7xl lg:flex-row lg:justify-between lg:px-[4.5rem] lg:py-20"
       >
-        <p className="mt-[5rem] max-w-sm text-3xl font-bold text-black200 lg:my-0 lg:max-w-[40rem] lg:text-5xl">
+        <p className="z-10 mt-[5rem] max-w-sm text-3xl font-bold text-black200 lg:my-0 lg:max-w-[40rem] lg:text-5xl">
           Have a project in mind that requires technical expertise?
         </p>
         <motion.div whileHover={{ scale: 1.05 }} className="z-10">

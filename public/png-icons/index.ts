@@ -8,3 +8,5 @@ export { default as hipnodeFigmaBannerImage } from "./hipnode-figma-banner-image
 export { default as jobItProblemImage } from "./jobit-problem-image.png";
 export { default as morentProblemImage } from "./morent-problem-image.png";
 export { default as hipnodeProblemImage } from "./hipnode-problem-image.png";
+export { default as redDial } from "./red-dial.png";
+export { default as blueDial } from "./blue-dial.png";
