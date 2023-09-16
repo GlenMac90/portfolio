@@ -1,37 +1,37 @@
 import { ReactNode } from "react";
 
 interface ButtonProps {
-  type?: string;
+  style?: string;
+  type?: "button" | "submit" | "reset";
   additionalStyles?: string;
-  submit?: boolean;
   value?: string;
   children: ReactNode;
 }
 
 const Button = ({
-  type = "default",
+  style,
   additionalStyles,
   children,
   value = "",
-  submit = false,
+  type = "button",
 }: ButtonProps) => {
-  let styles =
+  let buttonStyles =
     "text-primaryLight dark:text-primaryDark text:sm md:text-xl font-semibold justify-center gap-1";
 
-  if (type === "blueButton") {
-    styles =
+  if (style === "blueButton") {
+    buttonStyles =
       "bg-primaryLight font-semibold text-white900 dark:bg-primaryDark rounded-full py-2 gap-1 justify-center";
   }
 
-  if (type === "custom") {
-    styles = "";
+  if (style === "custom") {
+    buttonStyles = "";
   }
 
   return (
     <button
       value={value}
-      type={submit === true ? "submit" : "button"}
-      className={`flex items-center ${styles} ${additionalStyles}`}
+      type={type}
+      className={`flex items-center ${buttonStyles} ${additionalStyles}`}
     >
       {children}
     </button>

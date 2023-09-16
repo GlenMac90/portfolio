@@ -7,10 +7,16 @@ const CaseStudiesTitleText = () => {
         <p className="z-20  text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
           {"Recent"}
         </p>
-        <UnderlinedText text={"Case"} additionalStyles="flex lg:hidden" />
+        <UnderlinedText text={"Case"} additionalStyles="ml-2 flex lg:hidden" />
       </div>
-      <UnderlinedText text={"Studies"} additionalStyles="lg:hidden flex" />
-      <UnderlinedText text={"Case Studies"} additionalStyles="lg:flex hidden" />
+      <UnderlinedText
+        text={"Studies"}
+        additionalStyles="lg:hidden flex self-center md:mt-3"
+      />
+      <UnderlinedText
+        text={"Case Studies"}
+        additionalStyles="lg:flex hidden ml-3"
+      />
     </section>
   );
 };

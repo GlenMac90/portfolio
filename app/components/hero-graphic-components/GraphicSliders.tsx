@@ -13,7 +13,7 @@ const GraphicSliders = () => {
           repeat: Infinity,
         }}
         d="M306.339 148.843H169.776V134.629H306.339V148.843Z"
-        stroke="#289DF2"
+        className="stroke-graphicPaleBlue"
         stroke-width="2.3"
       />
       <motion.path
@@ -26,12 +26,12 @@ const GraphicSliders = () => {
           repeat: Infinity,
         }}
         d="M260.273 143.41H175.645V139.243H260.273V143.41Z"
-        fill="#289DF2"
+        className="fill-graphicPaleBlue"
       />
 
       <path
         d="M385.914 250.95H285.981V245.963H385.914V250.95Z"
-        fill="#284D89"
+        className="fill-graphicDarkBlue"
       />
       <motion.path
         animate={{
@@ -43,11 +43,11 @@ const GraphicSliders = () => {
           repeat: Infinity,
         }}
         d="M331.304 250.95H285.981V245.963H331.304V250.95Z"
-        fill="#2889DB"
+        className="fill-graphicLightBlue"
       />
       <path
         d="M385.914 263.973H285.981V258.913H385.914V263.973Z"
-        fill="#284D89"
+        className="fill-graphicDarkBlue"
       />
       <motion.path
         animate={{
@@ -59,11 +59,11 @@ const GraphicSliders = () => {
           repeat: Infinity,
         }}
         d="M355.6 263.973H285.981V258.913H355.6V263.973Z"
-        fill="#FF4D6B"
+        className="fill-graphicLightRed"
       />
       <path
         d="M385.914 276.997H285.981V271.936H385.914V276.997Z"
-        fill="#284D89"
+        className="fill-graphicDarkBlue"
       />
       <motion.path
         animate={{
@@ -76,7 +76,7 @@ const GraphicSliders = () => {
           repeat: Infinity,
         }}
         d="M306.339 276.997H285.981V271.936H306.339V276.997Z"
-        fill="#1AE5FF"
+        className="fill-graphicTurquoise"
       />
       <motion.path
         animate={{
@@ -89,7 +89,7 @@ const GraphicSliders = () => {
           repeat: Infinity,
         }}
         d="M288.359 239.117H286.353V237.107H288.359V239.117Z"
-        fill="#284D89"
+        className="fill-graphicDarkBlue"
       />
       <motion.path
         animate={{
@@ -103,7 +103,7 @@ const GraphicSliders = () => {
           delay: 1,
         }}
         d="M295.045 239.117H293.113V237.107H295.045V239.117Z"
-        fill="#284D89"
+        className="fill-graphicDarkBlue"
       />
       <motion.path
         animate={{
@@ -117,7 +117,7 @@ const GraphicSliders = () => {
           delay: 2,
         }}
         d="M301.732 239.117H299.801V237.107H301.732V239.117Z"
-        fill="#284D89"
+        className="fill-graphicDarkBlue"
       />
     </>
   );

@@ -25,7 +25,7 @@ const GetInTouchCard = () => {
         <motion.div whileHover={{ scale: 1.05 }} className="z-10">
           <Link href="/contact" className="mb-[5rem] mt-4 flex">
             <Button
-              type="blueButton"
+              style="blueButton"
               additionalStyles="w-full gap-1.5 py-3.5 text-lg lg:w-[20rem] lg:translate-y-16 lg:self-end lg:font-medium"
             >
               <p>Get in touch with me</p>

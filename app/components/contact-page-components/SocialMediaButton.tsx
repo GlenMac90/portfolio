@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { useTheme } from "next-themes";
@@ -15,6 +18,7 @@ interface SocialMediaButtonProps {
 }
 
 const SocialMediaButton = ({ button }: SocialMediaButtonProps) => {
+  const pathname = usePathname();
   const { theme } = useTheme();
   const [currentIcon, setCurrentIcon] = useState(button.icon);
 
@@ -28,8 +32,8 @@ const SocialMediaButton = ({ button }: SocialMediaButtonProps) => {
         <Image
           src={currentIcon}
           alt={button.title}
-          height={30}
-          width={30}
+          height={pathname === "/contact" ? 30 : 24}
+          width={pathname === "/contact" ? 30 : 24}
           className="max-w-[1.5rem] md:max-w-[1.875rem]"
         />
       </Link>

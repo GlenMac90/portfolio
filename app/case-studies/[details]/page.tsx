@@ -26,7 +26,7 @@ const CaseStudy = ({ params }: CaseStudyProps) => {
   );
 
   return (
-    <main className="flex w-full flex-col items-center bg-white800 dark:bg-black300">
+    <main className="flex w-full flex-col items-center overflow-hidden bg-white800 dark:bg-black300">
       <CaseStudyHeader mainProject={mainProject} />
       <CaseStudyTechStack mainProject={mainProject} />
       <CaseStudyProblemStatement mainProject={mainProject} />

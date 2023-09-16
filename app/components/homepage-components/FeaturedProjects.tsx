@@ -8,6 +8,7 @@ import { featuredProjectsList } from "@/constants";
 import FeaturedProjectCard from "./FeaturedProjectCard";
 import { whiteButtonArrow } from "@/public/svg-icons";
 import Button from "../Button";
+import UnderlinedText from "../UnderlinedText";
 
 const FeaturedProjects = () => {
   return (
@@ -23,12 +24,7 @@ const FeaturedProjects = () => {
           <p className="z-20  text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
             Featured
           </p>
-          <div className="relative ml-4 flex w-fit flex-col self-center">
-            <p className="z-20 text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
-              Projects
-            </p>
-            <div className="absolute z-10 h-[1rem] w-full translate-y-[1.6rem] bg-orange-200 md:h-[1.358rem] md:translate-y-[1.7rem]" />
-          </div>
+          <UnderlinedText text="Projects" additionalStyles="flex ml-2" />
         </div>
       </motion.div>
       <div className="mt-9 flex flex-col gap-9 lg:mt-12">
@@ -56,7 +52,7 @@ const FeaturedProjects = () => {
       >
         <Link href="/case-studies" className="flex">
           <Button
-            type="blueButton"
+            style="blueButton"
             additionalStyles="mb-0 mt-6 gap-1.5 px-10 py-5 text-lg lg:mb-14 lg:mt-12"
           >
             <p>See more case studies</p>
