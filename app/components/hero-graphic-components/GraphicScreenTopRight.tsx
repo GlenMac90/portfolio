@@ -53,8 +53,8 @@ const GraphicScreenTopRight = () => {
           duration: 2,
           ease: "easeInOut",
           repeat: Infinity,
-          delay: 1,
-          repeatDelay: 1.5,
+          delay: 1.5,
+          repeatDelay: 1,
         }}
         d="M77.0488 235.916V228.623H106.1V235.916H77.0488Z"
         fill="#A9CCEA"

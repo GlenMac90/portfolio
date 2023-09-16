@@ -5,39 +5,42 @@ const GraphicScreenTopLeft = () => {
     <>
       <motion.path
         animate={{
-          scale: [1, 2, 1],
+          scale: [1, 2.5, 1],
           y: ["-0.15rem", "0.15rem", "-0.15rem"],
         }}
         transition={{
           duration: 4,
           ease: "easeInOut",
           repeat: Infinity,
+          delay: 1,
         }}
         d="M320.456 416.984H319.341V415.868H320.456V416.984Z"
         fill="#F7F7F7"
       />
       <motion.path
         animate={{
-          scale: [1, 2, 1],
+          scale: [1, 2.5, 1],
           y: ["-0.15rem", "0.15rem", "-0.15rem"],
         }}
         transition={{
           duration: 4,
           ease: "easeInOut",
           repeat: Infinity,
+          delay: 2,
         }}
         d="M327.515 416.984H326.326V415.868H327.515V416.984Z"
         fill="#F7F7F7"
       />
       <motion.path
         animate={{
-          scale: [1, 2, 1],
+          scale: [1, 2.5, 1],
           y: ["-0.15rem", "0.15rem", "-0.15rem"],
         }}
         transition={{
           duration: 4,
           ease: "easeInOut",
           repeat: Infinity,
+          delay: 3,
         }}
         d="M334.499 416.984H333.384V415.868H334.499V416.984Z"
         fill="#F7F7F7"

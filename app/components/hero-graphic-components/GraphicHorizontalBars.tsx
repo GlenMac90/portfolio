@@ -69,16 +69,39 @@ const GraphicHorizontalBars = () => {
         d="M514.527 206.743H426.184V195.878H514.527V206.743Z"
         fill="#2889DB"
       />
+
       <motion.path
-        animate={{ scale: [1, 1.2, 1] }}
+        initial={{ y: "-0.25rem" }}
+        animate={{
+          y: "-0.25rem",
+          rotate: [
+            90, 180, 270, 360, 450, 540, 630, 540, 450, 360, 270, 180, 90,
+          ],
+          x: [
+            "0rem",
+            "0.8rem",
+            "1.2rem",
+            "2rem",
+            "2.4rem",
+            "3.2rem",
+            "3.6rem",
+            "3.2rem",
+            "2.4rem",
+            "2rem",
+            "1.2rem",
+            "0.8rem",
+            "0rem",
+          ],
+        }}
         transition={{
-          duration: 2,
+          duration: 8,
           ease: "easeInOut",
           repeat: Infinity,
         }}
         d="M169.478 192.529H160.859V187.17H169.478V192.529Z"
         fill="#2889DB"
       />
+
       <motion.path
         animate={{ opacity: [0.5, 1, 0.5] }}
         transition={{

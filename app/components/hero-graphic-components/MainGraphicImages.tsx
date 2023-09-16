@@ -4,46 +4,82 @@ const MainGraphicImages = () => {
   return (
     <>
       <motion.path
-        initial={{ scale: 1 }}
+        initial={{ scale: 1, x: "10rem", opacity: 0 }}
         animate={{
           scale: [1, 1.1, 1],
+          x: 0,
+          opacity: 1,
         }}
         transition={{
-          duration: 1,
-          ease: "easeInOut",
-          times: [0, 0.5, 1],
-          repeat: Infinity,
-          repeatDelay: 0.5,
+          scale: {
+            duration: 1,
+            ease: "easeInOut",
+            times: [0, 0.5, 1],
+            repeat: Infinity,
+            repeatDelay: 0.5,
+          },
+          x: {
+            duration: 1,
+            ease: "easeInOut",
+          },
+          opacity: {
+            duration: 1,
+            ease: "easeInOut",
+          },
         }}
         d="M671.597 170.5C671.597 241.051 614.46 298.282 544.024 298.282C473.588 298.282 416.525 241.051 416.525 170.5C416.525 99.9481 473.588 42.7924 544.024 42.7924C614.46 42.7924 671.597 99.9481 671.597 170.5Z"
         fill="#E5F1FF"
       />
       <motion.path
-        initial={{ scale: 1 }}
+        initial={{ scale: 1, x: "-10rem", opacity: 0 }}
         animate={{
           scale: [1, 1.1, 1],
+          x: 0,
+          opacity: 1,
         }}
         transition={{
-          duration: 1,
-          ease: "easeInOut",
-          times: [0, 0.5, 1],
-          repeat: Infinity,
-          repeatDelay: 0.5,
+          scale: {
+            duration: 1,
+            ease: "easeInOut",
+            times: [0, 0.5, 1],
+            repeat: Infinity,
+            repeatDelay: 0.5,
+          },
+          x: {
+            duration: 1,
+            ease: "easeInOut",
+          },
+          opacity: {
+            duration: 1,
+            ease: "easeInOut",
+          },
         }}
         d="M289.993 439.832C289.993 481.061 256.632 514.476 215.47 514.476C174.308 514.476 140.947 481.061 140.947 439.832C140.947 398.602 174.308 365.187 215.47 365.187C256.632 365.187 289.993 398.602 289.993 439.832Z"
         fill="#E5F1FF"
       />
       <motion.path
-        initial={{ scale: 1 }}
+        initial={{ scale: 1, y: "10rem", opacity: 0 }}
         animate={{
+          y: 0,
           scale: [1, 0.8, 1],
+          opacity: 1,
         }}
         transition={{
-          duration: 5,
-          ease: "easeInOut",
-          times: [0, 0.5, 1],
-          repeat: Infinity,
-          repeatDelay: 0.5,
+          scale: {
+            duration: 5,
+            ease: "easeInOut",
+            times: [0, 0.5, 1],
+            repeat: Infinity,
+            repeatDelay: 0.5,
+          },
+          y: {
+            duration: 1,
+            ease: "easeInOut",
+          },
+          opacity: {
+            duration: 1,
+            ease: "easeInOut",
+          },
         }}
         fill-rule="evenodd"
         clip-rule="evenodd"
@@ -77,12 +113,16 @@ const MainGraphicImages = () => {
         stroke-linejoin="round"
       />
       <motion.path
-        animate={{ rotate: 360 }}
+        initial={{ y: "-15rem" }}
+        animate={{ rotate: 360, y: 0 }}
         transition={{
           duration: 4,
           ease: "linear",
           repeat: Infinity,
           repeatDelay: 0,
+          y: {
+            duration: 2,
+          },
         }}
         fill-rule="evenodd"
         clip-rule="evenodd"

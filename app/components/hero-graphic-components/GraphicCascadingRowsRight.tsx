@@ -73,7 +73,6 @@ const GraphicCascadingRowsRight = () => {
         d="M239.618 285.928H225.352V283.025H239.618V285.928Z"
         fill="white"
       />
-
       <motion.path
         animate={{
           opacity: [0, 1, 1, 0],

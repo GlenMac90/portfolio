@@ -88,6 +88,7 @@ const GraphicBouncingSquares = () => {
       />
       <motion.path
         animate={{
+          scale: [0, 0, 1, 1, 0],
           y: ["0rem", "-0.25rem", "0rem"],
         }}
         transition={{
@@ -95,34 +96,57 @@ const GraphicBouncingSquares = () => {
           ease: "easeInOut",
           repeat: Infinity,
           repeatDelay: 2,
+          scale: {
+            repeat: Infinity,
+            duration: 4,
+            times: [0, 0.12, 0.15, 0.9, 0.95],
+          },
         }}
         d="M438.964 434.994H432.872V428.891H438.964V434.994Z"
         fill="white"
       />
       <motion.path
         animate={{
+          scale: [0, 0, 1, 1, 0],
           y: ["0rem", "-0.25rem", "0rem"],
         }}
         transition={{
-          duration: 0.6,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatDelay: 2,
-          delay: 0.1,
+          y: {
+            duration: 0.6,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatDelay: 2,
+            delay: 0.1,
+          },
+          scale: {
+            repeat: Infinity,
+            duration: 4,
+            delay: 0.1,
+            times: [0, 0.12, 0.15, 0.85, 0.9],
+          },
         }}
         d="M459.917 434.994H453.825V428.891H459.917V434.994Z"
         fill="white"
       />
       <motion.path
         animate={{
+          scale: [0, 0, 1, 1, 0],
           y: ["0rem", "-0.25rem", "0rem"],
         }}
         transition={{
-          duration: 0.6,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatDelay: 2,
-          delay: 0.2,
+          y: {
+            duration: 0.6,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatDelay: 2,
+            delay: 0.2,
+          },
+          scale: {
+            repeat: Infinity,
+            duration: 4,
+            delay: 0.2,
+            times: [0, 0.12, 0.15, 0.8, 0.85],
+          },
         }}
         d="M480.869 434.994H474.777V428.891H480.869V434.994Z"
         fill="white"

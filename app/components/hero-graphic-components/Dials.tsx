@@ -14,7 +14,6 @@ const Dials = () => {
           duration: 6,
           ease: "linear",
           repeat: Infinity,
-          repeatDelay: 0,
         }}
         className="absolute flex rounded-full sm:hidden"
       >
@@ -33,7 +32,6 @@ const Dials = () => {
           duration: 2,
           ease: "linear",
           repeat: Infinity,
-          repeatDelay: 0,
         }}
         className="absolute flex rounded-full sm:hidden"
       >
@@ -52,7 +50,6 @@ const Dials = () => {
           duration: 6,
           ease: "linear",
           repeat: Infinity,
-          repeatDelay: 0,
         }}
         className="absolute hidden rounded-full sm:flex"
       >
@@ -71,7 +68,6 @@ const Dials = () => {
           duration: 2,
           ease: "linear",
           repeat: Infinity,
-          repeatDelay: 0,
         }}
         className="absolute hidden rounded-full sm:flex"
       >
