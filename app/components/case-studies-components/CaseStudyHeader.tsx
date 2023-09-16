@@ -72,14 +72,6 @@ const CaseStudyHeader = ({ mainProject }: CaseStudyHeaderProps) => {
             additionalStyles="flex self-center lg:mr-3"
           />
         )}
-
-        {/* <div className="relative ml-4 flex w-fit flex-col self-center">
-          <p className="z-20 text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
-            {mainProject?.title}
-          </p>
-          <div className="absolute z-10 h-[1rem] w-full translate-y-[1.6rem] bg-secondary md:h-[1.358rem] md:translate-y-[1.7rem]" />
-        </div> */}
-
         <p className="mt-0 text-center text-4xl font-bold text-black200 dark:text-white900 md:mt-4 md:text-[3rem] lg:mt-0">
           {" "}
           - {mainProject?.description}
