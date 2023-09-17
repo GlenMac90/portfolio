@@ -78,7 +78,7 @@ const CaseStudyTechStack = ({ mainProject }: CaseStudyHeaderProps) => {
               key={tech.text}
             >
               <Tooltip content={tech.text}>
-                <div className="flex h-[3rem] w-[3rem] cursor-pointer rounded-full bg-white800 p-3 dark:bg-black300 sm:h-[5.75rem] sm:w-[5.75rem] sm:p-6">
+                <div className="flex h-[3rem] w-[3rem] cursor-pointer items-center rounded-full bg-white800 p-3 dark:bg-black300 sm:h-[5.75rem] sm:w-[5.75rem] sm:p-6">
                   <Image
                     src={tech.image}
                     className="h-[1.5rem] w-[1.5rem] sm:h-[3rem] sm:w-[3rem]"

@@ -5,7 +5,7 @@ const GraphicSmallCardLeft = () => {
     <>
       <path
         d="M256.483 421.598H172.747C166.506 421.598 161.379 416.538 161.379 410.286V258.392C161.379 252.14 166.506 247.08 172.747 247.08H256.483C262.725 247.08 267.851 252.14 267.851 258.392V410.286C267.851 416.538 262.725 421.598 256.483 421.598Z"
-        fill="#284D89"
+        className="fill-graphicDarkBlue"
       />
       <motion.path
         animate={{ opacity: [0, 1, 0] }}
@@ -52,7 +52,7 @@ const GraphicSmallCardLeft = () => {
           repeatDelay: 2,
         }}
         d="M180.029 318.822H174.828V313.389H180.029V318.822Z"
-        fill="#2889DB"
+        className="fill-graphicLightBlue"
       />
       <motion.path
         animate={{ opacity: [0, 1, 0] }}
@@ -64,7 +64,7 @@ const GraphicSmallCardLeft = () => {
           repeatDelay: 2,
         }}
         d="M180.029 328.497H174.828V322.99H180.029V328.497Z"
-        fill="#FF4D6B"
+        className="fill-graphicLightRed"
       />
       {/* group together */}
       <motion.path
@@ -89,7 +89,7 @@ const GraphicSmallCardLeft = () => {
           repeatDelay: 2,
         }}
         d="M230.701 339.362H193.254V333.93H230.701V339.362Z"
-        fill="#FF4D6B"
+        className="fill-graphicLightRed"
       />
       <motion.path
         animate={{ opacity: [0, 1, 0] }}
@@ -161,7 +161,7 @@ const GraphicSmallCardLeft = () => {
           repeatDelay: 2,
         }}
         d="M255.667 380.517H174.828V375.903H255.667V380.517Z"
-        fill="#282E5C"
+        className="fill-graphicDarkestBlue"
       />
       <motion.path
         animate={{ opacity: [0, 1, 0] }}
@@ -173,7 +173,7 @@ const GraphicSmallCardLeft = () => {
           repeatDelay: 2,
         }}
         d="M255.667 391.011H174.828V386.397H255.667V391.011Z"
-        fill="#282E5C"
+        className="fill-graphicDarkestBlue"
       />
     </>
   );

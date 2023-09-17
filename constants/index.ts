@@ -108,13 +108,6 @@ export const workProcessSymbols = [
 ];
 
 export const socialMediaIcons = [
-  { title: "github", icon: gitHubIcon, url: "https://github.com" },
-  { title: "instagram", icon: instagramIcon, url: "https://instagram.com" },
-  { title: "linkedin", icon: linkedInIcon, url: "https://linkedin" },
-  { title: "x", icon: socialMediaIcon, url: "https://x.com" },
-];
-
-export const socialMediaButtonsContactPage = [
   {
     icon: instagramIcon,
     iconDark: instagramIconWhite,
@@ -408,7 +401,7 @@ export const testimonials = [
     jobDescription: "Software Engineer and all-round good dude",
     image: christopherPic,
     rating: 5,
-    text: "I got the chance to work with Glen while he took part in the JSMastery Masterclass Experience. Apart from the 2000 line pull requests and working on 10 different things instead of the comments I made in the pr, he put in the hours.",
+    text: "I had the great pleasure of serving as a Mentor for Glen in the JS Masterclass. His attitude is as amazing as his ability to tackle any task, no matter how complex. Always eager to learn, he adapts to new skills and libraries with ease. What makes him truly exceptional is his receptivity to feedback, applying corrections flawlessly on the first try. Combine this with a terrific personality, and you have someone who is not just highly skilled but also a genuine pleasure to work with.",
   },
   {
     name: "Santiago Laight",

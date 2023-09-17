@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 import ServicesCard from "./ServicesCard";
 import { servicesProvided } from "@/constants";
+import UnderlinedText from "../UnderlinedText";
 
 const MyServices = () => {
   return (
@@ -16,18 +17,16 @@ const MyServices = () => {
           viewport={{ once: true }}
           className="flex flex-col lg:flex-row"
         >
-          <div className="flex">
-            <p className="mr-4 text-[2.625rem] font-bold text-black200 dark:text-white900 md:text-[4rem]">
+          <div className="flex items-center">
+            <p className="text-[2.25rem] font-bold text-black200 dark:text-white900 md:text-[3rem]">
               What
             </p>
-            <div className="relative flex w-fit flex-col self-center">
-              <p className="z-20 truncate whitespace-nowrap text-[2.625rem] font-bold text-black200 dark:text-white900 md:text-[4rem]">
-                service
-              </p>
-              <div className="absolute z-10 h-[1.2rem] w-full translate-y-[2.38rem] bg-orange-200 md:h-[1.8rem] md:translate-y-[3.625rem]" />
-            </div>
+            <UnderlinedText
+              text="service"
+              additionalStyles="flex ml-2 md:ml-3 lg:mx-3"
+            />
           </div>
-          <p className="ml-4 text-[2.625rem] font-bold text-black200 dark:text-white900 md:text-[4rem]">
+          <p className="self-center text-[2.25rem] font-bold text-black200 dark:text-white900 md:text-[3rem]">
             do I provide
           </p>
         </motion.div>

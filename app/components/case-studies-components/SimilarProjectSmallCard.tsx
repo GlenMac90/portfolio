@@ -41,7 +41,7 @@ const SimilarProjectSmallCard = ({ project }: FeaturedProjectCardProps) => {
           className="mt-4 flex"
         >
           <motion.div whileHover={{ scale: 1.05 }} className="flex w-full">
-            <Button type="blueButton" additionalStyles="w-full py-3.5 text-sm">
+            <Button style="blueButton" additionalStyles="w-full py-3.5 text-sm">
               See Case Study
             </Button>
           </motion.div>

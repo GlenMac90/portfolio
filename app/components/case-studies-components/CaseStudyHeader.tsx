@@ -21,6 +21,7 @@ import LaptopMockup from "../LaptopMockup";
 import MobileMockup from "../MobileMockup";
 
 import Button from "../Button";
+import UnderlinedText from "../UnderlinedText";
 
 const CaseStudyHeader = ({ mainProject }: CaseStudyHeaderProps) => {
   const [icons, setIcons] = useState({
@@ -65,12 +66,12 @@ const CaseStudyHeader = ({ mainProject }: CaseStudyHeaderProps) => {
         }}
         className="mx-2 mt-2.5 flex flex-col justify-center lg:mt-7 lg:flex-row"
       >
-        <div className="relative ml-4 flex w-fit flex-col self-center">
-          <p className="z-20 text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
-            {mainProject?.title}
-          </p>
-          <div className="absolute z-10 h-[1rem] w-full translate-y-[1.6rem] bg-orange-200 md:h-[1.358rem] md:translate-y-[1.7rem]" />
-        </div>
+        {mainProject && (
+          <UnderlinedText
+            text={mainProject?.title}
+            additionalStyles="flex self-center lg:mr-3"
+          />
+        )}
         <p className="mt-0 text-center text-4xl font-bold text-black200 dark:text-white900 md:mt-4 md:text-[3rem] lg:mt-0">
           {" "}
           - {mainProject?.description}

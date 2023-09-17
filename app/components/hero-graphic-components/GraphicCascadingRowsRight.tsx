@@ -15,7 +15,7 @@ const GraphicCascadingRowsRight = () => {
           delay: 0.3,
         }}
         d="M235.16 257.052H225.352V254.224H235.16V257.052Z"
-        fill="#1AE5FF"
+        className="fill-graphicTurquoise"
       />
       <motion.path
         animate={{
@@ -29,7 +29,7 @@ const GraphicCascadingRowsRight = () => {
           delay: 0.6,
         }}
         d="M235.16 263.527H225.352V260.624H235.16V263.527Z"
-        fill="#1AE5FF"
+        className="fill-graphicTurquoise"
       />
       <motion.path
         animate={{
@@ -43,7 +43,7 @@ const GraphicCascadingRowsRight = () => {
           delay: 0.9,
         }}
         d="M235.16 270.001H225.352V267.099H235.16V270.001Z"
-        fill="#1AE5FF"
+        className="fill-graphicTurquoise"
       />
       <motion.path
         animate={{
@@ -57,7 +57,7 @@ const GraphicCascadingRowsRight = () => {
           delay: 1.2,
         }}
         d="M239.618 279.453H225.352V276.551H239.618V279.453Z"
-        fill="#1AE5FF"
+        className="fill-graphicTurquoise"
       />
       <motion.path
         animate={{
@@ -99,7 +99,7 @@ const GraphicCascadingRowsRight = () => {
           delay: 2.1,
         }}
         d="M235.16 303.566H225.352V300.663H235.16V303.566Z"
-        fill="#1AE5FF"
+        className="fill-graphicTurquoise"
       />
     </>
   );

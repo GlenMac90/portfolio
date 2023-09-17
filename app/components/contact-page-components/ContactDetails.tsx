@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { socialMediaButtonsContactPage, contactDetails } from "@/constants";
+import { socialMediaIcons, contactDetails } from "@/constants";
 import SocialMediaButton from "./SocialMediaButton";
 import ContactItem from "./ContactItem";
 
@@ -23,7 +23,7 @@ const ContactDetails = () => {
           My Socials
         </p>
         <div className="mt-3.5 flex gap-9 md:mt-7">
-          {socialMediaButtonsContactPage.map((button) => (
+          {socialMediaIcons.map((button) => (
             <SocialMediaButton key={button.title} button={button} />
           ))}
         </div>

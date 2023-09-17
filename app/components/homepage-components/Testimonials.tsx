@@ -60,7 +60,6 @@ const Testimonials = () => {
   }: ButtonsProps) => (
     <>
       <motion.button
-        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
         viewport={{ once: true }}
@@ -77,7 +76,6 @@ const Testimonials = () => {
       </motion.button>
 
       <motion.button
-        initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
         viewport={{ once: true }}
