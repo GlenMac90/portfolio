@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 
-import { featuredProjectsList } from "@/constants";
 import CaseStudyCard from "./case-studies-components/CaseStudyCard";
+import { CaseStudiesShortenedProps } from "@/utils/interfaces";
 
-const CaseStudyGallery = () => {
+const CaseStudyGallery = ({ caseStudies }: CaseStudiesShortenedProps) => {
   return (
     <section className="flex w-full justify-center bg-white900 dark:bg-black200">
       <div className="flex w-full max-w-[78rem] flex-col items-center justify-center gap-4 self-center  px-6 py-12  md:gap-8 md:py-[4.5rem] xl:grid xl:grid-cols-2 xl:px-2">
-        {featuredProjectsList.map((project, index) => (
+        {caseStudies.map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ y: "10%", opacity: 0 }}

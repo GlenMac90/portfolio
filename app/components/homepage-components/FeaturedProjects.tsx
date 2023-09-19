@@ -4,13 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { featuredProjectsList } from "@/constants";
+import { CaseStudyShortened } from "@/utils/interfaces";
 import FeaturedProjectCard from "./FeaturedProjectCard";
 import { whiteButtonArrow } from "@/public/svg-icons";
 import Button from "../Button";
 import UnderlinedText from "../UnderlinedText";
 
-const FeaturedProjects = () => {
+interface FeaturedProjectsProps {
+  caseStudies: CaseStudyShortened[];
+}
+
+const FeaturedProjects = ({ caseStudies }: FeaturedProjectsProps) => {
   return (
     <section className="flex w-full flex-col items-center bg-white900 p-6 dark:bg-black200">
       <motion.div
@@ -28,7 +32,7 @@ const FeaturedProjects = () => {
         </div>
       </motion.div>
       <div className="mt-9 flex flex-col gap-9 lg:mt-12">
-        {featuredProjectsList.map((project, index) => (
+        {caseStudies.map((project, index) => (
           <motion.div
             key={project.title}
             initial={{ x: index % 2 === 1 ? "-25%" : "25%", opacity: 0 }}

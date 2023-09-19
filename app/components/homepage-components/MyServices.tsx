@@ -3,10 +3,14 @@
 import { motion } from "framer-motion";
 
 import ServicesCard from "./ServicesCard";
-import { servicesProvided } from "@/constants";
 import UnderlinedText from "../UnderlinedText";
+import { ServiceProvidedType } from "@/types";
 
-const MyServices = () => {
+interface MyServicesProps {
+  services: ServiceProvidedType[];
+}
+
+const MyServices = ({ services }: MyServicesProps) => {
   return (
     <section className="flex w-full flex-col items-center justify-center bg-white900 p-6 py-12 dark:bg-black300 md:bg-white800 xl:px-20 xl:py-[4.5rem]">
       <div className="flex w-full max-w-7xl flex-col items-center">
@@ -31,7 +35,7 @@ const MyServices = () => {
           </p>
         </motion.div>
         <div className="mt-8 flex flex-col items-center gap-8 md:grid md:max-w-3xl md:grid-cols-2 xl:flex xl:max-w-7xl xl:flex-row">
-          {servicesProvided.map((service, index) => (
+          {services.map((service, index) => (
             <motion.div
               initial={{ x: "25%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}

@@ -3,15 +3,22 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { CaseStudyHeaderProps } from "@/utils/interfaces";
-import { workProcessSymbols } from "@/constants";
+import { CaseStudyType, WorkProcessSymbolType } from "@/types";
 
-const CaseStudyProblemStatement = ({ mainProject }: CaseStudyHeaderProps) => {
+interface CaseStudyProblemStatementProps {
+  caseStudy: CaseStudyType;
+  workProcess: WorkProcessSymbolType[];
+}
+
+const CaseStudyProblemStatement = ({
+  caseStudy,
+  workProcess,
+}: CaseStudyProblemStatementProps) => {
   return (
     <>
       <section className="flex w-full flex-col items-center justify-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">
         <div className="flex flex-col gap-4 self-center md:max-w-3xl">
-          {mainProject?.caseStudyDescription?.map((text, index) => (
+          {caseStudy?.caseStudyDescription?.map((text, index) => (
             <motion.p
               initial={{ x: "25%", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -48,10 +55,10 @@ const CaseStudyProblemStatement = ({ mainProject }: CaseStudyHeaderProps) => {
               Problem Statement
             </p>
             <p className="mt-5 text-sm font-light text-white500 dark:text-white800 md:text-xl">
-              {mainProject?.problemStatement}
+              {caseStudy?.problemStatement}
             </p>
           </motion.div>
-          {mainProject?.problemStatementImage && (
+          {caseStudy?.problemStatementImage && (
             <motion.div
               initial={{ x: "-25%", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -63,27 +70,31 @@ const CaseStudyProblemStatement = ({ mainProject }: CaseStudyHeaderProps) => {
               className="mt-6 w-full max-w-3xl md:mt-8"
             >
               <Image
-                src={mainProject.problemStatementImage}
+                src={caseStudy.problemStatementImage.image}
                 alt="image underlying text in problem statement"
                 layout="responsive"
                 className="w-full rounded md:rounded-xl"
+                height={768}
+                width={500}
               />
             </motion.div>
           )}
         </div>
       </section>
 
-      {mainProject?.figmaBannerImage && (
+      {caseStudy?.figmaBannerImage && (
         <section className="flex w-full flex-col items-center justify-center">
           <div className="flex w-full items-center justify-center bg-primaryLight py-2.5 text-sm font-semibold text-white900 dark:bg-primaryDark md:py-9 md:text-[2rem]">
             HIGH-FIDELITY FIGMA DESIGN
           </div>
           <div className="w-full">
             <Image
-              src={mainProject.figmaBannerImage}
+              src={caseStudy.figmaBannerImage.image}
               alt="image of figma design"
               layout="responsive"
               className="w-full"
+              width={2000}
+              height={2000}
             />
           </div>
         </section>
@@ -99,7 +110,7 @@ const CaseStudyProblemStatement = ({ mainProject }: CaseStudyHeaderProps) => {
             </p>
           </motion.div>
           <div className="mt-6 flex max-w-md flex-wrap items-center justify-center gap-12 self-center md:mt-11 md:max-w-4xl md:justify-center md:gap-20">
-            {workProcessSymbols.map((symbol, index) => (
+            {workProcess.map((process, index) => (
               <motion.div
                 initial={{ x: "25%", opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -109,19 +120,21 @@ const CaseStudyProblemStatement = ({ mainProject }: CaseStudyHeaderProps) => {
                   opacity: { duration: 0.5, delay: index * 0.2 },
                 }}
                 viewport={{ once: true }}
-                key={symbol.title}
+                key={process.title}
                 className="flex w-[4.7rem] flex-col items-center gap-3 md:w-[6rem] md:gap-5"
               >
                 <div className="flex h-[4.7rem] w-[4.7rem] items-center justify-center rounded-full bg-white800 dark:bg-black300 md:h-[6rem] md:w-[6rem]">
                   <Image
-                    src={symbol.image}
+                    src={process.image.image}
                     alt="symbol of working process"
                     layout="responsive"
+                    height={48}
+                    width={48}
                     className="max-h-[2.25rem] max-w-[2.25rem] md:max-h-[3rem] md:max-w-[3rem]"
                   />
                 </div>
                 <p className="whitespace-nowrap text-center text-sm font-medium text-black300 dark:text-white900 md:text-xl">
-                  {symbol.title}
+                  {process.title}
                 </p>
               </motion.div>
             ))}

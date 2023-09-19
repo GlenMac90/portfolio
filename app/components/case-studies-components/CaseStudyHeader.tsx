@@ -15,15 +15,14 @@ import {
   githubButtonDark,
 } from "@/public/svg-icons/case-study-icons";
 
-import { CaseStudyHeaderProps } from "@/utils/interfaces";
-
+import { MainCaseStudyProps } from "@/utils/interfaces";
 import LaptopMockup from "../LaptopMockup";
 import MobileMockup from "../MobileMockup";
 
 import Button from "../Button";
 import UnderlinedText from "../UnderlinedText";
 
-const CaseStudyHeader = ({ mainProject }: CaseStudyHeaderProps) => {
+const CaseStudyHeader = ({ caseStudy }: MainCaseStudyProps) => {
   const [icons, setIcons] = useState({
     demoButtonIcon: demoButtonLight,
     arrowIcon: arrowlight,
@@ -66,15 +65,15 @@ const CaseStudyHeader = ({ mainProject }: CaseStudyHeaderProps) => {
         }}
         className="mx-2 mt-2.5 flex flex-col justify-center lg:mt-7 lg:flex-row"
       >
-        {mainProject && (
+        {caseStudy && (
           <UnderlinedText
-            text={mainProject?.title}
+            text={caseStudy?.title}
             additionalStyles="flex self-center lg:mr-3"
           />
         )}
         <p className="mt-0 text-center text-4xl font-bold text-black200 dark:text-white900 md:mt-4 md:text-[3rem] lg:mt-0">
           {" "}
-          - {mainProject?.description}
+          - {caseStudy?.description}
         </p>
       </motion.div>
 
@@ -90,11 +89,11 @@ const CaseStudyHeader = ({ mainProject }: CaseStudyHeaderProps) => {
         }}
         className="mt-6 flex lg:mt-[3.5rem]"
       >
-        {mainProject?.desktopImage && (
-          <LaptopMockup imageSrc={mainProject?.desktopImage} />
+        {caseStudy?.desktopImage && (
+          <LaptopMockup imageSrc={caseStudy?.desktopImage.image} />
         )}
-        {mainProject?.mobileImage && (
-          <MobileMockup imageSrc={mainProject?.mobileImage} />
+        {caseStudy?.mobileImage && (
+          <MobileMockup imageSrc={caseStudy?.mobileImage.image} />
         )}
       </motion.div>
 

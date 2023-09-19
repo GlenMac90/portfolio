@@ -3,33 +3,25 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-
-interface Job {
-  title: string;
-  position: string;
-  duration: number;
-  durationUnit: string;
-  image: string;
-  imageDark: string;
-  imagePrimaryLight: string;
-  imagePrimaryDark: string;
-}
+import { WorkExperienceType } from "@/types";
 
 interface WorkExperienceCardProps {
-  job: Job;
+  job: WorkExperienceType;
 }
 
 const WorkExperienceCard = ({ job }: WorkExperienceCardProps) => {
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
   const { theme } = useTheme();
 
-  const [imageSrc, setImageSrc] = useState<string>(job.image);
+  const [imageSrc, setImageSrc] = useState<string>(job.image.image);
 
   useEffect(() => {
     if (theme === "dark") {
-      setImageSrc(isMouseOver ? job.imagePrimaryDark : job.imageDark);
+      setImageSrc(
+        isMouseOver ? job.imagePrimaryDark.image : job.imageDark.image
+      );
     } else {
-      setImageSrc(isMouseOver ? job.imagePrimaryLight : job.image);
+      setImageSrc(isMouseOver ? job.imagePrimaryLight.image : job.image.image);
     }
   }, [theme, isMouseOver, job]);
 

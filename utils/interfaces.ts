@@ -1,41 +1,81 @@
-import { StaticImageData } from "next/image";
-
-interface TechStack {
-  image: StaticImageData;
-  text: string;
-}
+import { ContactDetailType, SocialMediaIconType } from "@/types";
 
 export interface MockupProps {
-  imageSrc: StaticImageData;
+  imageSrc: string;
   isHomepage?: boolean;
 }
-export interface Project {
-  caseStudyLink?: string;
+
+export type CaseStudyType = {
+  _id: string;
+  caseStudyLink: string;
   title: string;
   description: string;
-  myRole?: string;
-  startDate?: Date;
-  endDate?: Date;
-  techStackCaseStudy?: TechStack[];
-  caseStudyDescription?: string[];
-  problemStatement?: string;
-  problemStatementImage?: StaticImageData;
-  challenges?: string[];
-  learnings?: string[];
-  figmaBannerImage?: StaticImageData;
+  myRole: string;
+  startDate: Date;
+  endDate: Date;
+  techStackCaseStudy: {
+    title: string;
+    image: string;
+  }[];
+  caseStudyDescription: string[];
+  problemStatement: string;
+  problemStatementImage: {
+    alt: string;
+    image: string;
+  };
+  challenges: string[];
+  learnings: string[];
+  figmaBannerImage: {
+    alt: string;
+    image: string;
+  };
   techList: string[];
-  desktopImage: StaticImageData;
-  mobileImage: StaticImageData;
+  desktopImage: {
+    alt: string;
+    image: string;
+  };
+  mobileImage: {
+    alt: string;
+    image: string;
+  };
   backgroundColour: string;
   reverseLayout: boolean;
+};
+
+export interface CaseStudiesProps {
+  caseStudies: CaseStudyType[];
+}
+
+export interface MainCaseStudyProps {
+  caseStudy: CaseStudyType;
+}
+
+export interface CaseStudyShortened {
+  caseStudyLink?: string;
+  backgroundColour: string;
+  title: string;
+  techList: string[];
+  description: string;
+  mobileImage: {
+    alt: string;
+    image: string;
+  };
+  desktopImage: {
+    alt: string;
+    image: string;
+  };
+}
+
+export interface CaseStudiesShortenedProps {
+  caseStudies: CaseStudyShortened[];
 }
 
 export interface FeaturedProjectCardProps {
-  project: Project;
+  project: CaseStudyShortened;
   reverseLayout?: boolean;
 }
 
-export interface CaseStudyHeaderProps {
-  mainProject?: Project;
-  similarProjects?: Project[];
+export interface ContactPageBodyProps {
+  contactDetails: ContactDetailType[];
+  socialMediaIcons: SocialMediaIconType[];
 }

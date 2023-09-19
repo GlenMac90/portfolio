@@ -2,19 +2,15 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 
 import { Tooltip } from "@nextui-org/react";
 import { useState, useEffect } from "react";
+import { SocialMediaIconType } from "@/types";
 
 interface SocialMediaButtonProps {
-  button: {
-    title: string;
-    icon: StaticImageData;
-    iconDark: StaticImageData;
-    url: string;
-  };
+  button: SocialMediaIconType;
 }
 
 const SocialMediaButton = ({ button }: SocialMediaButtonProps) => {
@@ -30,7 +26,7 @@ const SocialMediaButton = ({ button }: SocialMediaButtonProps) => {
     <Tooltip key={button.title} content={button.title}>
       <Link href={button.url} target="_blank" rel="noopener noreferrer">
         <Image
-          src={currentIcon}
+          src={currentIcon.image}
           alt={button.title}
           height={pathname === "/contact" ? 30 : 24}
           width={pathname === "/contact" ? 30 : 24}

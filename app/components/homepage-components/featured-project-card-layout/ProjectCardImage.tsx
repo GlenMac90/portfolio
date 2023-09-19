@@ -15,8 +15,8 @@ const ProjectCardImage = ({
           : "lg:-ml-16 lg:translate-x-16"
       }`}
     >
-      <LaptopMockup imageSrc={project.desktopImage} isHomepage={true} />
-      <MobileMockup imageSrc={project.mobileImage} isHomepage={true} />
+      <LaptopMockup imageSrc={project.desktopImage.image} isHomepage={true} />
+      <MobileMockup imageSrc={project.mobileImage.image} isHomepage={true} />
     </div>
   );
 };

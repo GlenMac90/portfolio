@@ -30,7 +30,8 @@ const LaptopMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
           src={imageSrc}
           alt="desktop image of project"
           objectFit="cover"
-          className="h-full"
+          width={600}
+          height={300}
         />
       </div>
     </div>

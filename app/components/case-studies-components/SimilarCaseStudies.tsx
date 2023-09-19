@@ -2,11 +2,10 @@
 
 import { motion } from "framer-motion";
 
-import { CaseStudyHeaderProps } from "@/utils/interfaces";
-
+import { CaseStudiesProps } from "@/utils/interfaces";
 import { SimilarProjectSmallCard } from ".";
 
-const SimilarCaseStudies = ({ similarProjects }: CaseStudyHeaderProps) => {
+const SimilarCaseStudies = ({ caseStudies }: CaseStudiesProps) => {
   return (
     <section className="flex w-full flex-col items-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">
       <div className="w-full max-w-4xl">
@@ -25,7 +24,7 @@ const SimilarCaseStudies = ({ similarProjects }: CaseStudyHeaderProps) => {
           </p>
         </motion.div>
         <div className="mt-9 flex w-full max-w-4xl flex-col gap-6 md:mt-10 md:flex-row">
-          {similarProjects?.map((project, index) => (
+          {caseStudies?.map((caseStudy, index) => (
             <motion.div
               initial={{ y: "20%", opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -35,10 +34,10 @@ const SimilarCaseStudies = ({ similarProjects }: CaseStudyHeaderProps) => {
                 scale: { duration: 0.1 },
               }}
               viewport={{ once: true }}
-              key={project.title}
+              key={caseStudy.title}
               className="flex md:w-1/2"
             >
-              <SimilarProjectSmallCard project={project} />
+              <SimilarProjectSmallCard caseStudy={caseStudy} />
             </motion.div>
           ))}
         </div>

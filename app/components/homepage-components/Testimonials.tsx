@@ -8,20 +8,23 @@ import { motion } from "framer-motion";
 import TestimonialCard from "./TestimonialCard";
 import UnderlinedText from "../UnderlinedText";
 
-import { testimonials } from "@/constants";
 import {
   arrowLeft,
   arrowRight,
   arrowLeftDark,
   arrowRightDark,
 } from "@/public/svg-icons";
+import { TestimonialType } from "@/types";
 
 interface ButtonsProps {
   additionalClassesLeft: string;
   additionalClassesRight: string;
 }
+interface TestimonialsProps {
+  testimonials: TestimonialType[];
+}
 
-const Testimonials = () => {
+const Testimonials = ({ testimonials }: TestimonialsProps) => {
   const { theme } = useTheme();
   const [current, setCurrent] = useState(0);
 

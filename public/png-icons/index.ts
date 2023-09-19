@@ -1,12 +1,2 @@
-export { default as temporaryHeroIcon } from "./temporary-hero-png.png";
-export { default as adrianPic } from "./testimonial-profile-images/adrian-pic.jpg";
-export { default as christopherPic } from "./testimonial-profile-images/christopher-pic.jpg";
-export { default as santiagoPic } from "./testimonial-profile-images/santiago-pic.png";
-export { default as morentFigmaBannerImage } from "./morent-figma-banner-image.png";
-export { default as jobItFigmaBannerImage } from "./jobit-figma-banner-image.png";
-export { default as hipnodeFigmaBannerImage } from "./hipnode-figma-banner-image.png";
-export { default as jobItProblemImage } from "./jobit-problem-image.png";
-export { default as morentProblemImage } from "./morent-problem-image.png";
-export { default as hipnodeProblemImage } from "./hipnode-problem-image.png";
 export { default as redDial } from "./red-dial.png";
 export { default as blueDial } from "./blue-dial.png";
