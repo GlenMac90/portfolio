@@ -1,3 +1,4 @@
+import { WorkProcessSymbolType } from "@/types";
 import { z } from "zod";
 
 export const truncateString = (str: string, num: number): string => {
@@ -18,3 +19,21 @@ export const emailFormSchema = z.object({
     .min(100, "Message should be at least 100 characters long"),
   contact_info: z.string().nonempty("Contact information is required"),
 });
+
+export const reorderWorkProcesses = (
+  workProcesses: WorkProcessSymbolType[]
+): WorkProcessSymbolType[] => {
+  const desiredOrder = [
+    "Definition",
+    "Design",
+    "Planning",
+    "Development",
+    "Deployment",
+  ];
+
+  return desiredOrder.map((orderTitle) => {
+    return workProcesses.find(
+      (process) => process.title === orderTitle
+    ) as WorkProcessSymbolType;
+  });
+};

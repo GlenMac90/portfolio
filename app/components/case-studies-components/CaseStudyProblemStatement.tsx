@@ -3,12 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { CaseStudyAndWorkProcessProps } from "@/utils/interfaces";
+import { MainCaseStudyProps } from "@/utils/interfaces";
 
-const CaseStudyProblemStatement = ({
-  caseStudy,
-  workProcess,
-}: CaseStudyAndWorkProcessProps) => {
+const CaseStudyProblemStatement = ({ caseStudy }: MainCaseStudyProps) => {
   return (
     <>
       <section className="flex w-full flex-col items-center justify-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">

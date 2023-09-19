@@ -1,13 +1,16 @@
 "use client";
 
-import { CaseStudyAndWorkProcessProps } from "@/utils/interfaces";
 import { motion } from "framer-motion";
 import Image from "next/image";
+
+import { CaseStudyAndWorkProcessProps } from "@/utils/interfaces";
+import { reorderWorkProcesses } from "@/utils";
 
 const CaseStudyFigmaDesign = ({
   caseStudy,
   workProcess,
 }: CaseStudyAndWorkProcessProps) => {
+  const orderedWorkProcess = reorderWorkProcesses(workProcess);
   return (
     <>
       <section className="flex w-full flex-col items-center justify-center">
@@ -36,7 +39,7 @@ const CaseStudyFigmaDesign = ({
             </p>
           </motion.div>
           <div className="mt-6 flex max-w-md flex-wrap items-center justify-center gap-12 self-center md:mt-11 md:max-w-4xl md:justify-center md:gap-20">
-            {workProcess.map((process, index) => (
+            {orderedWorkProcess.map((process, index) => (
               <motion.div
                 initial={{ x: "25%", opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
