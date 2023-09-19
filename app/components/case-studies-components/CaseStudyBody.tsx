@@ -1,4 +1,6 @@
-import { WorkProcessSymbolType } from "@/types";
+"use client";
+
+import { CaseStudyType, WorkProcessSymbolType } from "@/types";
 import {
   CaseStudyHeader,
   CaseStudyTechStack,
@@ -7,7 +9,7 @@ import {
   SimilarCaseStudies,
 } from ".";
 import { GetInTouchCard } from "../homepage-components";
-import { CaseStudyType } from "@/utils/interfaces";
+import CaseStudyFigmaDesign from "./CaseStudyFigmaDesign";
 
 interface CaseStudyBodyProps {
   mainProject: CaseStudyType;
@@ -28,6 +30,7 @@ const CaseStudyBody = ({
         caseStudy={mainProject}
         workProcess={workProcess}
       />
+      <CaseStudyFigmaDesign caseStudy={mainProject} workProcess={workProcess} />
       <CaseStudyChallengesAndLearnings caseStudy={mainProject} />
       <SimilarCaseStudies caseStudies={similarProjects} />
       <GetInTouchCard />

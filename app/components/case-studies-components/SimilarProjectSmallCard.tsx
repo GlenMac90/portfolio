@@ -24,6 +24,7 @@ const SimilarProjectSmallCard = ({ caseStudy }: MainCaseStudyProps) => {
             style={{
               objectFit: "cover",
             }}
+            objectFit="fill"
             width={200}
             height={256}
           />

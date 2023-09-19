@@ -1,47 +1,19 @@
-import { ContactDetailType, SocialMediaIconType } from "@/types";
+import {
+  CaseStudyType,
+  ContactDetailType,
+  SocialMediaIconType,
+  WorkProcessSymbolType,
+} from "@/types";
 
 export interface MockupProps {
   imageSrc: string;
   isHomepage?: boolean;
 }
 
-export type CaseStudyType = {
-  _id: string;
-  caseStudyLink: string;
-  title: string;
-  description: string;
-  myRole: string;
-  startDate: Date;
-  endDate: Date;
-  techStackCaseStudy: {
-    title: string;
-    image: string;
-  }[];
-  caseStudyDescription: string[];
-  problemStatement: string;
-  problemStatementImage: {
-    alt: string;
-    image: string;
-  };
-  challenges: string[];
-  learnings: string[];
-  figmaBannerImage: {
-    alt: string;
-    image: string;
-  };
-  techList: string[];
-  desktopImage: {
-    alt: string;
-    image: string;
-  };
-  mobileImage: {
-    alt: string;
-    image: string;
-  };
-  backgroundColour: string;
-  reverseLayout: boolean;
-};
-
+export interface CaseStudyAndWorkProcessProps {
+  caseStudy: CaseStudyType;
+  workProcess: WorkProcessSymbolType[];
+}
 export interface CaseStudiesProps {
   caseStudies: CaseStudyType[];
 }
