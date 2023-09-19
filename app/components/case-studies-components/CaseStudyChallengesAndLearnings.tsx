@@ -1,14 +1,12 @@
 "use client";
 
-import { CaseStudyHeaderProps } from "@/utils/interfaces";
+import { MainCaseStudyProps } from "@/utils/interfaces";
 import { challengeIcon, greenTick } from "@/public/svg-icons/case-study-icons";
 import { motion } from "framer-motion";
 
 import ChallengesAndLearningsCard from "./ChallengesAndLearningsCard";
 
-const CaseStudyChallengesAndLearnings = ({
-  mainProject,
-}: CaseStudyHeaderProps) => {
+const CaseStudyChallengesAndLearnings = ({ caseStudy }: MainCaseStudyProps) => {
   return (
     <article className="flex w-full flex-col items-center bg-white900 px-6 py-9 dark:bg-black200 md:py-[4.5rem]">
       <div className="flex w-full max-w-4xl flex-col">
@@ -31,14 +29,14 @@ const CaseStudyChallengesAndLearnings = ({
           additionalStyles="my-6 md:my-7"
           textColour="text-challengeRed"
           text="CHALLENGES"
-          listText={mainProject?.challenges}
+          listText={caseStudy?.challenges}
         />
 
         <ChallengesAndLearningsCard
           image={greenTick}
           textColour="text-learningsGreen"
           text="LEARNINGS"
-          listText={mainProject?.learnings}
+          listText={caseStudy?.learnings}
         />
       </div>
     </article>

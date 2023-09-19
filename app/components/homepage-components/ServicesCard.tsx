@@ -3,17 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-
-interface Service {
-  imageSrc: string;
-  imageHoverLight: string;
-  imageHoverDark: string;
-  title: string;
-  description: string;
-}
+import { ServiceProvidedType } from "@/types";
 
 interface ServicesCardProps {
-  service: Service;
+  service: ServiceProvidedType;
 }
 
 const ServicesCard = ({ service }: ServicesCardProps) => {
@@ -48,7 +41,7 @@ const ServicesCard = ({ service }: ServicesCardProps) => {
         }`}
       >
         <Image
-          src={imageSrc}
+          src={imageSrc.image}
           height={24}
           width={24}
           alt="icon for services provided"

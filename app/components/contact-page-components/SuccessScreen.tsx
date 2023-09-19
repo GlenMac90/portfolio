@@ -2,9 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, MouseEvent, useState } from "react";
-import Image from "next/image";
-
-import { temporaryHeroIcon } from "@/public/png-icons";
 interface SuccessScreenProps {
   setShowSuccess: Dispatch<SetStateAction<boolean>>;
 }
@@ -38,11 +35,6 @@ const SuccessScreen = ({ setShowSuccess }: SuccessScreenProps) => {
         <p className="text-center text-2xl font-semibold text-black200 dark:text-white900 md:text-3xl">
           Thank you for getting in contact
         </p>
-        <Image
-          src={temporaryHeroIcon}
-          alt="icon of me working"
-          className="h-auto w-full"
-        />
         <div className="flex flex-col items-center gap-6">
           <p className="text-center text-2xl font-semibold text-black200 dark:text-white900 md:text-3xl">
             I will get back for you as soon as possible

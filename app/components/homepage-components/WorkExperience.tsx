@@ -2,11 +2,15 @@
 
 import { motion } from "framer-motion";
 
-import { workExperience } from "@/constants";
+import { WorkExperienceType } from "@/types";
 import WorkExperienceCard from "./WorkExperienceCard";
 import UnderlinedText from "../UnderlinedText";
 
-const WorkExperience = () => {
+interface WorkExperienceProps {
+  workExperienceList: WorkExperienceType[];
+}
+
+const WorkExperience = ({ workExperienceList }: WorkExperienceProps) => {
   return (
     <section className="flex w-full flex-col justify-center bg-white900 p-6 dark:bg-black200 md:px-20 md:py-[4.5rem] xl:flex-row">
       <div className="flex w-full max-w-7xl flex-col items-center xl:flex-row ">
@@ -54,7 +58,7 @@ const WorkExperience = () => {
         </motion.div>
 
         <div className="mt-4 flex w-full max-w-3xl flex-col gap-4 xl:ml-6 xl:mt-0 xl:w-1/2 xl:gap-7">
-          {workExperience.map((job, index) => (
+          {workExperienceList.map((job, index) => (
             <motion.div
               initial={{ x: "25%", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}

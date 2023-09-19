@@ -2,11 +2,14 @@
 
 import { motion } from "framer-motion";
 
-import { socialMediaIcons, contactDetails } from "@/constants";
 import SocialMediaButton from "./SocialMediaButton";
 import ContactItem from "./ContactItem";
+import { ContactPageBodyProps } from "@/utils/interfaces";
 
-const ContactDetails = () => {
+const ContactDetails = ({
+  contactDetails,
+  socialMediaIcons,
+}: ContactPageBodyProps) => {
   return (
     <>
       <motion.div

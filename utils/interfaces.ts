@@ -1,41 +1,53 @@
-import { StaticImageData } from "next/image";
-
-interface TechStack {
-  image: StaticImageData;
-  text: string;
-}
+import {
+  CaseStudyType,
+  ContactDetailType,
+  SocialMediaIconType,
+  WorkProcessSymbolType,
+} from "@/types";
 
 export interface MockupProps {
-  imageSrc: StaticImageData;
+  imageSrc: string;
   isHomepage?: boolean;
 }
-export interface Project {
+
+export interface CaseStudyAndWorkProcessProps {
+  caseStudy: CaseStudyType;
+  workProcess: WorkProcessSymbolType[];
+}
+export interface CaseStudiesProps {
+  caseStudies: CaseStudyType[];
+}
+
+export interface MainCaseStudyProps {
+  caseStudy: CaseStudyType;
+}
+
+export interface CaseStudyShortened {
   caseStudyLink?: string;
-  title: string;
-  description: string;
-  myRole?: string;
-  startDate?: Date;
-  endDate?: Date;
-  techStackCaseStudy?: TechStack[];
-  caseStudyDescription?: string[];
-  problemStatement?: string;
-  problemStatementImage?: StaticImageData;
-  challenges?: string[];
-  learnings?: string[];
-  figmaBannerImage?: StaticImageData;
-  techList: string[];
-  desktopImage: StaticImageData;
-  mobileImage: StaticImageData;
   backgroundColour: string;
-  reverseLayout: boolean;
+  title: string;
+  techList: string[];
+  description: string;
+  mobileImage: {
+    alt: string;
+    image: string;
+  };
+  desktopImage: {
+    alt: string;
+    image: string;
+  };
+}
+
+export interface CaseStudiesShortenedProps {
+  caseStudies: CaseStudyShortened[];
 }
 
 export interface FeaturedProjectCardProps {
-  project: Project;
+  project: CaseStudyShortened;
   reverseLayout?: boolean;
 }
 
-export interface CaseStudyHeaderProps {
-  mainProject?: Project;
-  similarProjects?: Project[];
+export interface ContactPageBodyProps {
+  contactDetails: ContactDetailType[];
+  socialMediaIcons: SocialMediaIconType[];
 }

@@ -1,9 +1,13 @@
 import Link from "next/link";
 
-import { CaseStudyHeaderProps } from "@/utils/interfaces";
+import { CaseStudyShortened } from "@/utils/interfaces";
 import LaptopMockup from "../LaptopMockup";
 
-const CaseStudyCard = ({ mainProject }: CaseStudyHeaderProps) => {
+interface CaseStudyCardProps {
+  mainProject: CaseStudyShortened;
+}
+
+const CaseStudyCard = ({ mainProject }: CaseStudyCardProps) => {
   return (
     <Link
       key={mainProject?.title}
@@ -16,8 +20,8 @@ const CaseStudyCard = ({ mainProject }: CaseStudyHeaderProps) => {
             backgroundColor: mainProject?.backgroundColour,
           }}
         >
-          {mainProject?.desktopImage && (
-            <LaptopMockup imageSrc={mainProject?.desktopImage} />
+          {mainProject?.desktopImage.image && (
+            <LaptopMockup imageSrc={mainProject?.desktopImage.image} />
           )}
         </div>
         <div className="flex w-full flex-col px-6">

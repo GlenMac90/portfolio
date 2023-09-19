@@ -2,11 +2,15 @@
 
 import { motion } from "framer-motion";
 
-import { mySkillsArray } from "@/constants";
 import SkillIcon from "./SkillIcon";
 import UnderlinedText from "../UnderlinedText";
+import { SkillType } from "@/types";
 
-const MySkills = () => {
+interface MySkillsProps {
+  mySkills: SkillType[];
+}
+
+const MySkills = ({ mySkills }: MySkillsProps) => {
   return (
     <section className="flex w-full flex-col justify-center bg-white900 px-6 py-12 dark:bg-black200 xl:px-20 xl:py-[4.5rem]">
       <motion.div
@@ -19,7 +23,7 @@ const MySkills = () => {
         <UnderlinedText text="My Skills" additionalStyles="flex" />
       </motion.div>
       <div className="mt-8 grid w-fit grid-cols-4 items-center justify-between gap-8 self-center sm:gap-10 lg:mt-12 lg:grid-flow-col lg:grid-rows-2 lg:gap-11">
-        {mySkillsArray.map((skill, index) => (
+        {mySkills.map((skill, index) => (
           <motion.div
             initial={{ y: "25%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -33,7 +37,7 @@ const MySkills = () => {
             className="flex"
             key={skill.text}
           >
-            <SkillIcon src={skill.src} text={skill.text} />
+            <SkillIcon skill={skill} />
           </motion.div>
         ))}
       </div>

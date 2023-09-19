@@ -1,14 +1,10 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+import { ContactDetailType } from "@/types";
 
 interface ContactItemProps {
-  contact: {
-    label: string;
-    imageSrc: StaticImageData;
-    imageSrcDark: StaticImageData;
-    info: string;
-  };
+  contact: ContactDetailType;
 }
 
 const ContactItem = ({ contact }: ContactItemProps) => {
@@ -28,7 +24,7 @@ const ContactItem = ({ contact }: ContactItemProps) => {
       </p>
       <div className="mt-3.5 flex gap-3 md:mt-7">
         <Image
-          src={currentImageSrc}
+          src={currentImageSrc.image}
           alt={contact.label}
           height={30}
           width={30}

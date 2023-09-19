@@ -1,39 +1,31 @@
-"use client";
+import CaseStudyBody from "@/app/components/case-studies-components/CaseStudyBody";
+import { getCaseStudy, getWorkProcessSymbols } from "@/sanity/sanity.query";
+import { CaseStudyType } from "@/types";
 
-import { featuredProjectsList } from "@/constants";
-import GetInTouchCard from "@/app/components/homepage-components/GetInTouchCard";
-
-import {
-  CaseStudyHeader,
-  CaseStudyTechStack,
-  CaseStudyProblemStatement,
-  CaseStudyChallengesAndLearnings,
-  SimilarCaseStudies,
-} from "@/app/components/case-studies-components/index";
 interface CaseStudyProps {
   params: {
     details: string;
   };
 }
 
-const CaseStudy = ({ params }: CaseStudyProps) => {
-  const mainProject = featuredProjectsList.find(
-    (project) => project.caseStudyLink === params.details
+const CaseStudy = async ({ params }: CaseStudyProps) => {
+  const workProcessSymbols = await getWorkProcessSymbols();
+  const allCaseStudies = await getCaseStudy();
+
+  const mainProject = allCaseStudies.find(
+    (project: CaseStudyType) => project.caseStudyLink === params.details
   );
 
-  const similarProjects = featuredProjectsList.filter(
-    (project) => project.caseStudyLink !== params.details
+  const similarProjects = allCaseStudies.filter(
+    (project: CaseStudyType) => project.caseStudyLink !== params.details
   );
 
   return (
-    <main className="flex w-full flex-col items-center overflow-hidden bg-white800 dark:bg-black300">
-      <CaseStudyHeader mainProject={mainProject} />
-      <CaseStudyTechStack mainProject={mainProject} />
-      <CaseStudyProblemStatement mainProject={mainProject} />
-      <CaseStudyChallengesAndLearnings mainProject={mainProject} />
-      <SimilarCaseStudies similarProjects={similarProjects} />
-      <GetInTouchCard />
-    </main>
+    <CaseStudyBody
+      mainProject={mainProject}
+      similarProjects={similarProjects}
+      workProcess={workProcessSymbols}
+    />
   );
 };
 
