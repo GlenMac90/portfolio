@@ -14,3 +14,4 @@ export { default as crossDarkMode } from "./cross-dark-mode.svg";
 export { default as frame } from "./frame.svg";
 export { default as star } from "./star.svg";
 export { default as whiteButtonArrow } from "./white-button-arrow.svg";
+export { default as tick } from "./tick.svg";
