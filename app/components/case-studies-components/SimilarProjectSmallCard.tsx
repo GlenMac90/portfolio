@@ -20,7 +20,7 @@ const SimilarProjectSmallCard = ({ caseStudy }: MainCaseStudyProps) => {
           <Image
             src={caseStudy.figmaBannerImage.image}
             alt="Image of similar case study"
-            className="h-full w-auto rounded-t-2xl md:rounded-t-3xl"
+            className="h-full max-h-[14.5rem] w-full rounded-t-2xl md:rounded-t-3xl"
             style={{
               objectFit: "cover",
             }}
