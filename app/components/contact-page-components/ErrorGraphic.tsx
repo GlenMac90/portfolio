@@ -50,7 +50,7 @@ const ErrorScreenDials = () => {
 
 const ErrorGraphic = () => {
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center overflow-hidden">
       <div className="absolute translate-x-[-6rem] translate-y-[-7rem]">
         {[0, 1, 2, 3, 4, 5, 6, 7].map((puff) => (
           <div key={puff} className="smoke_list z-10"></div>
