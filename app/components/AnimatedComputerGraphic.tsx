@@ -19,7 +19,7 @@ import {
 
 const AnimatedComputerGraphic = () => {
   return (
-    <section className="relative flex h-[20rem] w-[27.5rem] items-center sm:h-[30rem] sm:w-[40rem]">
+    <section className="relative flex h-[20rem] w-[27.5rem] items-center sm:h-[36rem] sm:w-[48rem]">
       <Dials />
       <svg
         width="743"
@@ -28,7 +28,7 @@ const AnimatedComputerGraphic = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_3357_822)">
+        <g clipPath="url(#clip0_3357_822)">
           <MainGraphicImages />
           <GraphicHorizontalBars />
           <GraphicSmallCardLeft />

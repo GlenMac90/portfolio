@@ -44,8 +44,8 @@ const Dials = () => {
         />
       </motion.div>
       <motion.div
-        initial={{ x: "15.7rem", y: "1.2rem" }}
-        animate={{ rotate: -360, x: "15.7rem", y: "1.2rem" }}
+        initial={{ x: "18.2rem", y: "1.2rem" }}
+        animate={{ rotate: -360, x: "18.2rem", y: "1.2rem" }}
         transition={{
           duration: 6,
           ease: "linear",
@@ -56,14 +56,14 @@ const Dials = () => {
         <Image
           src={blueDial}
           alt="blue dial"
-          height={33}
-          width={33}
+          height={40}
+          width={40}
           className="rounded-full"
         />
       </motion.div>
       <motion.div
-        initial={{ x: "18.2rem", y: "1.2rem" }}
-        animate={{ rotate: 360, x: "18.2rem", y: "1.2rem" }}
+        initial={{ x: "21.2rem", y: "1.2rem" }}
+        animate={{ rotate: 360, x: "21.2rem", y: "1.2rem" }}
         transition={{
           duration: 2,
           ease: "linear",
@@ -74,8 +74,8 @@ const Dials = () => {
         <Image
           src={redDial}
           alt="blue dial"
-          height={33}
-          width={33}
+          height={40}
+          width={40}
           className="rounded-full "
         />
       </motion.div>
