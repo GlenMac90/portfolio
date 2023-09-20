@@ -22,7 +22,7 @@ const MySkills = ({ mySkills }: MySkillsProps) => {
       >
         <UnderlinedText text="My Skills" additionalStyles="flex" />
       </motion.div>
-      <div className="mt-8 grid w-fit grid-cols-4 items-center justify-between gap-8 self-center sm:gap-10 lg:mt-12 lg:grid-flow-col lg:grid-rows-2 lg:gap-11">
+      <div className="mt-8 flex w-fit max-w-3xl flex-wrap items-center justify-center gap-8 self-center sm:gap-10 lg:mt-12 lg:gap-11 xl:max-w-7xl">
         {mySkills.map((skill, index) => (
           <motion.div
             initial={{ y: "25%", opacity: 0 }}

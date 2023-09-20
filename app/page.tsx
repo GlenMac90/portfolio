@@ -11,9 +11,9 @@ import {
 } from "./components/homepage-components";
 
 export default async function Home() {
-  const data = await getHomePageData();
+  const results = await getHomePageData();
   const { mySkills, services, workExperienceList, caseStudies, testimonials } =
-    data.props;
+    results;
 
   return (
     <main className="flex w-full flex-col items-center overflow-hidden bg-white800 dark:bg-black300">

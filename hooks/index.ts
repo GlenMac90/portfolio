@@ -29,35 +29,49 @@ export async function caseStudyFullInfo() {
 }
 
 export async function getHomePageData() {
-  try {
-    const caseStudies = await caseStudyInfoHomepage();
-    const testimonials = await getTestimonials();
-    const workExperienceList = await getWorkExperiences();
-    const services = await getServicesProvided();
-    const mySkills = await getMySkills();
+  const results = await Promise.allSettled([
+    caseStudyInfoHomepage(),
+    getTestimonials(),
+    getWorkExperiences(),
+    getServicesProvided(),
+    getMySkills(),
+  ]);
 
-    return {
-      props: {
-        caseStudies,
-        testimonials,
-        workExperienceList,
-        services,
-        mySkills,
-      },
-    };
-  } catch (error) {
-    const e = error as Error;
-    console.error("Error fetching data in getHomePageData:", e);
+  const [
+    caseStudiesResult,
+    testimonialsResult,
+    workExperienceListResult,
+    servicesResult,
+    mySkillsResult,
+  ] = results;
 
-    return {
-      props: {
-        error: e.message || "An error occurred.",
-        caseStudies: [],
-        testimonials: [],
-        workExperienceList: [],
-        services: [],
-        mySkills: [],
-      },
-    };
+  const caseStudies =
+    caseStudiesResult.status === "fulfilled" ? caseStudiesResult.value : [];
+  const testimonials =
+    testimonialsResult.status === "fulfilled" ? testimonialsResult.value : [];
+  const workExperienceList =
+    workExperienceListResult.status === "fulfilled"
+      ? workExperienceListResult.value
+      : [];
+  const services =
+    servicesResult.status === "fulfilled" ? servicesResult.value : [];
+  const mySkills =
+    mySkillsResult.status === "fulfilled" ? mySkillsResult.value : [];
+
+  const errors = results
+    .filter((result) => result.status === "rejected")
+    .map((result) => (result as PromiseRejectedResult).reason);
+
+  if (errors.length) {
+    console.error("Some errors occurred during data fetching:", errors);
   }
+
+  return {
+    caseStudies,
+    testimonials,
+    workExperienceList,
+    services,
+    mySkills,
+    error: errors.length ? "One or more requests failed." : undefined,
+  };
 }

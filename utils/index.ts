@@ -31,9 +31,7 @@ export const reorderWorkProcesses = (
     "Deployment",
   ];
 
-  return desiredOrder.map((orderTitle) => {
-    return workProcesses.find(
-      (process) => process.title === orderTitle
-    ) as WorkProcessSymbolType;
+  return workProcesses.sort((a, b) => {
+    return desiredOrder.indexOf(a.title) - desiredOrder.indexOf(b.title);
   });
 };

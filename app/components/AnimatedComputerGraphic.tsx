@@ -28,7 +28,7 @@ const AnimatedComputerGraphic = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_3357_822)">
+        <g clipPath="url(#clip0_3357_822)">
           <MainGraphicImages />
           <GraphicHorizontalBars />
           <GraphicSmallCardLeft />

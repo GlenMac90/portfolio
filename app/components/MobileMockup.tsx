@@ -31,7 +31,7 @@ const MobileMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
         <Image
           src={imageSrc}
           alt="mobile image of project"
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
           width={300}
           height={300}
         />
