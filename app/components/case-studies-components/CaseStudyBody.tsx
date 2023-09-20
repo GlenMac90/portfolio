@@ -26,10 +26,7 @@ const CaseStudyBody = ({
     <main className="flex w-full flex-col items-center overflow-hidden bg-white800 dark:bg-black300">
       <CaseStudyHeader caseStudy={mainProject} />
       <CaseStudyTechStack caseStudy={mainProject} />
-      <CaseStudyProblemStatement
-        caseStudy={mainProject}
-        workProcess={workProcess}
-      />
+      <CaseStudyProblemStatement caseStudy={mainProject} />
       <CaseStudyFigmaDesign caseStudy={mainProject} workProcess={workProcess} />
       <CaseStudyChallengesAndLearnings caseStudy={mainProject} />
       <SimilarCaseStudies caseStudies={similarProjects} />

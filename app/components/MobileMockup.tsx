@@ -26,12 +26,12 @@ const MobileMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
         className="z-20 h-auto w-auto"
       />
       <div
-        className={`absolute left-1 top-1 z-10 flex h-[6.5rem] w-[3.5rem] overflow-hidden rounded-md ${childDivSytles}`}
+        className={`absolute left-1 top-1 z-10 flex h-[6.5rem] w-[3.2rem] overflow-hidden rounded-md ${childDivSytles}`}
       >
         <Image
           src={imageSrc}
           alt="mobile image of project"
-          objectFit="cover"
+          style={{ objectFit: "fill" }}
           width={300}
           height={300}
         />
