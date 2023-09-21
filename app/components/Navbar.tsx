@@ -85,7 +85,7 @@ const Navbar = () => {
                   (button.path === "/case-studies" &&
                     pathname.startsWith("/case-studies")) ||
                   pathname === button.path
-                    ? "font-semibold text-primaryLight"
+                    ? "font-semibold text-primaryLight dark:text-primaryDark"
                     : "text-white500 dark:text-white800"
                 }`}
               >
