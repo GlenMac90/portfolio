@@ -1,18 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 
 import { ServiceProvidedType } from "@/types";
 interface ServicesCardProps {
   service: ServiceProvidedType;
+  delay?: number;
+  theme?: string;
 }
 
-const ServicesCard = ({ service }: ServicesCardProps) => {
-  const { theme } = useTheme();
+const ServicesCard = ({ service, delay, theme }: ServicesCardProps) => {
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
-
+  const [hoverBackgroundColour, setHoverBackgroundColour] = useState(
+    theme === "light" ? "#0252CD" : "#428DFF"
+  );
   let imageSrc;
 
   if (isMouseOver) {
@@ -25,13 +28,33 @@ const ServicesCard = ({ service }: ServicesCardProps) => {
     imageSrc = service.imageSrc;
   }
 
+  useEffect(() => {
+    if (theme === "light") {
+      setHoverBackgroundColour("#0252CD");
+    } else {
+      setHoverBackgroundColour("#428DFF");
+    }
+  }, [theme]);
+
   return (
-    <div
-      className={`w-full rounded-xl px-6 py-7 shadow-lg md:h-[18rem] md:w-[19rem] xl:w-full ${
-        isMouseOver
-          ? "bg-primaryLight dark:bg-primaryDark"
-          : "bg-white800 dark:bg-black300"
-      }`}
+    <motion.div
+      initial={{
+        x: "25%",
+        opacity: 0,
+      }}
+      animate={{ x: 0, opacity: 1 }}
+      whileHover={{
+        y: "10%",
+        transition: { duration: 0.2 },
+        backgroundColor: hoverBackgroundColour,
+        boxShadow: "30px 30px 40px #0252cd50",
+      }}
+      transition={{
+        x: { duration: 0.5, delay },
+        opacity: { duration: 0.5, delay },
+      }}
+      viewport={{ once: true }}
+      className="h-[17rem] w-full rounded-xl bg-white800 px-6 py-7 shadow-lg dark:bg-black300 xl:w-full"
       onMouseOver={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
     >
@@ -61,7 +84,7 @@ const ServicesCard = ({ service }: ServicesCardProps) => {
       >
         {service.description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 

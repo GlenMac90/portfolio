@@ -59,20 +59,7 @@ const WorkExperience = ({ workExperienceList }: WorkExperienceProps) => {
 
         <div className="mt-4 flex w-full max-w-3xl flex-col gap-4 xl:ml-6 xl:mt-0 xl:w-1/2 xl:gap-7">
           {workExperienceList.map((job, index) => (
-            <motion.div
-              initial={{ x: "25%", opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{
-                x: { duration: 0.7, delay: index * 0.2 },
-                opacity: { duration: 0.7, delay: index * 0.2 },
-                scale: { duration: 0.3 },
-              }}
-              viewport={{ once: true }}
-              key={job.title}
-            >
-              <WorkExperienceCard job={job} />
-            </motion.div>
+            <WorkExperienceCard key={job.title} job={job} delay={index * 0.2} />
           ))}
         </div>
       </div>

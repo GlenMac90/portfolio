@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 import ServicesCard from "./ServicesCard";
 import UnderlinedText from "../UnderlinedText";
@@ -11,6 +12,7 @@ interface MyServicesProps {
 }
 
 const MyServices = ({ services }: MyServicesProps) => {
+  const { theme } = useTheme();
   return (
     <section className="flex w-full flex-col items-center justify-center bg-white900 p-6 py-12 dark:bg-black300 md:bg-white800 xl:px-20 xl:py-[4.5rem]">
       <div className="flex w-full max-w-7xl flex-col items-center">
@@ -36,20 +38,12 @@ const MyServices = ({ services }: MyServicesProps) => {
         </motion.div>
         <div className="mt-8 flex flex-col items-center gap-8 md:grid md:max-w-3xl md:grid-cols-2 xl:flex xl:max-w-7xl xl:flex-row">
           {services.map((service, index) => (
-            <motion.div
-              initial={{ x: "25%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              whileHover={{ y: "10%", transition: { duration: 0.2 } }}
-              transition={{
-                x: { duration: 0.5, delay: index * 0.3 },
-                opacity: { duration: 0.5, delay: index * 0.3 },
-              }}
-              viewport={{ once: true }}
+            <ServicesCard
               key={service.title}
-              className="flex w-full md:h-[18rem] md:w-[19rem] lg:w-full "
-            >
-              <ServicesCard service={service} />
-            </motion.div>
+              service={service}
+              theme={theme}
+              delay={index * 0.3}
+            />
           ))}
         </div>
       </div>
