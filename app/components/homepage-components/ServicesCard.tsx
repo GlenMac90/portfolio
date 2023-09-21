@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { ServiceProvidedType } from "@/types";
 
+import { ServiceProvidedType } from "@/types";
 interface ServicesCardProps {
   service: ServiceProvidedType;
 }
