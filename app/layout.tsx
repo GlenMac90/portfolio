@@ -7,6 +7,7 @@ import { Poppins } from "next/font/google";
 import Provider from "./providers/Provider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Navbar />
           {children}
           <Footer />
+          <ToastContainer position="bottom-right" />
         </Provider>
       </body>
     </html>

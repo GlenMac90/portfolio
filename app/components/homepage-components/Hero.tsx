@@ -1,16 +1,38 @@
 "use client";
 
+import { useCallback, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import { frame } from "@/public/svg-icons";
-
+import { frame, tick } from "@/public/svg-icons";
 import Button from "../Button";
 import AnimatedComputerGraphic from "../AnimatedComputerGraphic";
 import HeroUnderlinedText from "./HeroUnderlinedText";
 
 const Hero = () => {
+  const [showTick, setShowTick] = useState(false);
+  const copySuccess = () => toast.success("Email copied to clipboard");
+  const copyFailure = () => toast.error("Unable to copy to clipboard");
+
+  const handleCopyToClipboard = useCallback(() => {
+    navigator.clipboard
+      .writeText("glen.mccallum@live.co.uk")
+      .then(() => {
+        copySuccess();
+        setShowTick(true);
+        setTimeout(() => {
+          setShowTick(false);
+        }, 3000);
+      })
+      .catch((err) => {
+        console.error("Could not copy text: ", err);
+        copyFailure();
+      });
+  }, []);
+
   return (
     <section className="relative mx-4 mt-16 flex w-full max-w-7xl flex-col bg-white800 px-5 pt-12 dark:bg-black300 md:mt-24 lg:flex-row lg:justify-between lg:pb-24">
       <motion.div
@@ -49,9 +71,10 @@ const Hero = () => {
           >
             <p>glen.mccallum@live.co.uk</p>
             <Image
-              src={frame}
+              src={showTick ? tick : frame}
               alt="click to download resume"
               className="h-4 w-4 md:h-5 md:w-5"
+              onClick={handleCopyToClipboard}
             />
           </Button>
         </div>
