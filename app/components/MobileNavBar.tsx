@@ -62,7 +62,7 @@ const MobileNavBar = ({
           href={button.path}
           className={`w-full cursor-pointer rounded-lg px-2 py-4 text-sm ${
             pathname === button.path
-              ? "border-primaryLight bg-primaryDark font-semibold text-white800"
+              ? "bg-primaryLight font-semibold text-white800 dark:bg-primaryDark"
               : "text-white500 dark:text-white800"
           }`}
           onClick={handleCloseMobileNav}
