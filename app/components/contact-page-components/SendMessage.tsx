@@ -53,9 +53,11 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
           setShowSuccess(true);
         } else {
           sendFailure();
+          setIsSending(false);
         }
       } else {
         sendFailure();
+        setIsSending(false);
       }
     } catch (error) {
       if (error instanceof ZodError) {
@@ -65,7 +67,6 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
         console.error("An unknown error occurred:", error);
       }
     }
-    setIsSending(false);
   };
 
   return (

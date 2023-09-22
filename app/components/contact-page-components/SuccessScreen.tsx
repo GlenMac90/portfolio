@@ -2,13 +2,19 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { man } from "@/public/svg-icons";
 
 const SuccessScreen = () => {
   return (
     <main className="flex h-screen w-screen flex-col items-center justify-between bg-white800 px-4 pt-20 dark:bg-black300 md:pt-40">
-      <section className="flex max-w-md flex-col items-center gap-4 rounded-xl bg-white900 p-6 dark:bg-black200 md:p-10">
+      <motion.section
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.2 }}
+        className="flex max-w-md flex-col items-center gap-4 rounded-xl bg-white900 p-6 dark:bg-black200 md:p-10"
+      >
         <p className="text-center text-2xl font-semibold text-black200 dark:text-white900 md:text-3xl">
           Thank you for getting in contact
         </p>
@@ -22,7 +28,7 @@ const SuccessScreen = () => {
         >
           Return to Homepage
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 };

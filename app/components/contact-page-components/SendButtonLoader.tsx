@@ -3,19 +3,15 @@ import { motion } from "framer-motion";
 const SendButtonLoader = () => {
   return (
     <div className="ml-2 flex items-center gap-1.5">
-      {[...Array(3)].map((_, index) => (
-        <motion.div
-          animate={{ y: ["0rem", "-0.25rem", "0rem"] }}
-          transition={{
-            duration: 0.8,
-            repeat: Infinity,
-            repeatDelay: 0.4,
-            delay: index * 0.2,
-          }}
-          key={index}
-          className="h-1 w-1 bg-white"
-        />
-      ))}
+      <motion.div
+        animate={{ rotate: [0, 360, 0], scale: [1, 1.5, 1] }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="h-2.5 w-2.5 border-2 border-white"
+      />
     </div>
   );
 };
