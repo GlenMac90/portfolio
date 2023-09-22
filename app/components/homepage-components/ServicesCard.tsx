@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
@@ -8,14 +9,13 @@ import { ServiceProvidedType } from "@/types";
 interface ServicesCardProps {
   service: ServiceProvidedType;
   delay?: number;
-  theme?: string;
 }
 
-const ServicesCard = ({ service, delay, theme }: ServicesCardProps) => {
+const ServicesCard = ({ service, delay }: ServicesCardProps) => {
+  const { theme } = useTheme();
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
-  const [hoverBackgroundColour, setHoverBackgroundColour] = useState(
-    theme === "light" ? "#0252CD" : "#428DFF"
-  );
+  const [backgroundColor, setBackgroundColor] = useState("");
+  const [hoverBackgroundColour, setHoverBackgroundColour] = useState("");
   let imageSrc;
 
   if (isMouseOver) {
@@ -31,8 +31,10 @@ const ServicesCard = ({ service, delay, theme }: ServicesCardProps) => {
   useEffect(() => {
     if (theme === "light") {
       setHoverBackgroundColour("#0252CD");
+      setBackgroundColor("#F3F8FF");
     } else {
       setHoverBackgroundColour("#428DFF");
+      setBackgroundColor("#192333");
     }
   }, [theme]);
 
@@ -42,7 +44,7 @@ const ServicesCard = ({ service, delay, theme }: ServicesCardProps) => {
         x: "25%",
         opacity: 0,
       }}
-      animate={{ x: 0, opacity: 1 }}
+      animate={{ x: 0, opacity: 1, backgroundColor }}
       whileHover={{
         y: "10%",
         transition: { duration: 0.2 },
@@ -54,7 +56,7 @@ const ServicesCard = ({ service, delay, theme }: ServicesCardProps) => {
         opacity: { duration: 0.5, delay },
       }}
       viewport={{ once: true }}
-      className="h-[17rem] w-full rounded-xl bg-white800 px-6 py-7 shadow-lg dark:bg-black300 xl:w-full"
+      className="h-[19rem] w-full rounded-xl bg-white800 px-6 py-7 shadow-lg dark:bg-black300 xl:w-full"
       onMouseOver={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
     >
