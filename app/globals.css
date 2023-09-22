@@ -8,13 +8,13 @@
 
 .input_light:focus,
 .textarea_light:focus {
-  outline: 2px solid #0252cd !important;
+  @apply outline-2 border-primaryLight;
   box-shadow: none !important;
 }
 
 .input_dark:focus,
 .textarea_dark:focus {
-  outline: 2px solid #428dff !important;
+  @apply outline-2 border-primaryDark;
   box-shadow: none !important;
 }
 
