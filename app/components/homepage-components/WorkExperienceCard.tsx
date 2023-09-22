@@ -17,6 +17,7 @@ const WorkExperienceCard = ({ job, delay }: WorkExperienceCardProps) => {
   const { theme } = useTheme();
 
   const [imageSrc, setImageSrc] = useState<string>(job.image.image);
+  const experienceUnit = job.duration > 1 ? "s" : "";
 
   useEffect(() => {
     if (theme === "dark") {
@@ -61,7 +62,7 @@ const WorkExperienceCard = ({ job, delay }: WorkExperienceCardProps) => {
         <p className="mt-4 text-2xl font-semibold xl:mt-0">{job.title}</p>
         <p className="">
           {job.position} - {job.duration} {job.durationUnit}
-          {job.duration > 1 && "s"} Experience
+          {experienceUnit} Experience
         </p>
       </div>
     </motion.div>

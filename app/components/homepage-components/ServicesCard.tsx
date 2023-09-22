@@ -16,17 +16,12 @@ const ServicesCard = ({ service, delay }: ServicesCardProps) => {
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
   const [backgroundColor, setBackgroundColor] = useState("");
   const [hoverBackgroundColour, setHoverBackgroundColour] = useState("");
-  let imageSrc;
 
-  if (isMouseOver) {
-    if (theme === "light") {
-      imageSrc = service.imageHoverLight;
-    } else {
-      imageSrc = service.imageHoverDark;
-    }
-  } else {
-    imageSrc = service.imageSrc;
-  }
+  const imageSrc = isMouseOver
+    ? theme === "light"
+      ? service.imageHoverLight
+      : service.imageHoverDark
+    : service.imageSrc;
 
   useEffect(() => {
     if (theme === "light") {
