@@ -3,6 +3,7 @@
 import { useRef, useState, SetStateAction, Dispatch, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { ZodError } from "zod";
+import { toast } from "react-toastify";
 
 import SendMessageForm from "./SendMessageForm";
 
@@ -13,6 +14,8 @@ interface SendMessageProps {
 }
 
 const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
+  const sendFailure = () => toast.error("Unable to send message at this time");
+  const [isSending, setIsSending] = useState(false);
   const [errorList, setErrorList] = useState("");
   const [formData, setFormData] = useState({
     user_name: "",
@@ -29,6 +32,7 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSending(true);
 
     try {
       emailFormSchema.parse({
@@ -46,13 +50,12 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
           process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
         );
         if (response.status === 200) {
-          console.log("Email successfully sent!");
           setShowSuccess(true);
         } else {
-          console.error(`Failed to send email: ${response.text}`);
+          sendFailure();
         }
       } else {
-        console.error("Form reference is null.");
+        sendFailure();
       }
     } catch (error) {
       if (error instanceof ZodError) {
@@ -62,6 +65,7 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
         console.error("An unknown error occurred:", error);
       }
     }
+    setIsSending(false);
   };
 
   return (
@@ -72,6 +76,7 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
       errorList={errorList}
       formData={formData}
       setFormData={setFormData}
+      isSending={isSending}
     />
   );
 };
