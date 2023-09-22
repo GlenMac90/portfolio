@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 import { ServiceProvidedType } from "@/types";
@@ -14,8 +14,6 @@ interface ServicesCardProps {
 const ServicesCard = ({ service, delay }: ServicesCardProps) => {
   const { theme } = useTheme();
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
-  const [backgroundColor, setBackgroundColor] = useState("");
-  const [hoverBackgroundColour, setHoverBackgroundColour] = useState("");
 
   const imageSrc = isMouseOver
     ? theme === "light"
@@ -23,35 +21,21 @@ const ServicesCard = ({ service, delay }: ServicesCardProps) => {
       : service.imageHoverDark
     : service.imageSrc;
 
-  useEffect(() => {
-    if (theme === "light") {
-      setHoverBackgroundColour("#0252CD");
-      setBackgroundColor("#F3F8FF");
-    } else {
-      setHoverBackgroundColour("#428DFF");
-      setBackgroundColor("#192333");
-    }
-  }, [theme]);
-
   return (
     <motion.div
       initial={{
-        x: "25%",
         opacity: 0,
       }}
-      animate={{ x: 0, opacity: 1, backgroundColor }}
-      whileHover={{
-        y: "10%",
-        transition: { duration: 0.2 },
-        backgroundColor: hoverBackgroundColour,
-        boxShadow: "30px 30px 40px #0252cd50",
-      }}
+      animate={{ opacity: 1 }}
       transition={{
-        x: { duration: 0.5, delay },
-        opacity: { duration: 0.5, delay },
+        opacity: { duration: 0.3, delay },
       }}
       viewport={{ once: true }}
-      className="h-[19rem] w-full rounded-xl bg-white800 px-6 py-7 shadow-lg dark:bg-black300 xl:w-full"
+      className={`h-[19rem] w-full rounded-xl px-6 py-7 shadow-lg transition duration-300 xl:w-full ${
+        isMouseOver
+          ? "translate-y-8 bg-primaryLight shadow-servicesCard dark:bg-primaryDark"
+          : "bg-white800 dark:bg-black300"
+      }`}
       onMouseOver={() => setIsMouseOver(true)}
       onMouseLeave={() => setIsMouseOver(false)}
     >

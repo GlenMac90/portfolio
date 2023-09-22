@@ -51,8 +51,7 @@ const WorkExperienceCard = ({ job, delay }: WorkExperienceCardProps) => {
       }}
       viewport={{ once: true }}
       className={`flex flex-col rounded-xl border border-white800 bg-white900 p-9 dark:border-0 dark:bg-black200 xl:flex-row ${
-        isMouseOver &&
-        "shadow-[-10px_10px_15px_rgba(0,0,0,0.1)] dark:bg-black300"
+        isMouseOver && "shadow-lg dark:bg-black300"
       }`}
       onMouseOver={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

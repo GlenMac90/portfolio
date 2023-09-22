@@ -8,16 +8,10 @@
 
 .input_light:focus,
 .textarea_light:focus {
-  @apply outline-2 border-primaryLight;
-  box-shadow: none !important;
+  @apply outline-2 border-primaryLight shadow-none;
 }
 
 .input_dark:focus,
 .textarea_dark:focus {
-  @apply outline-2 border-primaryDark;
-  box-shadow: none !important;
-}
-
-.shadow_left_bottom {
-  box-shadow: "-15px 15px 20px rgba(0, 0, 0, 0.2)"; /* Adjust values as needed */
+  @apply outline-2 border-primaryDark shadow-none;
 }

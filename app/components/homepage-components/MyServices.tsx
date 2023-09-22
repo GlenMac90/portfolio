@@ -39,7 +39,7 @@ const MyServices = ({ services }: MyServicesProps) => {
             <ServicesCard
               key={service.title}
               service={service}
-              delay={index * 0.3}
+              delay={index * 0.2}
             />
           ))}
         </div>
