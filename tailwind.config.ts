@@ -10,11 +10,13 @@ module.exports = {
     extend: {
       boxShadow: {
         cardShadow: "-25px 47px 66px 0px",
+        servicesCard: "30px 30px 40px #0252cd50",
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
+        gradientRadial: "radial-gradient(var(--tw-gradient-stops))",
+        gradientConic:
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        initial: "conic-gradient(#0252cd, #0252cd54)",
       },
       colors: {
         primaryLight: "#0252CD",
