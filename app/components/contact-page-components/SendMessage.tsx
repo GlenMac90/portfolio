@@ -32,8 +32,6 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSending(true);
-
     try {
       emailFormSchema.parse({
         user_name: e.currentTarget.user_name.value,
@@ -43,6 +41,7 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
       });
 
       if (form.current) {
+        setIsSending(true);
         const response = await emailjs.sendForm(
           process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID as string,
           process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID as string,
