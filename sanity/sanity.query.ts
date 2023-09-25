@@ -11,7 +11,7 @@ export async function getCaseStudy() {
       myRole,
       startDate,
       endDate,
-      "techStackCaseStudy": techStackCaseStudy[]{
+      techStackCaseStudy[]{
         title,
         "image": image.asset->url
       },      
