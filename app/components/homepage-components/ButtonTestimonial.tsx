@@ -1,4 +1,12 @@
-const RightButton = () => {
+interface ButtonTestimonialProps {
+  direction: "left" | "right";
+}
+
+const ButtonTestimonial = ({ direction }: ButtonTestimonialProps) => {
+  const arrowDirection =
+    direction === "left"
+      ? "M19 12H5M5 12L12 19M5 12L12 5"
+      : "M5 12H19M19 12L12 5M19 12L12 19";
   return (
     <svg
       width="24"
@@ -7,10 +15,10 @@ const RightButton = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="arrow-right">
+      <g id="arrow-left">
         <path
           id="Icon"
-          d="M5 12H19M19 12L12 5M19 12L12 19"
+          d={arrowDirection}
           className="stroke-[#151E2C] dark:stroke-[#F3F8FF]"
           stroke-width="2"
           stroke-linecap="round"
@@ -21,4 +29,4 @@ const RightButton = () => {
   );
 };
 
-export default RightButton;
+export default ButtonTestimonial;

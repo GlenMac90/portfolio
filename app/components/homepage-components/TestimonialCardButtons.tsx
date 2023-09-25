@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 
 import { ButtonsProps } from "@/utils/interfaces";
-import LeftButton from "./LeftButton";
-import RightButton from "./RightButton";
+import ButtonTestimonial from "./ButtonTestimonial";
 
 const TestimonialCardButtons = ({
   additionalClassesLeft,
@@ -22,7 +21,7 @@ const TestimonialCardButtons = ({
         onClick={previous}
         className={`absolute ${additionalClassesLeft} self-center rounded-full bg-white900 p-4 dark:bg-black200 `}
       >
-        <LeftButton />
+        <ButtonTestimonial direction="left" />
       </motion.button>
 
       <motion.button
@@ -33,7 +32,7 @@ const TestimonialCardButtons = ({
         onClick={next}
         className={`absolute ${additionalClassesRight} rounded-full bg-white900 p-4 dark:bg-black200`}
       >
-        <RightButton />
+        <ButtonTestimonial direction="right" />
       </motion.button>
     </>
   );
