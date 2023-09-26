@@ -1,53 +1,40 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, MouseEvent, useState } from "react";
-interface SuccessScreenProps {
-  setShowSuccess: Dispatch<SetStateAction<boolean>>;
-}
 
-const SuccessScreen = ({ setShowSuccess }: SuccessScreenProps) => {
-  const [closeAnimation, setCloseAnimation] = useState(false);
-  const preventCloseOnInnerClick = (e: MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
-  };
+import { customGraphic } from "@/public/svg-icons";
 
-  const handleCloseSuccessScreen = () => {
-    setCloseAnimation(true);
-
-    setTimeout(() => {
-      setShowSuccess(false);
-      setCloseAnimation(false);
-    }, 400);
-  };
-
+const SuccessScreen = () => {
   return (
-    <div
-      className="fixed z-30 flex h-screen w-screen justify-center bg-black/30 px-4 pt-20 md:pt-28"
-      onClick={handleCloseSuccessScreen}
-    >
-      <motion.div
+    <main className="flex h-screen w-screen flex-col items-center justify-between bg-white800 pt-20 dark:bg-black300">
+      <motion.section
         initial={{ scale: 0 }}
-        animate={{ scale: closeAnimation ? 0 : 1 }}
-        className="z-40 flex h-fit w-full max-w-xl flex-col items-center justify-between rounded-xl bg-white900 p-6 dark:bg-black300 md:p-9"
-        onClick={preventCloseOnInnerClick}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.2 }}
+        className="fixed mx-4 flex max-w-md flex-col items-center gap-4 rounded-xl bg-white900 p-6 dark:bg-black200 md:p-10"
       >
         <p className="text-center text-2xl font-semibold text-black200 dark:text-white900 md:text-3xl">
           Thank you for getting in contact
         </p>
-        <div className="flex flex-col items-center gap-6">
-          <p className="text-center text-2xl font-semibold text-black200 dark:text-white900 md:text-3xl">
-            I will get back for you as soon as possible
-          </p>
-          <button
-            className="w-full max-w-[15rem] rounded-full bg-primaryLight py-4 font-semibold text-white900 dark:bg-primaryDark md:text-xl"
-            onClick={handleCloseSuccessScreen}
-          >
-            Close
-          </button>
-        </div>
-      </motion.div>
-    </div>
+        <Image
+          src={customGraphic}
+          alt="Image of man working at computer"
+          height={250}
+          width={350}
+        />
+        <p className="text-center text-2xl font-semibold text-black200 dark:text-white900 md:text-3xl">
+          I will get back to you as soon as possible
+        </p>
+        <Link
+          href="/"
+          className="flex w-full justify-center rounded-full bg-primaryLight py-4 text-white900 dark:bg-primaryDark md:text-lg"
+        >
+          Return to Homepage
+        </Link>
+      </motion.section>
+    </main>
   );
 };
 

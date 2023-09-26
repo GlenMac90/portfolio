@@ -63,7 +63,9 @@ const Navbar = () => {
     <>
       <nav
         className={`fixed z-50 flex h-16 w-full items-center justify-between bg-white800 px-6 dark:bg-black300 md:h-24 md:px-20 ${
-          pathname.startsWith("/studio") && "hidden"
+          pathname.startsWith("/studio") || pathname === "/success-screen"
+            ? "hidden"
+            : ""
         }`}
       >
         <div className="initial_background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9">

@@ -27,8 +27,7 @@ const Hero = () => {
           setShowTick(false);
         }, 3000);
       })
-      .catch((err) => {
-        console.error("Could not copy text: ", err);
+      .catch(() => {
         copyFailure();
       });
   }, []);

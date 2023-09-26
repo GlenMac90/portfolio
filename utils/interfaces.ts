@@ -5,6 +5,13 @@ import {
   WorkProcessSymbolType,
 } from "@/types";
 
+export interface ButtonsProps {
+  additionalClassesLeft: string;
+  additionalClassesRight: string;
+  previous: () => void;
+  next: () => void;
+}
+
 export interface MockupProps {
   imageSrc: string;
   isHomepage?: boolean;

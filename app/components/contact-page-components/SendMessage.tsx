@@ -3,6 +3,7 @@
 import { useRef, useState, SetStateAction, Dispatch, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { ZodError } from "zod";
+import { toast } from "react-toastify";
 
 import SendMessageForm from "./SendMessageForm";
 
@@ -13,6 +14,8 @@ interface SendMessageProps {
 }
 
 const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
+  const sendFailure = () => toast.error("Unable to send message at this time");
+  const [isSending, setIsSending] = useState(false);
   const [errorList, setErrorList] = useState("");
   const [formData, setFormData] = useState({
     user_name: "",
@@ -29,7 +32,6 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     try {
       emailFormSchema.parse({
         user_name: e.currentTarget.user_name.value,
@@ -39,6 +41,7 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
       });
 
       if (form.current) {
+        setIsSending(true);
         const response = await emailjs.sendForm(
           process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID as string,
           process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID as string,
@@ -46,13 +49,14 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
           process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
         );
         if (response.status === 200) {
-          console.log("Email successfully sent!");
           setShowSuccess(true);
         } else {
-          console.error(`Failed to send email: ${response.text}`);
+          sendFailure();
+          setIsSending(false);
         }
       } else {
-        console.error("Form reference is null.");
+        sendFailure();
+        setIsSending(false);
       }
     } catch (error) {
       if (error instanceof ZodError) {
@@ -72,6 +76,7 @@ const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
       errorList={errorList}
       formData={formData}
       setFormData={setFormData}
+      isSending={isSending}
     />
   );
 };

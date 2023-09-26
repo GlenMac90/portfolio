@@ -12,7 +12,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <div className="flex max-w-xl shrink-0 grow-0 basis-full flex-col p-2 lg:max-w-5xl lg:flex-row">
+    <article className="flex max-w-xl shrink-0 grow-0 basis-full flex-col p-2 lg:max-w-5xl lg:flex-row">
       <Image
         src={testimonial.image.image}
         alt="Image of testimonial giver"
@@ -51,7 +51,7 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           {testimonial.jobDescription}
         </p>
       </div>
-    </div>
+    </article>
   );
 };
 

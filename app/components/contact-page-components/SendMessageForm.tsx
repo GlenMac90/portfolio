@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { RefObject, SetStateAction, FormEvent, Dispatch } from "react";
 
 import FormInput from "./FormInput";
+import SendButtonLoader from "./SendButtonLoader";
 import Button from "../Button";
 import { inputFields } from "@/constants";
 
@@ -20,6 +21,7 @@ interface SendMessageFormProps {
   errorList: string;
   formData: FormData;
   setFormData: Dispatch<SetStateAction<FormData>>;
+  isSending: boolean;
 }
 const SendMessageForm = ({
   form,
@@ -28,7 +30,10 @@ const SendMessageForm = ({
   errorList,
   formData,
   setFormData,
+  isSending,
 }: SendMessageFormProps) => {
+  const buttonText = isSending ? "Sending" : "Send";
+
   return (
     <motion.form
       initial={{ y: "15%", opacity: 0 }}
@@ -64,7 +69,8 @@ const SendMessageForm = ({
           additionalStyles="mt-10 flex h-[3.75rem] w-full justify-center text-sm lg:mt-11 lg:h-[4.3rem] lg:w-[11.75rem] lg:text-lg"
           value="Send"
         >
-          Send
+          {buttonText}
+          {isSending && <SendButtonLoader />}
         </Button>
       </motion.div>
     </motion.form>
