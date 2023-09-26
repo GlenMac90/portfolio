@@ -7,9 +7,9 @@ const mobileMockupStyles = {
   homepageParent: "lg:h-[17rem] lg:w-[8.7rem] lg:-translate-x-6",
   otherPageParent: "sm:h-[17rem] sm:w-[8.6rem] sm:-translate-x-6",
   homepageChild:
-    "lg:left-2 lg:top-2 lg:h-[16.3rem] lg:w-[7.5rem] lg:rounded-2xl",
+    "left-[5%] rounded-[10%] h-[95%] w-[90%] top-[0.2rem] lg:left-2 lg:top-2 lg:h-[16.3rem] lg:w-[7.5rem] lg:rounded-2xl",
   otherPageChild:
-    "sm:left-[0.25rem] sm:top-2 sm:h-[15.5rem] sm:w-[8rem] sm:rounded-2xl",
+    "left-[9%] rounded-[10%] h-[95%] w-[83%] top-[0.2rem] sm:left-[0.6rem] sm:top-2 sm:h-[15.6rem] sm:w-[7rem] sm:rounded-2xl",
 };
 
 const MobileMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
@@ -19,7 +19,7 @@ const MobileMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
   const childDivSytles = isHomepage ? homepageChild : otherPageChild;
   return (
     <div
-      className={`relative z-20 flex h-28 w-[4.2rem] -translate-x-4 self-end overflow-hidden ${parentDivStyles}`}
+      className={`relative z-20 flex min-w-[3rem] -translate-x-4 self-end overflow-hidden ${parentDivStyles}`}
     >
       <Image
         src={iphoneTemplate}
@@ -27,7 +27,7 @@ const MobileMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
         className="z-20 h-auto w-auto"
       />
       <div
-        className={`absolute left-[0.25rem] top-[0.2rem] z-10 flex h-[6.7rem] w-[3rem] overflow-hidden rounded-md ${childDivSytles}`}
+        className={`absolute z-10 flex overflow-hidden rounded-md ${childDivSytles}`}
       >
         <Image
           src={imageSrc}

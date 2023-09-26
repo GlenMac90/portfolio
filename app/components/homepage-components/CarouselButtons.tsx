@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ButtonsProps } from "@/utils/interfaces";
 import ButtonTestimonial from "./ButtonTestimonial";
 
-const TestimonialCardButtons = ({
+const CarouselButtons = ({
   additionalClassesLeft,
   additionalClassesRight,
   previous,
@@ -38,4 +38,4 @@ const TestimonialCardButtons = ({
   );
 };
 
-export default TestimonialCardButtons;
+export default CarouselButtons;
