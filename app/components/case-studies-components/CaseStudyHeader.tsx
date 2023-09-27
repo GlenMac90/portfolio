@@ -90,15 +90,17 @@ const CaseStudyHeader = ({ caseStudy }: MainCaseStudyProps) => {
         className="mt-6 flex lg:mt-[3.5rem]"
       >
         {caseStudy?.desktopImage && (
-          <div className="flex w-full max-w-[80%]">
-            <LaptopMockup imageSrc={caseStudy?.desktopImage.image} />
-          </div>
+          <LaptopMockup
+            imageSrc={caseStudy?.desktopImage.image}
+            isCaseStudyPage={true}
+          />
         )}
 
         {caseStudy?.mobileImage && (
-          <div className="flex w-full max-w-[20%]">
-            <MobileMockup imageSrc={caseStudy?.mobileImage.image} />
-          </div>
+          <MobileMockup
+            imageSrc={caseStudy?.mobileImage.image}
+            isCaseStudyPage={true}
+          />
         )}
       </motion.div>
 

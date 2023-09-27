@@ -56,7 +56,6 @@ const CaseStudyFigmaDesign = ({
                   <Image
                     src={process.image.image}
                     alt="symbol of working process"
-                    layout="responsive"
                     height={48}
                     width={48}
                     className="max-h-[2.25rem] max-w-[2.25rem] md:max-h-[3rem] md:max-w-[3rem]"

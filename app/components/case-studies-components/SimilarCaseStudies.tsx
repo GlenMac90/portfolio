@@ -4,8 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 import { CaseStudiesProps } from "@/utils/interfaces";
-import { SimilarProjectSmallCard } from ".";
 import CarouselButtons from "../homepage-components/CarouselButtons";
+import SimilarProjectsGallery from "./SimilarProjectsGallery";
 
 const SimilarCaseStudies = ({ caseStudies }: CaseStudiesProps) => {
   const [current, setCurrent] = useState(0);
@@ -34,21 +34,7 @@ const SimilarCaseStudies = ({ caseStudies }: CaseStudiesProps) => {
               Other Case Studies
             </p>
           </motion.div>
-
-          <div
-            className="mt-9 flex w-full max-w-xl flex-col gap-6 transition-transform duration-1000 ease-out md:mt-10 md:flex-row md:gap-0"
-            style={{ transform: `translateX(-${current * 100}%)` }}
-          >
-            {caseStudies?.map((caseStudy) => (
-              <div
-                key={caseStudy.title}
-                className="flex w-full px-4 md:shrink-0 md:grow-0 md:basis-full"
-              >
-                <SimilarProjectSmallCard caseStudy={caseStudy} />
-              </div>
-            ))}
-          </div>
-
+          <SimilarProjectsGallery caseStudies={caseStudies} current={current} />
           <CarouselButtons
             additionalClassesLeft="self-center left-0 top-[50%] hidden md:flex"
             additionalClassesRight="self-center right-0 top-[50%] hidden md:flex"

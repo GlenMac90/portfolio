@@ -14,7 +14,11 @@ const laptopMockupStyles = {
     "top-[1.7%] h-[92%] rounded-[3%] left-[8.8%] sm:top-[0.34rem] w-[83.1%] sm:left-[2.92rem] sm:h-[18rem] sm:w-[27.2rem] sm:rounded-t-lg",
 };
 
-const LaptopMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
+const LaptopMockup = ({
+  imageSrc,
+  isHomepage = false,
+  isCaseStudyPage = false,
+}: MockupProps) => {
   const { homepageParent, otherPageParent, homepageChild, otherPageChild } =
     laptopMockupStyles;
 
@@ -22,7 +26,11 @@ const LaptopMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
   const childDivSytles = isHomepage ? homepageChild : otherPageChild;
 
   return (
-    <div className={`relative z-30 flex ${parentDivStyles}`}>
+    <div
+      className={`relative z-30 flex ${parentDivStyles} ${
+        isCaseStudyPage && "w-full max-w-[80%]"
+      }`}
+    >
       <Image
         src={laptopTemplate}
         alt="laptop template image"

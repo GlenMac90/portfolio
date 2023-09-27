@@ -12,14 +12,20 @@ const mobileMockupStyles = {
     "left-[9%] rounded-[10%] h-[95%] w-[83%] top-[0.2rem] sm:left-[0.6rem] sm:top-2 sm:h-[15.6rem] sm:w-[7rem] sm:rounded-2xl",
 };
 
-const MobileMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
+const MobileMockup = ({
+  imageSrc,
+  isHomepage = false,
+  isCaseStudyPage = false,
+}: MockupProps) => {
   const { homepageParent, otherPageParent, homepageChild, otherPageChild } =
     mobileMockupStyles;
   const parentDivStyles = isHomepage ? homepageParent : otherPageParent;
   const childDivSytles = isHomepage ? homepageChild : otherPageChild;
   return (
     <div
-      className={`relative z-20 flex min-w-[3rem] -translate-x-4 self-end overflow-hidden ${parentDivStyles}`}
+      className={`relative z-20 flex min-w-[3rem] -translate-x-4 self-end overflow-hidden ${parentDivStyles} ${
+        isCaseStudyPage && "w-full max-w-[20%]"
+      }`}
     >
       <Image
         src={iphoneTemplate}
