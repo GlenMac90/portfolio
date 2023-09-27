@@ -12,13 +12,6 @@ export interface ButtonsProps {
   previous: () => void;
   next: () => void;
 }
-
-export interface MockupProps {
-  imageSrc: string;
-  isHomepage?: boolean;
-  isCaseStudyPage?: boolean;
-}
-
 export interface CaseStudyAndWorkProcessProps {
   caseStudy: CaseStudyType;
   workProcess: WorkProcessSymbolType[];
@@ -37,7 +30,7 @@ export interface CaseStudyShortened {
   title: string;
   techList: string[];
   description: string;
-  mobileImage: {
+  desktopMobileImage: {
     alt: string;
     image: string;
   };

@@ -48,7 +48,7 @@ export type CaseStudyType = {
     alt: string;
     image: string;
   };
-  mobileImage: {
+  desktopMobileImage: {
     alt: string;
     image: string;
   };

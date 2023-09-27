@@ -14,8 +14,6 @@ import {
   githubButtonLight,
   githubButtonDark,
 } from "@/public/svg-icons/case-study-icons";
-import LaptopMockup from "../LaptopMockup";
-import MobileMockup from "../MobileMockup";
 import Button from "../Button";
 import UnderlinedText from "../UnderlinedText";
 import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
@@ -87,19 +85,14 @@ const CaseStudyHeader = () => {
           opacity: { duration: 0.5, delay: 0.75 },
           scale: { duration: 0.2 },
         }}
-        className="mt-6 flex lg:mt-[3.5rem]"
+        className="mx-4 flex"
       >
-        {mainProject?.desktopImage && (
-          <LaptopMockup
-            imageSrc={mainProject?.desktopImage.image}
-            isCaseStudyPage={true}
-          />
-        )}
-
-        {mainProject?.mobileImage && (
-          <MobileMockup
-            imageSrc={mainProject?.mobileImage.image}
-            isCaseStudyPage={true}
+        {mainProject?.desktopMobileImage && (
+          <Image
+            src={mainProject?.desktopMobileImage.image}
+            alt="laptop and mobile image of project"
+            height={630}
+            width={630}
           />
         )}
       </motion.div>

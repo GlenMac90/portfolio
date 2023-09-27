@@ -30,7 +30,7 @@ const SimilarCaseStudies = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="flex flex-col px-4"
+            className="flex flex-col md:px-4"
           >
             <p className="text-xs font-semibold text-primaryLight dark:text-primaryDark md:text-sm">
               Projects
