@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import { SimilarProjectSmallCard } from ".";
 import { CaseStudyType } from "@/types";
 
