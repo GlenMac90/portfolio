@@ -4,6 +4,7 @@ import {
   SocialMediaIconType,
   WorkProcessSymbolType,
 } from "@/types";
+import { StaticImageData } from "next/image";
 
 export interface ButtonsProps {
   additionalClassesLeft: string;
@@ -57,5 +58,41 @@ export interface FeaturedProjectCardProps {
 
 export interface ContactPageBodyProps {
   contactDetails: ContactDetailType[];
+  socialMediaIcons: SocialMediaIconType[];
+}
+
+export interface CaseStudyBodyProps {
+  mainProject: CaseStudyType;
+  similarProjects: CaseStudyType[];
+  workProcess: WorkProcessSymbolType[];
+}
+export interface TechStackItem {
+  title: string;
+  image: string;
+}
+
+export interface CaseStudyCardProps {
+  mainProject: CaseStudyShortened;
+}
+
+export interface ChallengesAndLearningsCardProps {
+  image: StaticImageData;
+  additionalStyles?: string;
+  textColour: string;
+  text: string;
+  listText?: string[];
+}
+
+export interface SimilarProjectGalleryProps {
+  current: number;
+}
+
+export interface CaseStudyProps {
+  params: {
+    details: string;
+  };
+}
+
+export interface FooterLayoutProps {
   socialMediaIcons: SocialMediaIconType[];
 }

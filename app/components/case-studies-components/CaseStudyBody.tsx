@@ -1,6 +1,6 @@
 "use client";
 
-import { CaseStudyType, WorkProcessSymbolType } from "@/types";
+import { CaseStudyContext } from "@/app/contexts/CaseStudyContext";
 import {
   CaseStudyHeader,
   CaseStudyTechStack,
@@ -10,12 +10,7 @@ import {
 } from ".";
 import { GetInTouchCard } from "../homepage-components";
 import CaseStudyFigmaDesign from "./CaseStudyFigmaDesign";
-
-interface CaseStudyBodyProps {
-  mainProject: CaseStudyType;
-  similarProjects: CaseStudyType[];
-  workProcess: WorkProcessSymbolType[];
-}
+import { CaseStudyBodyProps } from "@/utils/interfaces";
 
 const CaseStudyBody = ({
   mainProject,
@@ -24,13 +19,17 @@ const CaseStudyBody = ({
 }: CaseStudyBodyProps) => {
   return (
     <main className="flex w-full flex-col items-center overflow-hidden bg-white800 dark:bg-black300">
-      <CaseStudyHeader caseStudy={mainProject} />
-      <CaseStudyTechStack caseStudy={mainProject} />
-      <CaseStudyProblemStatement caseStudy={mainProject} />
-      <CaseStudyFigmaDesign caseStudy={mainProject} workProcess={workProcess} />
-      <CaseStudyChallengesAndLearnings caseStudy={mainProject} />
-      <SimilarCaseStudies caseStudies={similarProjects} />
-      <GetInTouchCard />
+      <CaseStudyContext.Provider
+        value={{ mainProject, similarProjects, workProcess }}
+      >
+        <CaseStudyHeader />
+        <CaseStudyTechStack />
+        <CaseStudyProblemStatement />
+        <CaseStudyFigmaDesign />
+        <CaseStudyChallengesAndLearnings />
+        <SimilarCaseStudies />
+        <GetInTouchCard />
+      </CaseStudyContext.Provider>
     </main>
   );
 };
