@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import TestimonialCard from "./TestimonialCard";
-import TestimonialCardButtons from "./TestimonialCardButtons";
+import CarouselButtons from "./CarouselButtons";
 import UnderlinedText from "../UnderlinedText";
 import { TestimonialType } from "@/types";
 interface TestimonialsProps {
@@ -88,14 +88,14 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
               />
             ))}
           </motion.div>
-          <TestimonialCardButtons
+          <CarouselButtons
             additionalClassesLeft="right-[4.5rem] top-1 flex lg:hidden"
             additionalClassesRight="right-1 top-1 flex lg:hidden"
             previous={previous}
             next={next}
           />
         </div>
-        <TestimonialCardButtons
+        <CarouselButtons
           additionalClassesLeft="hidden lg:left-4 lg:top-[9rem] lg:flex"
           additionalClassesRight="hidden lg:right-4 lg:top-[9rem] lg:flex"
           previous={previous}

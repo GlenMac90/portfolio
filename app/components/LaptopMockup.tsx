@@ -5,15 +5,19 @@ import { laptopTemplate } from "@/public/png-icons/featured-projects-images";
 import { MockupProps } from "@/utils/interfaces";
 
 const laptopMockupStyles = {
-  homepageParent: "h-40 w-64 lg:h-[21rem] lg:w-[35rem]",
-  otherPageParent: "h-[10.6rem] w-[17.9rem] sm:h-[19.5rem] sm:w-[32.8rem]",
+  homepageParent: "min-h-40 min-w-64 lg:h-[21rem] lg:w-[35rem]",
+  otherPageParent:
+    "min-h-[10.6rem] min-w-[17.9rem] sm:h-[19.5rem] sm:w-[32.8rem]",
   homepageChild:
-    "top-[0.18rem] h-[9.22rem] rounded w-[13.26rem] left-[1.432rem] lg:left-12 lg:h-[19.25rem] lg:w-[28.9rem] lg:rounded-t-[10px] lg:top-[0.4rem]",
-  otherPageChild:
-    "top-[0.24rem] h-[9.66rem] rounded left-[1.61rem] sm:top-[0.34rem] w-[14.8rem] sm:left-[2.92rem] sm:h-[18rem] sm:w-[27.2rem] sm:rounded-t-lg",
+    "top-[1.7%] h-[92%] rounded-t-[3%] rounded w-[83%] left-[8.9%]",
+  otherPageChild: "top-[1.7%] h-[92%] rounded-[3%] left-[8.8%] w-[83.1%]",
 };
 
-const LaptopMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
+const LaptopMockup = ({
+  imageSrc,
+  isHomepage = false,
+  isCaseStudyPage = false,
+}: MockupProps) => {
   const { homepageParent, otherPageParent, homepageChild, otherPageChild } =
     laptopMockupStyles;
 
@@ -21,12 +25,17 @@ const LaptopMockup = ({ imageSrc, isHomepage = false }: MockupProps) => {
   const childDivSytles = isHomepage ? homepageChild : otherPageChild;
 
   return (
-    <div className={`relative z-30 flex ${parentDivStyles}`}>
+    <div
+      className={`relative z-30 flex ${parentDivStyles} ${
+        isCaseStudyPage && "w-full max-w-[80%]"
+      }`}
+    >
       <Image
         src={laptopTemplate}
         alt="laptop template image"
         width={555}
         height={329}
+        className="lg:w-[35rem]"
       />
       <div className={`absolute flex overflow-hidden ${childDivSytles}`}>
         <Image

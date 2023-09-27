@@ -15,7 +15,7 @@ const CaseStudyCard = ({ mainProject }: CaseStudyCardProps) => {
     >
       <div className="flex flex-col">
         <div
-          className="flex rounded-xl px-7 pt-12 sm:rounded-2xl sm:pt-20 "
+          className="flex rounded-xl px-7 pt-[12%] sm:rounded-2xl"
           style={{
             backgroundColor: mainProject?.backgroundColour,
           }}

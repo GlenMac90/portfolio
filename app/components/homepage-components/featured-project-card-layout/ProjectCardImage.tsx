@@ -9,14 +9,18 @@ const ProjectCardImage = ({
   return (
     <div
       className={`order-2 mt-6 flex
-      h-40 self-center lg:h-[21rem] ${
+      self-center lg:h-[21rem] ${
         reverseLayout
-          ? "lg:order-1 lg:-mr-32 lg:translate-x-[-10.5rem]"
+          ? "lg:order-1 lg:-mr-32 lg:translate-x-[-9rem]"
           : "lg:-ml-16 lg:translate-x-16"
       }`}
     >
-      <LaptopMockup imageSrc={project.desktopImage.image} isHomepage={true} />
-      <MobileMockup imageSrc={project.mobileImage.image} isHomepage={true} />
+      <div className="flex w-full max-w-[80%]">
+        <LaptopMockup imageSrc={project.desktopImage.image} isHomepage={true} />
+      </div>
+      <div className="flex w-full max-w-[20%]">
+        <MobileMockup imageSrc={project.mobileImage.image} isHomepage={true} />
+      </div>
     </div>
   );
 };

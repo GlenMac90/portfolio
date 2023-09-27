@@ -15,6 +15,7 @@ export interface ButtonsProps {
 export interface MockupProps {
   imageSrc: string;
   isHomepage?: boolean;
+  isCaseStudyPage?: boolean;
 }
 
 export interface CaseStudyAndWorkProcessProps {
