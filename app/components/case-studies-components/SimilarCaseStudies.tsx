@@ -3,18 +3,23 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import { CaseStudiesProps } from "@/utils/interfaces";
 import CarouselButtons from "../homepage-components/CarouselButtons";
 import SimilarProjectsGallery from "./SimilarProjectsGallery";
+import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
 
-const SimilarCaseStudies = ({ caseStudies }: CaseStudiesProps) => {
+const SimilarCaseStudies = () => {
+  const { similarProjects } = useCaseStudyContext();
   const [current, setCurrent] = useState(0);
 
   const previous = () =>
-    setCurrent((index) => (index === 0 ? caseStudies.length - 1 : index - 1));
+    setCurrent((index) =>
+      index === 0 ? similarProjects.length - 1 : index - 1
+    );
 
   const next = () =>
-    setCurrent((index) => (index === caseStudies.length - 1 ? 0 : index + 1));
+    setCurrent((index) =>
+      index === similarProjects.length - 1 ? 0 : index + 1
+    );
 
   return (
     <section className="flex w-full flex-col items-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">
@@ -34,7 +39,7 @@ const SimilarCaseStudies = ({ caseStudies }: CaseStudiesProps) => {
               Other Case Studies
             </p>
           </motion.div>
-          <SimilarProjectsGallery caseStudies={caseStudies} current={current} />
+          <SimilarProjectsGallery current={current} />
           <CarouselButtons
             additionalClassesLeft="self-center left-0 top-[50%] hidden md:flex"
             additionalClassesRight="self-center right-0 top-[50%] hidden md:flex"

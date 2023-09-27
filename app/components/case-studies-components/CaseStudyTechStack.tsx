@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { Tooltip } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import { MainCaseStudyProps } from "@/utils/interfaces";
+import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
+import { TechStackItem } from "@/utils/interfaces";
 
-const CaseStudyTechStack = ({ caseStudy }: MainCaseStudyProps) => {
-  const startDate = new Date(caseStudy?.startDate);
-  const endDate = new Date(caseStudy?.endDate);
+const CaseStudyTechStack = () => {
+  const { mainProject } = useCaseStudyContext();
+  const startDate = new Date(mainProject?.startDate);
+  const endDate = new Date(mainProject?.endDate);
   return (
     <section className="flex w-full flex-col bg-white900 px-6 py-10 dark:bg-black200 md:pb-[4.5rem] md:pt-[3.3rem]">
       <motion.div
@@ -21,7 +23,7 @@ const CaseStudyTechStack = ({ caseStudy }: MainCaseStudyProps) => {
             My Role
           </p>
           <p className="mt-1 text-xl font-medium text-black200 dark:text-white900 md:text-2xl">
-            {caseStudy?.myRole}
+            {mainProject?.myRole}
           </p>
         </div>
         <div className="flex flex-col">
@@ -63,32 +65,34 @@ const CaseStudyTechStack = ({ caseStudy }: MainCaseStudyProps) => {
           Tech Stack
         </motion.p>
         <div className="mt-6 flex max-w-md flex-wrap items-center justify-center gap-5 self-center md:mt-11 md:max-w-3xl md:justify-center md:gap-9">
-          {caseStudy?.techStackCaseStudy?.map((tech, index) => (
-            <motion.div
-              initial={{ y: "25%", opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              whileHover={{ scale: 1.2 }}
-              transition={{
-                y: { duration: 0.5, delay: index * 0.1 },
-                opacity: { duration: 0.5, delay: index * 0.1 },
-                scale: { duration: 0.1 },
-              }}
-              viewport={{ once: true }}
-              key={tech.title}
-            >
-              <Tooltip content={tech.title}>
-                <div className="flex h-[3rem] w-[3rem] cursor-pointer items-center rounded-full bg-white800 p-3 dark:bg-black300 sm:h-[5.75rem] sm:w-[5.75rem] sm:p-6">
-                  <Image
-                    src={tech.image}
-                    className="h-[1.5rem] w-[1.5rem] sm:h-[3rem] sm:w-[3rem]"
-                    alt="image of tech stack used"
-                    width={48}
-                    height={48}
-                  />
-                </div>
-              </Tooltip>
-            </motion.div>
-          ))}
+          {mainProject?.techStackCaseStudy?.map(
+            (tech: TechStackItem, index: number) => (
+              <motion.div
+                initial={{ y: "25%", opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                whileHover={{ scale: 1.2 }}
+                transition={{
+                  y: { duration: 0.5, delay: index * 0.1 },
+                  opacity: { duration: 0.5, delay: index * 0.1 },
+                  scale: { duration: 0.1 },
+                }}
+                viewport={{ once: true }}
+                key={tech.title}
+              >
+                <Tooltip content={tech.title}>
+                  <div className="flex h-[3rem] w-[3rem] cursor-pointer items-center rounded-full bg-white800 p-3 dark:bg-black300 sm:h-[5.75rem] sm:w-[5.75rem] sm:p-6">
+                    <Image
+                      src={tech.image}
+                      className="h-[1.5rem] w-[1.5rem] sm:h-[3rem] sm:w-[3rem]"
+                      alt="image of tech stack used"
+                      width={48}
+                      height={48}
+                    />
+                  </div>
+                </Tooltip>
+              </motion.div>
+            )
+          )}
         </div>
       </div>
     </section>

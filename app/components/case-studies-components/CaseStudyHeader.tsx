@@ -14,15 +14,15 @@ import {
   githubButtonLight,
   githubButtonDark,
 } from "@/public/svg-icons/case-study-icons";
-
-import { MainCaseStudyProps } from "@/utils/interfaces";
 import LaptopMockup from "../LaptopMockup";
 import MobileMockup from "../MobileMockup";
-
 import Button from "../Button";
 import UnderlinedText from "../UnderlinedText";
+import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
 
-const CaseStudyHeader = ({ caseStudy }: MainCaseStudyProps) => {
+const CaseStudyHeader = () => {
+  const { mainProject } = useCaseStudyContext();
+
   const [icons, setIcons] = useState({
     demoButtonIcon: demoButtonLight,
     arrowIcon: arrowlight,
@@ -65,15 +65,15 @@ const CaseStudyHeader = ({ caseStudy }: MainCaseStudyProps) => {
         }}
         className="mx-2 mt-2.5 flex flex-col justify-center lg:mt-7 lg:flex-row"
       >
-        {caseStudy && (
+        {mainProject && (
           <UnderlinedText
-            text={caseStudy?.title}
+            text={mainProject?.title}
             additionalStyles="flex self-center lg:mr-3"
           />
         )}
         <p className="mt-0 text-center text-4xl font-bold text-black200 dark:text-white900 md:mt-4 md:text-[3rem] lg:mt-0">
           {" "}
-          - {caseStudy?.description}
+          - {mainProject?.description}
         </p>
       </motion.div>
 
@@ -81,7 +81,7 @@ const CaseStudyHeader = ({ caseStudy }: MainCaseStudyProps) => {
         initial={{ y: "10%", opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.1 }}
         transition={{
           y: { duration: 0.5, delay: 0.75 },
           opacity: { duration: 0.5, delay: 0.75 },
@@ -89,16 +89,16 @@ const CaseStudyHeader = ({ caseStudy }: MainCaseStudyProps) => {
         }}
         className="mt-6 flex lg:mt-[3.5rem]"
       >
-        {caseStudy?.desktopImage && (
+        {mainProject?.desktopImage && (
           <LaptopMockup
-            imageSrc={caseStudy?.desktopImage.image}
+            imageSrc={mainProject?.desktopImage.image}
             isCaseStudyPage={true}
           />
         )}
 
-        {caseStudy?.mobileImage && (
+        {mainProject?.mobileImage && (
           <MobileMockup
-            imageSrc={caseStudy?.mobileImage.image}
+            imageSrc={mainProject?.mobileImage.image}
             isCaseStudyPage={true}
           />
         )}

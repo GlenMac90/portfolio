@@ -1,11 +1,7 @@
 import Link from "next/link";
 
-import { CaseStudyShortened } from "@/utils/interfaces";
+import { CaseStudyCardProps } from "@/utils/interfaces";
 import LaptopMockup from "../LaptopMockup";
-
-interface CaseStudyCardProps {
-  mainProject: CaseStudyShortened;
-}
 
 const CaseStudyCard = ({ mainProject }: CaseStudyCardProps) => {
   return (

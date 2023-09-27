@@ -3,13 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import { CaseStudyAndWorkProcessProps } from "@/utils/interfaces";
+import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
 import { reorderWorkProcesses } from "@/utils";
 
-const CaseStudyFigmaDesign = ({
-  caseStudy,
-  workProcess,
-}: CaseStudyAndWorkProcessProps) => {
+const CaseStudyFigmaDesign = () => {
+  const { mainProject, workProcess } = useCaseStudyContext();
   const orderedWorkProcess = reorderWorkProcesses(workProcess);
   return (
     <>
@@ -19,7 +17,7 @@ const CaseStudyFigmaDesign = ({
         </div>
         <div className="w-full">
           <Image
-            src={caseStudy.figmaBannerImage.image}
+            src={mainProject.figmaBannerImage.image}
             alt="image of figma design"
             layout="responsive"
             className="w-full"

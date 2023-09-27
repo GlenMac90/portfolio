@@ -2,16 +2,12 @@ import { useState, useEffect } from "react";
 
 import { SimilarProjectSmallCard } from ".";
 import { CaseStudyType } from "@/types";
+import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
+import { SimilarProjectGalleryProps } from "@/utils/interfaces";
 
-interface SimilarProjectGalleryProps {
-  caseStudies: CaseStudyType[];
-  current: number;
-}
+const SimilarProjectsGallery = ({ current }: SimilarProjectGalleryProps) => {
+  const { similarProjects } = useCaseStudyContext();
 
-const SimilarProjectsGallery = ({
-  caseStudies,
-  current,
-}: SimilarProjectGalleryProps) => {
   const [isMdScreen, setIsMdScreen] = useState(false);
 
   useEffect(() => {
@@ -34,7 +30,7 @@ const SimilarProjectsGallery = ({
       className="mt-9 flex w-full max-w-xl flex-col gap-6 transition-transform duration-0 md:mt-10 md:flex-row md:gap-0 md:duration-1000 md:ease-out"
       style={{ transform: carouselTranslateValue }}
     >
-      {caseStudies?.map((caseStudy) => (
+      {similarProjects?.map((caseStudy: CaseStudyType) => (
         <div
           key={caseStudy.title}
           className="flex w-full px-4 md:shrink-0 md:grow-0 md:basis-full"
