@@ -6,10 +6,8 @@ import { MockupProps } from "@/utils/interfaces";
 const mobileMockupStyles = {
   homepageParent: "lg:h-[17rem] lg:w-[8.7rem] lg:-translate-x-6",
   otherPageParent: "sm:h-[17rem] sm:w-[8.6rem] sm:-translate-x-6",
-  homepageChild:
-    "left-[5%] rounded-[10%] h-[95%] w-[90%] top-[0.2rem] lg:left-2 lg:top-2 lg:h-[16.3rem] lg:w-[7.5rem] lg:rounded-2xl",
-  otherPageChild:
-    "left-[9%] rounded-[10%] h-[95%] w-[83%] top-[0.2rem] sm:left-[0.6rem] sm:top-2 sm:h-[15.6rem] sm:w-[7rem] sm:rounded-2xl",
+  homepageChild: "left-[5%] rounded-[13%] h-[95%] w-[90%] top-[3.5%]",
+  otherPageChild: "left-[9%] rounded-[13%] h-[95%] w-[83%] top-[3.5%]",
 };
 
 const MobileMockup = ({

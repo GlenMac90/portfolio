@@ -9,9 +9,8 @@ const laptopMockupStyles = {
   otherPageParent:
     "min-h-[10.6rem] min-w-[17.9rem] sm:h-[19.5rem] sm:w-[32.8rem]",
   homepageChild:
-    "top-[1.7%] h-[92%] rounded-t-[3%] rounded w-[83%] left-[8.9%] lg:left-[3.1rem] lg:h-[19.25rem] lg:w-[28.78rem] lg:rounded-t-[10px] lg:top-[0.35rem]",
-  otherPageChild:
-    "top-[1.7%] h-[92%] rounded-[3%] left-[8.8%] sm:top-[0.34rem] w-[83.1%] sm:left-[2.92rem] sm:h-[18rem] sm:w-[27.2rem] sm:rounded-t-lg",
+    "top-[1.7%] h-[92%] rounded-t-[3%] rounded w-[83%] left-[8.9%]",
+  otherPageChild: "top-[1.7%] h-[92%] rounded-[3%] left-[8.8%] w-[83.1%]",
 };
 
 const LaptopMockup = ({
@@ -36,6 +35,7 @@ const LaptopMockup = ({
         alt="laptop template image"
         width={555}
         height={329}
+        className="lg:w-[35rem]"
       />
       <div className={`absolute flex overflow-hidden ${childDivSytles}`}>
         <Image
