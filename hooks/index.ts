@@ -16,7 +16,7 @@ export async function caseStudyInfoHomepage() {
     title: study.title,
     techList: study.techList,
     description: study.description,
-    mobileImage: study.mobileImage,
+    desktopMobileImage: study.desktopMobileImage,
     desktopImage: study.desktopImage,
   }));
 

@@ -33,7 +33,7 @@ const SimilarProjectsGallery = ({ current }: SimilarProjectGalleryProps) => {
       {similarProjects?.map((caseStudy: CaseStudyType) => (
         <div
           key={caseStudy.title}
-          className="flex w-full px-4 md:shrink-0 md:grow-0 md:basis-full"
+          className="flex w-full md:shrink-0 md:grow-0 md:basis-full md:px-4"
         >
           <SimilarProjectSmallCard caseStudy={caseStudy} />
         </div>

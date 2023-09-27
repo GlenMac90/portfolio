@@ -4,9 +4,16 @@ import Link from "next/link";
 import { arrow } from "@/public/svg-icons";
 import { FeaturedProjectCardProps } from "@/utils/interfaces";
 
-const ProjectCardText = ({ project }: FeaturedProjectCardProps) => {
+const ProjectCardText = ({
+  project,
+  reverseLayout,
+}: FeaturedProjectCardProps) => {
   return (
-    <div className="order-1 flex flex-col">
+    <div
+      className={`order-1 flex flex-col px-8 lg:w-2/5 lg:px-0 ${
+        reverseLayout ? "lg:pr-[4rem]" : "lg:pl-[4rem]"
+      }`}
+    >
       <div className="flex flex-col">
         <div className="flex flex-col md:flex-row">
           <p className="mr-1 text-[2rem] font-bold text-white900 lg:text-[3rem]">

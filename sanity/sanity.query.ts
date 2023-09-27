@@ -1,6 +1,8 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
 
+const revalidate = 10;
+
 export async function getCaseStudy() {
   return client.fetch(
     groq`*[_type == "caseStudy"]{
@@ -23,10 +25,11 @@ export async function getCaseStudy() {
       figmaBannerImage {alt, "image": asset->url},
       techList,
       desktopImage {alt, "image": asset->url},
-      mobileImage {alt, "image": asset->url},
+      desktopMobileImage {alt, "image": asset->url},
       backgroundColour,
       reverseLayout
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
 

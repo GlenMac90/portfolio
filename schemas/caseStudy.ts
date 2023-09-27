@@ -100,8 +100,8 @@ const caseStudy = {
       type: "image",
     },
     {
-      name: "mobileImage",
-      title: "Mobile View Image",
+      name: "desktopMobileImage",
+      title: "Desktop & Mobile View Image",
       type: "image",
     },
     {

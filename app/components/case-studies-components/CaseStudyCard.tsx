@@ -1,7 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { CaseStudyCardProps } from "@/utils/interfaces";
-import LaptopMockup from "../LaptopMockup";
 
 const CaseStudyCard = ({ mainProject }: CaseStudyCardProps) => {
   return (
@@ -17,7 +17,12 @@ const CaseStudyCard = ({ mainProject }: CaseStudyCardProps) => {
           }}
         >
           {mainProject?.desktopImage.image && (
-            <LaptopMockup imageSrc={mainProject?.desktopImage.image} />
+            <Image
+              src={mainProject?.desktopImage.image}
+              alt="Laptop preview of website"
+              height={600}
+              width={600}
+            />
           )}
         </div>
         <div className="flex w-full flex-col px-6">

@@ -1,26 +1,27 @@
 import { FeaturedProjectCardProps } from "@/utils/interfaces";
-import LaptopMockup from "../../LaptopMockup";
-import MobileMockup from "../../MobileMockup";
+import Image from "next/image";
 
 const ProjectCardImage = ({
   project,
   reverseLayout,
 }: FeaturedProjectCardProps) => {
+  const imageSrc = project.desktopMobileImage.image;
   return (
     <div
-      className={`order-2 mt-6 flex
-      self-center lg:h-[21rem] ${
+      className={`order-2 flex self-center
+      px-8 lg:mt-6 lg:h-auto lg:w-3/5  lg:-translate-y-8 lg:px-0 ${
         reverseLayout
-          ? "lg:order-1 lg:-mr-32 lg:translate-x-[-9rem]"
-          : "lg:-ml-16 lg:translate-x-16"
+          ? "lg:order-1 lg:translate-x-[-4.5rem]"
+          : "lg:translate-x-8"
       }`}
     >
-      <div className="flex w-full max-w-[80%]">
-        <LaptopMockup imageSrc={project.desktopImage.image} isHomepage={true} />
-      </div>
-      <div className="flex w-full max-w-[20%]">
-        <MobileMockup imageSrc={project.mobileImage.image} isHomepage={true} />
-      </div>
+      <Image
+        src={imageSrc}
+        alt="picture of laptop and mobile preview"
+        layout="responsive"
+        height={900}
+        width={900}
+      />
     </div>
   );
 };
