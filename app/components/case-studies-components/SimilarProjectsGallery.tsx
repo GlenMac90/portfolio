@@ -5,7 +5,10 @@ import { CaseStudyType } from "@/types";
 import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
 import { SimilarProjectGalleryProps } from "@/utils/interfaces";
 
-const SimilarProjectsGallery = ({ current }: SimilarProjectGalleryProps) => {
+const SimilarProjectsGallery = ({
+  current,
+  setCurrent,
+}: SimilarProjectGalleryProps) => {
   const { similarProjects } = useCaseStudyContext();
 
   const [isMdScreen, setIsMdScreen] = useState(false);
@@ -14,6 +17,7 @@ const SimilarProjectsGallery = ({ current }: SimilarProjectGalleryProps) => {
     if (typeof window !== "undefined") {
       const checkScreenSize = () => {
         setIsMdScreen(window.innerWidth >= 768);
+        setCurrent(0);
       };
       checkScreenSize();
       window.addEventListener("resize", checkScreenSize);

@@ -86,6 +86,7 @@ export interface ChallengesAndLearningsCardProps {
 
 export interface SimilarProjectGalleryProps {
   current: number;
+  setCurrent: Dispatch<SetStateAction<number>>;
 }
 
 export interface CaseStudyProps {
