@@ -20,7 +20,6 @@ const CaseStudyFigmaDesign = () => {
           <Image
             src={figmaImage}
             alt="image of figma design"
-            layout="responsive"
             className="w-full"
             width={2000}
             height={2000}

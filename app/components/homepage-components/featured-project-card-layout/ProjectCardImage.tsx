@@ -20,7 +20,6 @@ const ProjectCardImage = ({
       <Image
         src={imageSrc || mobileAndDesktopFallback}
         alt="picture of laptop and mobile preview"
-        layout="responsive"
         height={900}
         width={900}
       />

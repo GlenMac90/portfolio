@@ -67,7 +67,6 @@ const CaseStudyProblemStatement = () => {
               <Image
                 src={mainProject.problemStatementImage.image}
                 alt="image underlying text in problem statement"
-                layout="responsive"
                 className="w-full rounded md:rounded-xl"
                 height={768}
                 width={500}
