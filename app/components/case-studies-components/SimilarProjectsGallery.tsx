@@ -16,14 +16,16 @@ const SimilarProjectsGallery = ({
   useEffect(() => {
     if (typeof window !== "undefined") {
       const checkScreenSize = () => {
+        if (window.innerWidth < 768) {
+          setCurrent(0);
+        }
         setIsMdScreen(window.innerWidth >= 768);
-        setCurrent(0);
       };
       checkScreenSize();
       window.addEventListener("resize", checkScreenSize);
       return () => window.removeEventListener("resize", checkScreenSize);
     }
-  }, []);
+  });
 
   const carouselTranslateValue = isMdScreen
     ? `translateX(-${current * 100}%)`
