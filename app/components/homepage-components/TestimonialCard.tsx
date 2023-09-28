@@ -11,10 +11,11 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
+  const testimonialImage = testimonial.image.image;
   return (
     <article className="flex max-w-xl shrink-0 grow-0 basis-full flex-col p-2 lg:max-w-5xl lg:flex-row">
       <Image
-        src={testimonial.image.image}
+        src={testimonialImage}
         alt="Image of testimonial giver"
         className="h-[12.5rem] w-[12.5rem] rounded-2xl lg:h-[20.5rem] lg:w-[20.5rem]"
         height={200}

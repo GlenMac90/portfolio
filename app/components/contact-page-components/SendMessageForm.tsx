@@ -1,28 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RefObject, SetStateAction, FormEvent, Dispatch } from "react";
 
 import FormInput from "./FormInput";
 import SendButtonLoader from "./SendButtonLoader";
 import Button from "../Button";
 import { inputFields } from "@/constants";
+import { SendMessageFormProps } from "@/utils/interfaces";
 
-type FormData = {
-  user_name: string;
-  user_email: string;
-  message: string;
-  contact_info: string;
-};
-interface SendMessageFormProps {
-  form: RefObject<HTMLFormElement>;
-  sendEmail: (e: FormEvent<HTMLFormElement>) => void;
-  removeErrorMessage: (errorMsg: string) => void;
-  errorList: string;
-  formData: FormData;
-  setFormData: Dispatch<SetStateAction<FormData>>;
-  isSending: boolean;
-}
 const SendMessageForm = ({
   form,
   sendEmail,

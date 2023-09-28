@@ -1,8 +1,8 @@
 "use client";
 
-import { challengeIcon, greenTick } from "@/public/svg-icons/case-study-icons";
 import { motion } from "framer-motion";
 
+import { challengeIcon, greenTick } from "@/public/svg-icons/case-study-icons";
 import ChallengesAndLearningsCard from "./ChallengesAndLearningsCard";
 import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
 

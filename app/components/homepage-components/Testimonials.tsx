@@ -74,10 +74,6 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
           <motion.div
             onMouseEnter={clearAutoAdvance}
             onMouseLeave={setAutoAdvance}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
             className="flex max-w-xl transition-transform duration-1000 ease-out lg:max-w-5xl"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >

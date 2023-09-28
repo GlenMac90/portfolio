@@ -1,33 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 import { navbarButtons } from "@/constants";
 import {
-  download,
-  downloadDarkMode,
-  lightModeIcon,
-  darkModeIcon,
-  cross,
-  crossDarkMode,
-} from "@/public/svg-icons";
-
-interface MobileNavBarProps {
-  theme: string | undefined;
-  pathname: string;
-  currentTheme: string | undefined;
-  setTheme: (newTheme: string) => void;
-  handleCloseMobileNav: () => void; // Added type for handleCloseMobileNav
-  closeAnimation: boolean;
-}
+  CrossButton,
+  DownloadButton,
+  LightOrDarkModeIcon,
+} from "./light-dark-mode-buttons";
+import { MobileNavBarProps } from "@/utils/interfaces";
 
 const MobileNavBar = ({
-  theme,
   pathname,
-  currentTheme,
-  setTheme,
   handleCloseMobileNav,
   closeAnimation,
 }: MobileNavBarProps) => {
@@ -39,21 +24,10 @@ const MobileNavBar = ({
       onClick={(e) => e.stopPropagation()}
     >
       <div className="mb-2 flex justify-between">
-        <Image
-          src={theme === "light" ? lightModeIcon : darkModeIcon}
-          height={24}
-          width={24}
-          alt="light mode symbol"
-          className="cursor-pointer"
-          onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
-        />
-        <Image
-          src={theme === "light" ? cross : crossDarkMode}
-          height={20}
-          width={20}
-          alt="close button"
-          onClick={handleCloseMobileNav}
-        />
+        <LightOrDarkModeIcon />
+        <div className="flex" onClick={handleCloseMobileNav}>
+          <CrossButton />
+        </div>
       </div>
 
       {navbarButtons.map((button) => (
@@ -71,12 +45,7 @@ const MobileNavBar = ({
         </Link>
       ))}
       <Link href="/" className="flex w-full cursor-pointer rounded px-2 py-4">
-        <Image
-          src={theme === "light" ? download : downloadDarkMode}
-          height={20}
-          width={20}
-          alt="download"
-        />
+        <DownloadButton />
         <p className="ml-1 text-sm font-semibold text-black200 dark:text-white800">
           Resume
         </p>

@@ -1,17 +1,13 @@
 "use client";
 
-import { useRef, useState, SetStateAction, Dispatch, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { ZodError } from "zod";
 import { toast } from "react-toastify";
 
 import SendMessageForm from "./SendMessageForm";
-
 import { emailFormSchema } from "@/utils";
-
-interface SendMessageProps {
-  setShowSuccess: Dispatch<SetStateAction<boolean>>;
-}
+import { SendMessageProps } from "@/utils/interfaces";
 
 const SendMessage = ({ setShowSuccess }: SendMessageProps) => {
   const sendFailure = () => toast.error("Unable to send message at this time");

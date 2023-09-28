@@ -3,8 +3,16 @@ import {
   ContactDetailType,
   SocialMediaIconType,
   WorkProcessSymbolType,
+  FormData,
 } from "@/types";
 import { StaticImageData } from "next/image";
+import {
+  Dispatch,
+  FormEvent,
+  ReactNode,
+  RefObject,
+  SetStateAction,
+} from "react";
 
 export interface ButtonsProps {
   additionalClassesLeft: string;
@@ -65,7 +73,7 @@ export interface TechStackItem {
 }
 
 export interface CaseStudyCardProps {
-  mainProject: CaseStudyShortened;
+  caseStudy: CaseStudyShortened;
 }
 
 export interface ChallengesAndLearningsCardProps {
@@ -88,4 +96,64 @@ export interface CaseStudyProps {
 
 export interface FooterLayoutProps {
   socialMediaIcons: SocialMediaIconType[];
+}
+
+export interface MobileNavBarProps {
+  pathname: string;
+  handleCloseMobileNav: () => void;
+  closeAnimation: boolean;
+}
+
+export interface ContactItemProps {
+  contact: ContactDetailType;
+}
+
+export interface ErrorMessageProps {
+  message: string;
+}
+
+export interface FormInputProps {
+  label: string;
+  input?: boolean;
+  email?: boolean;
+  inputName: string;
+  setFormData: (data: any) => void;
+  formData: { [key: string]: string };
+  removeErrorMessage: (message: string) => void;
+  errorList: string;
+  errorMessage: string;
+  marginTop?: boolean;
+}
+
+export interface SendMessageProps {
+  setShowSuccess: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface SendMessageFormProps {
+  form: RefObject<HTMLFormElement>;
+  sendEmail: (e: FormEvent<HTMLFormElement>) => void;
+  removeErrorMessage: (errorMsg: string) => void;
+  errorList: string;
+  formData: FormData;
+  setFormData: Dispatch<SetStateAction<FormData>>;
+  isSending: boolean;
+}
+
+export interface SocialMediaButtonProps {
+  button: SocialMediaIconType;
+}
+
+export interface ButtonProps {
+  style?: string;
+  type?: "button" | "submit" | "reset";
+  additionalStyles?: string;
+  value?: string;
+  children: ReactNode;
+}
+
+export interface UnderlinedTextProps {
+  text: string;
+  header?: boolean;
+  workExperience?: boolean;
+  additionalStyles?: string;
 }

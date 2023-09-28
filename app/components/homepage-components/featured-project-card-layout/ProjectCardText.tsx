@@ -8,6 +8,7 @@ const ProjectCardText = ({
   project,
   reverseLayout,
 }: FeaturedProjectCardProps) => {
+  const techList = project.techList;
   return (
     <div
       className={`order-1 flex flex-col px-8 lg:w-2/5 lg:px-0 ${
@@ -27,12 +28,12 @@ const ProjectCardText = ({
       <div className="mt-8 flex flex-col gap-5 xs:flex-row">
         <div className="flex w-fit rounded-md bg-white/40 p-2.5">
           <p className="text-xs font-light text-white900 lg:text-sm">
-            {project.techList[0]}, {project.techList[1]}
+            {techList[0]}, {techList[1]}
           </p>
         </div>
         <div className="flex w-fit rounded-md bg-white/40 p-2.5">
           <p className="text-xs font-light text-white900 lg:text-sm">
-            {project.techList[2]}, {project.techList[3]}
+            {techList[2]}, {techList[3]}
           </p>
         </div>
       </div>

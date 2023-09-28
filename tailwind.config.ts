@@ -24,6 +24,8 @@ module.exports = {
         secondary: "#FFBE62",
         challengeRed: "#E15A46",
         learningsGreen: "#02BC7D",
+        cross: "#424B5C",
+        crossDark: "#F6F7F9",
         white500: "#6F74A7",
         white800: "#F3F8FF",
         white900: "#FFFFFF",
