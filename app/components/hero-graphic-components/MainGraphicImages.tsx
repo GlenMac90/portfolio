@@ -108,9 +108,9 @@ const MainGraphicImages = () => {
         }}
         d="M621.52 431.943C615.873 434.101 609.78 435.292 603.39 435.292C575.379 435.292 552.718 412.593 552.718 384.536C552.718 356.554 575.379 333.781 603.39 333.781C631.401 333.781 654.063 356.554 654.063 384.536C654.063 392.053 652.428 399.197 649.531 405.597"
         className="stroke-graphicLightRed"
-        stroke-width="2.3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <motion.path
         initial={{ y: "-15rem" }}

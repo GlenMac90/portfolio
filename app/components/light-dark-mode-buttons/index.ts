@@ -1,17 +1,7 @@
-import ArrowButton from "./ArrowButton";
-import DemoButton from "./DemoButton";
-import GitHubButton from "./GitHubButton";
-import CrossButton from "./CrossButton";
-import DownloadButton from "./DownloadButton";
-import MenuButton from "./MenuButton";
-import LightOrDarkModeIcon from "./LightOrDarkModeIcon";
-
-export {
-  ArrowButton,
-  DemoButton,
-  GitHubButton,
-  CrossButton,
-  DownloadButton,
-  MenuButton,
-  LightOrDarkModeIcon,
-};
+export { default as ArrowButton } from "./ArrowButton";
+export { default as DemoButton } from "./DemoButton";
+export { default as GitHubButton } from "./GitHubButton";
+export { default as CrossButton } from "./CrossButton";
+export { default as DownloadButton } from "./DownloadButton";
+export { default as MenuButton } from "./MenuButton";
+export { default as LightOrDarkModeIcon } from "./LightOrDarkModeIcon";

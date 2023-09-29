@@ -35,6 +35,8 @@ const MobileNavBar = ({
           key={button.label}
           href={button.path}
           className={`w-full cursor-pointer rounded-lg px-2 py-4 text-sm ${
+            (button.path === "/case-studies" &&
+              pathname.startsWith("/case-studies")) ||
             pathname === button.path
               ? "bg-primaryLight font-semibold text-white800 dark:bg-primaryDark"
               : "text-white500 dark:text-white800"

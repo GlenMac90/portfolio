@@ -20,9 +20,9 @@ const ButtonTestimonial = ({ direction }: ButtonTestimonialProps) => {
           id="Icon"
           d={arrowDirection}
           className="stroke-[#151E2C] dark:stroke-[#F3F8FF]"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
