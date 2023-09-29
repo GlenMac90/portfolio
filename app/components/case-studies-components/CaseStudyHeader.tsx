@@ -1,42 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 
-import {
-  demoButtonLight,
-  demoButtonDark,
-  arrowlight,
-  arrowDark,
-  githubButtonLight,
-  githubButtonDark,
-} from "@/public/svg-icons/case-study-icons";
-import Button from "../Button";
 import UnderlinedText from "../UnderlinedText";
 import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
+import { mobileAndDesktopFallback } from "@/public/png-icons";
+import { CaseStudyWebsiteLinks } from ".";
 
 const CaseStudyHeader = () => {
   const { mainProject } = useCaseStudyContext();
-
-  const [icons, setIcons] = useState({
-    demoButtonIcon: demoButtonLight,
-    arrowIcon: arrowlight,
-    githubButtonIcon: githubButtonLight,
-  });
-  const { theme } = useTheme();
-
-  useEffect(() => {
-    const newIcons = {
-      demoButtonIcon: theme === "light" ? demoButtonLight : demoButtonDark,
-      arrowIcon: theme === "light" ? arrowlight : arrowDark,
-      githubButtonIcon:
-        theme === "light" ? githubButtonLight : githubButtonDark,
-    };
-    setIcons(newIcons);
-  }, [theme]);
+  const imageSrc =
+    mainProject?.desktopMobileImage.image || mobileAndDesktopFallback;
 
   return (
     <header className="flex w-full flex-col items-center">
@@ -87,45 +62,15 @@ const CaseStudyHeader = () => {
         }}
         className="mx-4 flex"
       >
-        {mainProject?.desktopMobileImage && (
-          <Image
-            src={mainProject?.desktopMobileImage.image}
-            alt="laptop and mobile image of project"
-            height={630}
-            width={630}
-          />
-        )}
+        <Image
+          src={imageSrc}
+          alt="laptop and mobile image of project"
+          height={630}
+          width={630}
+        />
       </motion.div>
 
-      <motion.div
-        initial={{ y: "10%", opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{
-          y: { duration: 0.5, delay: 1 },
-          opacity: { duration: 0.5, delay: 1 },
-        }}
-        className="mb-12 mt-6 flex justify-between gap-10 md:mb-16 md:mt-[4.5rem] md:gap-24"
-      >
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <Link href="/" className="flex">
-            <Button>
-              <Image src={icons.demoButtonIcon} alt="Demo Icon" />
-              <p>Demo Site</p>
-              <Image src={icons.arrowIcon} alt="Link to live site" />
-            </Button>
-          </Link>
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <Link href="/" className="flex">
-            <Button>
-              <Image src={icons.githubButtonIcon} alt="Github logo" />
-              <p>Source Code</p>
-              <Image src={icons.arrowIcon} alt="Link to source code" />
-            </Button>
-          </Link>
-        </motion.div>
-      </motion.div>
+      <CaseStudyWebsiteLinks />
     </header>
   );
 };

@@ -1,5 +1,7 @@
-import { FeaturedProjectCardProps } from "@/utils/interfaces";
 import Image from "next/image";
+
+import { FeaturedProjectCardProps } from "@/utils/interfaces";
+import { mobileAndDesktopFallback } from "@/public/png-icons";
 
 const ProjectCardImage = ({
   project,
@@ -16,9 +18,8 @@ const ProjectCardImage = ({
       }`}
     >
       <Image
-        src={imageSrc}
+        src={imageSrc || mobileAndDesktopFallback}
         alt="picture of laptop and mobile preview"
-        layout="responsive"
         height={900}
         width={900}
       />

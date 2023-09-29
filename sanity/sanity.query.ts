@@ -11,6 +11,8 @@ export async function getCaseStudy() {
       title,
       description,
       myRole,
+      sourceCode,
+      websiteURL,
       startDate,
       endDate,
       techStackCaseStudy[]{

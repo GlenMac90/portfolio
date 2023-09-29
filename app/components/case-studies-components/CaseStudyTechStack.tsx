@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Tooltip } from "@nextui-org/react";
 import { motion } from "framer-motion";
+
 import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
 import { TechStackItem } from "@/utils/interfaces";
 

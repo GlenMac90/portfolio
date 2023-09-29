@@ -8,6 +8,7 @@ import { reorderWorkProcesses } from "@/utils";
 
 const CaseStudyFigmaDesign = () => {
   const { mainProject, workProcess } = useCaseStudyContext();
+  const figmaImage = mainProject?.figmaBannerImage.image;
   const orderedWorkProcess = reorderWorkProcesses(workProcess);
   return (
     <>
@@ -17,9 +18,8 @@ const CaseStudyFigmaDesign = () => {
         </div>
         <div className="w-full">
           <Image
-            src={mainProject.figmaBannerImage.image}
+            src={figmaImage}
             alt="image of figma design"
-            layout="responsive"
             className="w-full"
             width={2000}
             height={2000}
@@ -37,33 +37,36 @@ const CaseStudyFigmaDesign = () => {
             </p>
           </motion.div>
           <div className="mt-6 flex max-w-md flex-wrap items-center justify-center gap-12 self-center md:mt-11 md:max-w-4xl md:justify-center md:gap-20">
-            {orderedWorkProcess.map((process, index) => (
-              <motion.div
-                initial={{ x: "25%", opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                whileHover={{ scale: 1.2 }}
-                transition={{
-                  x: { duration: 0.5, delay: index * 0.2 },
-                  opacity: { duration: 0.5, delay: index * 0.2 },
-                }}
-                viewport={{ once: true }}
-                key={process.title}
-                className="flex w-[4.7rem] flex-col items-center gap-3 md:w-[6rem] md:gap-5"
-              >
-                <div className="flex h-[4.7rem] w-[4.7rem] items-center justify-center rounded-full bg-white800 dark:bg-black300 md:h-[6rem] md:w-[6rem]">
-                  <Image
-                    src={process.image.image}
-                    alt="symbol of working process"
-                    height={48}
-                    width={48}
-                    className="max-h-[2.25rem] max-w-[2.25rem] md:max-h-[3rem] md:max-w-[3rem]"
-                  />
-                </div>
-                <p className="whitespace-nowrap text-center text-sm font-medium text-black300 dark:text-white900 md:text-xl">
-                  {process.title}
-                </p>
-              </motion.div>
-            ))}
+            {orderedWorkProcess.map((process, index) => {
+              const imageSrc = process.image.image;
+              return (
+                <motion.div
+                  initial={{ x: "25%", opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{
+                    x: { duration: 0.5, delay: index * 0.2 },
+                    opacity: { duration: 0.5, delay: index * 0.2 },
+                  }}
+                  viewport={{ once: true }}
+                  key={process.title}
+                  className="flex w-[4.7rem] flex-col items-center gap-3 md:w-[6rem] md:gap-5"
+                >
+                  <div className="flex h-[4.7rem] w-[4.7rem] items-center justify-center rounded-full bg-white800 dark:bg-black300 md:h-[6rem] md:w-[6rem]">
+                    <Image
+                      src={imageSrc}
+                      alt="symbol of working process"
+                      height={48}
+                      width={48}
+                      className="max-h-[2.25rem] max-w-[2.25rem] md:max-h-[3rem] md:max-w-[3rem]"
+                    />
+                  </div>
+                  <p className="whitespace-nowrap text-center text-sm font-medium text-black300 dark:text-white900 md:text-xl">
+                    {process.title}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

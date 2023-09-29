@@ -14,9 +14,7 @@ export const emailFormSchema = z.object({
     .string()
     .email("Invalid email format")
     .nonempty("Email is required"),
-  message: z
-    .string()
-    .min(100, "Message should be at least 100 characters long"),
+  message: z.string().min(20, "Message should be at least 20 characters long"),
   contact_info: z.string().nonempty("Contact information is required"),
 });
 

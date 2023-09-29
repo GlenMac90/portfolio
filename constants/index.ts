@@ -35,7 +35,7 @@ export const inputFields = [
     input: false,
     email: false,
     inputName: "message",
-    errorMessage: "Message should be at least 100 characters long",
+    errorMessage: "Message should be at least 20 characters long",
     marginTop: true,
   },
   {

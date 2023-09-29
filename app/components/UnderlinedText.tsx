@@ -1,9 +1,4 @@
-interface UnderlinedTextProps {
-  text: string;
-  header?: boolean;
-  workExperience?: boolean;
-  additionalStyles?: string;
-}
+import { UnderlinedTextProps } from "@/utils/interfaces";
 
 const UnderlinedText = ({
   text,

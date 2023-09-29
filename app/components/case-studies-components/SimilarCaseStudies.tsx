@@ -39,7 +39,7 @@ const SimilarCaseStudies = () => {
               Other Case Studies
             </p>
           </motion.div>
-          <SimilarProjectsGallery current={current} />
+          <SimilarProjectsGallery current={current} setCurrent={setCurrent} />
           <CarouselButtons
             additionalClassesLeft="self-center left-0 top-[50%] hidden md:flex"
             additionalClassesRight="self-center right-0 top-[50%] hidden md:flex"

@@ -1,12 +1,4 @@
-import { ReactNode } from "react";
-
-interface ButtonProps {
-  style?: string;
-  type?: "button" | "submit" | "reset";
-  additionalStyles?: string;
-  value?: string;
-  children: ReactNode;
-}
+import { ButtonProps } from "@/utils/interfaces";
 
 const Button = ({
   style,

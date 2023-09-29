@@ -19,9 +19,10 @@ import {
 
 const AnimatedComputerGraphic = () => {
   return (
-    <section className="relative flex h-[20rem] w-[27.5rem] items-center sm:h-[36rem] sm:w-[48rem]">
+    <section className="relative flex items-center lg:h-[36rem] lg:w-[48rem] lg:min-w-[48rem]">
       <Dials />
       <svg
+        className="flex h-full w-full"
         width="743"
         height="579"
         viewBox="0 0 743 579"
