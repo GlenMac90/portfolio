@@ -6,80 +6,42 @@ import { blueDial, redDial } from "@/public/png-icons";
 
 const Dials = () => {
   return (
-    <>
+    <div className="absolute left-[39.2%] flex h-[15.6%] w-[12%] translate-y-[46%] gap-[8%] lg:h-[15.8%]">
       <motion.div
-        initial={{ x: "10.7rem", y: "1rem" }}
-        animate={{ rotate: -360, x: "10.7rem", y: "1rem" }}
+        animate={{ rotate: -360 }}
         transition={{
-          duration: 6,
+          duration: 5,
           ease: "linear",
           repeat: Infinity,
         }}
-        className="absolute flex rounded-full sm:hidden"
+        className="flex h-[45%] w-[45%] rounded-full"
       >
         <Image
           src={blueDial}
           alt="blue dial"
-          height={25}
-          width={25}
-          className="rounded-full"
+          height={40}
+          width={40}
+          className="h-auto w-auto rounded-full"
         />
       </motion.div>
       <motion.div
-        initial={{ x: "12.6rem", y: "1rem" }}
-        animate={{ rotate: 360, x: "12.6rem", y: "1rem" }}
+        animate={{ rotate: 360 }}
         transition={{
-          duration: 2,
+          duration: 1.5,
           ease: "linear",
           repeat: Infinity,
         }}
-        className="absolute flex rounded-full sm:hidden"
+        className="flex h-[45%] w-[45%] rounded-full"
       >
         <Image
           src={redDial}
           alt="blue dial"
-          height={25}
-          width={25}
-          className="rounded-full"
+          height={40}
+          width={40}
+          className="h-auto w-auto rounded-full"
         />
       </motion.div>
-      <motion.div
-        initial={{ x: "15.7rem", y: "1.2rem" }}
-        animate={{ rotate: -360, x: "15.7rem", y: "1.2rem" }}
-        transition={{
-          duration: 6,
-          ease: "linear",
-          repeat: Infinity,
-        }}
-        className="absolute hidden rounded-full sm:flex"
-      >
-        <Image
-          src={blueDial}
-          alt="blue dial"
-          height={33}
-          width={33}
-          className="rounded-full"
-        />
-      </motion.div>
-      <motion.div
-        initial={{ x: "18.2rem", y: "1.2rem" }}
-        animate={{ rotate: 360, x: "18.2rem", y: "1.2rem" }}
-        transition={{
-          duration: 2,
-          ease: "linear",
-          repeat: Infinity,
-        }}
-        className="absolute hidden rounded-full sm:flex"
-      >
-        <Image
-          src={redDial}
-          alt="blue dial"
-          height={33}
-          width={33}
-          className="rounded-full "
-        />
-      </motion.div>
-    </>
+    </div>
   );
 };
 

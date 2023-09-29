@@ -1,34 +1,24 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 
 import TestimonialCard from "./TestimonialCard";
+import CarouselButtons from "./CarouselButtons";
 import UnderlinedText from "../UnderlinedText";
-
-import {
-  arrowLeft,
-  arrowRight,
-  arrowLeftDark,
-  arrowRightDark,
-} from "@/public/svg-icons";
 import { TestimonialType } from "@/types";
-
-interface ButtonsProps {
-  additionalClassesLeft: string;
-  additionalClassesRight: string;
-}
 interface TestimonialsProps {
   testimonials: TestimonialType[];
 }
 
 const Testimonials = ({ testimonials }: TestimonialsProps) => {
-  const { theme } = useTheme();
   const [current, setCurrent] = useState(0);
 
   const intervalIdRef = useRef<number | null>(null);
+
+  const clearAutoAdvance = () => {
+    if (intervalIdRef.current) clearInterval(intervalIdRef.current);
+  };
 
   const setAutoAdvance = () => {
     if (intervalIdRef.current) clearInterval(intervalIdRef.current);
@@ -57,45 +47,6 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
   const next = () =>
     setCurrent((index) => (index === testimonials.length - 1 ? 0 : index + 1));
 
-  const Buttons = ({
-    additionalClassesLeft,
-    additionalClassesRight,
-  }: ButtonsProps) => (
-    <>
-      <motion.button
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-        viewport={{ once: true }}
-        whileHover={{ scale: 1.1 }}
-        onClick={previous}
-        className={`absolute ${additionalClassesLeft} self-center rounded-full bg-white900 p-4 dark:bg-black200 `}
-      >
-        <Image
-          src={theme === "light" ? arrowLeft : arrowLeftDark}
-          height={24}
-          width={24}
-          alt="left button click"
-        />
-      </motion.button>
-
-      <motion.button
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-        viewport={{ once: true }}
-        whileHover={{ scale: 1.1 }}
-        onClick={next}
-        className={`absolute ${additionalClassesRight} rounded-full bg-white900 p-4 dark:bg-black200`}
-      >
-        <Image
-          src={theme === "light" ? arrowRight : arrowRightDark}
-          height={24}
-          width={24}
-          alt="right button click"
-        />
-      </motion.button>
-    </>
-  );
-
   return (
     <section className="flex w-full flex-col items-center bg-white800 px-6 py-12 dark:bg-black300 md:py-[4.5rem]">
       <motion.div
@@ -121,10 +72,8 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
       <div className="relative mt-9 flex w-full flex-col items-center lg:max-w-7xl lg:px-20">
         <div className="relative max-w-xl overflow-hidden lg:max-w-6xl">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
+            onMouseEnter={clearAutoAdvance}
+            onMouseLeave={setAutoAdvance}
             className="flex max-w-xl transition-transform duration-1000 ease-out lg:max-w-5xl"
             style={{ transform: `translateX(-${current * 100}%)` }}
           >
@@ -135,14 +84,18 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
               />
             ))}
           </motion.div>
-          <Buttons
+          <CarouselButtons
             additionalClassesLeft="right-[4.5rem] top-1 flex lg:hidden"
             additionalClassesRight="right-1 top-1 flex lg:hidden"
+            previous={previous}
+            next={next}
           />
         </div>
-        <Buttons
+        <CarouselButtons
           additionalClassesLeft="hidden lg:left-4 lg:top-[9rem] lg:flex"
           additionalClassesRight="hidden lg:right-4 lg:top-[9rem] lg:flex"
+          previous={previous}
+          next={next}
         />
       </div>
     </section>

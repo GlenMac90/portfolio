@@ -9,6 +9,7 @@ interface SkillIconProps {
 
 const SkillIcon = ({ skill }: SkillIconProps) => {
   const [colourIcon, setColourIcon] = useState<boolean>(false);
+  const imageSrc = skill?.src.image;
 
   return (
     <Tooltip content={skill.text}>
@@ -21,7 +22,7 @@ const SkillIcon = ({ skill }: SkillIconProps) => {
         onMouseLeave={() => setColourIcon(false)}
       >
         <Image
-          src={skill.src.image}
+          src={imageSrc}
           width={27}
           height={27}
           alt="Company Icon"

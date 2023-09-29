@@ -1,11 +1,8 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import { ContactDetailType } from "@/types";
 
-interface ContactItemProps {
-  contact: ContactDetailType;
-}
+import { ContactItemProps } from "@/utils/interfaces";
 
 const ContactItem = ({ contact }: ContactItemProps) => {
   const { theme } = useTheme();

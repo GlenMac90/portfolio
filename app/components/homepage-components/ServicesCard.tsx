@@ -1,35 +1,39 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import { useState } from "react";
 import Image from "next/image";
-import { useTheme } from "next-themes";
-import { ServiceProvidedType } from "@/types";
 
+import { ServiceProvidedType } from "@/types";
 interface ServicesCardProps {
   service: ServiceProvidedType;
+  delay?: number;
 }
 
-const ServicesCard = ({ service }: ServicesCardProps) => {
+const ServicesCard = ({ service, delay }: ServicesCardProps) => {
   const { theme } = useTheme();
   const [isMouseOver, setIsMouseOver] = useState<boolean>(false);
 
-  let imageSrc;
-
-  if (isMouseOver) {
-    if (theme === "light") {
-      imageSrc = service.imageHoverLight;
-    } else {
-      imageSrc = service.imageHoverDark;
-    }
-  } else {
-    imageSrc = service.imageSrc;
-  }
+  const imageSrc = isMouseOver
+    ? theme === "light"
+      ? service.imageHoverLight
+      : service.imageHoverDark
+    : service.imageSrc;
 
   return (
-    <div
-      className={`w-full rounded-xl px-6 py-7 shadow-lg md:h-[18rem] md:w-[19rem] xl:w-full ${
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      animate={{ opacity: 1 }}
+      transition={{
+        opacity: { duration: 0.3, delay },
+      }}
+      viewport={{ once: true }}
+      className={`h-[19rem] w-full rounded-xl px-6 py-7 shadow-lg transition duration-300 xl:w-full ${
         isMouseOver
-          ? "bg-primaryLight dark:bg-primaryDark"
+          ? "translate-y-8 bg-primaryLight shadow-servicesCard dark:bg-primaryDark"
           : "bg-white800 dark:bg-black300"
       }`}
       onMouseOver={() => setIsMouseOver(true)}
@@ -61,7 +65,7 @@ const ServicesCard = ({ service }: ServicesCardProps) => {
       >
         {service.description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,26 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RefObject, SetStateAction, FormEvent, Dispatch } from "react";
 
 import FormInput from "./FormInput";
+import SendButtonLoader from "./SendButtonLoader";
 import Button from "../Button";
 import { inputFields } from "@/constants";
+import { SendMessageFormProps } from "@/utils/interfaces";
 
-type FormData = {
-  user_name: string;
-  user_email: string;
-  message: string;
-  contact_info: string;
-};
-interface SendMessageFormProps {
-  form: RefObject<HTMLFormElement>;
-  sendEmail: (e: FormEvent<HTMLFormElement>) => void;
-  removeErrorMessage: (errorMsg: string) => void;
-  errorList: string;
-  formData: FormData;
-  setFormData: Dispatch<SetStateAction<FormData>>;
-}
 const SendMessageForm = ({
   form,
   sendEmail,
@@ -28,7 +15,10 @@ const SendMessageForm = ({
   errorList,
   formData,
   setFormData,
+  isSending,
 }: SendMessageFormProps) => {
+  const buttonText = isSending ? "Sending" : "Send";
+
   return (
     <motion.form
       initial={{ y: "15%", opacity: 0 }}
@@ -64,7 +54,8 @@ const SendMessageForm = ({
           additionalStyles="mt-10 flex h-[3.75rem] w-full justify-center text-sm lg:mt-11 lg:h-[4.3rem] lg:w-[11.75rem] lg:text-lg"
           value="Send"
         >
-          Send
+          {buttonText}
+          {isSending && <SendButtonLoader />}
         </Button>
       </motion.div>
     </motion.form>

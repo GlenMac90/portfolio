@@ -25,6 +25,8 @@ export type CaseStudyType = {
   title: string;
   description: string;
   myRole: string;
+  websiteURL: string;
+  sourceCode: string;
   startDate: Date;
   endDate: Date;
   techStackCaseStudy: {
@@ -48,7 +50,7 @@ export type CaseStudyType = {
     alt: string;
     image: string;
   };
-  mobileImage: {
+  desktopMobileImage: {
     alt: string;
     image: string;
   };
@@ -147,4 +149,11 @@ export type WorkProcessSymbolType = {
     alt: string;
     image: string;
   };
+};
+
+export type FormData = {
+  user_name: string;
+  user_email: string;
+  message: string;
+  contact_info: string;
 };

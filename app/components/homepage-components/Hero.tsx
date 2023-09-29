@@ -27,8 +27,7 @@ const Hero = () => {
           setShowTick(false);
         }, 3000);
       })
-      .catch((err) => {
-        console.error("Could not copy text: ", err);
+      .catch(() => {
         copyFailure();
       });
   }, []);
@@ -41,7 +40,7 @@ const Hero = () => {
         transition={{ duration: 0.7 }}
         className="z-20 flex w-full flex-col lg:w-5/12"
       >
-        <p className="font-semibold tracking-widest text-primaryLight md:text-xl">
+        <p className="font-semibold tracking-widest text-primaryLight dark:text-primaryDark md:text-xl">
           HI, I AM GLEN
         </p>
         <p className="mt-5 text-[2.625rem] font-bold leading-tight text-black200 dark:text-white900 md:text-[4rem]">

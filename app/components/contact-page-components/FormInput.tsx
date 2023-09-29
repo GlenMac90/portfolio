@@ -1,20 +1,8 @@
 import ErrorMessage from "./ErrorMessage";
+import { FormInputProps } from "@/utils/interfaces";
 
 const sharedStyles =
   "mt-4 h-[3.75rem] rounded-[10px] bg-white800 px-4 text-white500 dark:bg-black300 dark:text-white900 lg:rounded-3xl lg:px-6 lg:text-xl";
-
-interface FormInputProps {
-  label: string;
-  input?: boolean;
-  email?: boolean;
-  inputName: string;
-  setFormData: (data: any) => void;
-  formData: { [key: string]: string };
-  removeErrorMessage: (message: string) => void;
-  errorList: string;
-  errorMessage: string;
-  marginTop?: boolean;
-}
 
 const FormInput = ({
   label,

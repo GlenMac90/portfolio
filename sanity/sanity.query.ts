@@ -1,23 +1,7 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
 
-export async function getProfile() {
-  return client.fetch(
-    groq`*[_type == "profile"]{
-      _id,
-      fullName,
-      headline,
-      profileImage {alt, "image": asset->url},
-      shortBio,
-      location,
-      fullBio,
-      email,
-      "resumeURL": resumeURL.asset->url,
-      socialLinks,
-      skills
-    }`
-  );
-}
+const revalidate = 10;
 
 export async function getCaseStudy() {
   return client.fetch(
@@ -27,9 +11,11 @@ export async function getCaseStudy() {
       title,
       description,
       myRole,
+      sourceCode,
+      websiteURL,
       startDate,
       endDate,
-      "techStackCaseStudy": techStackCaseStudy[]{
+      techStackCaseStudy[]{
         title,
         "image": image.asset->url
       },      
@@ -41,10 +27,11 @@ export async function getCaseStudy() {
       figmaBannerImage {alt, "image": asset->url},
       techList,
       desktopImage {alt, "image": asset->url},
-      mobileImage {alt, "image": asset->url},
+      desktopMobileImage {alt, "image": asset->url},
       backgroundColour,
       reverseLayout
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
 

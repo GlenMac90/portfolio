@@ -1,10 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-interface ErrorMessageProps {
-  message: string;
-}
+import { ErrorMessageProps } from "@/utils/interfaces";
 
 const ErrorMessage = ({ message }: ErrorMessageProps) => {
   return (

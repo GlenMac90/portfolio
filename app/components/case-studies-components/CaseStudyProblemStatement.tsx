@@ -3,31 +3,31 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { CaseStudyAndWorkProcessProps } from "@/utils/interfaces";
+import { useCaseStudyContext } from "@/app/contexts/CaseStudyContext";
 
-const CaseStudyProblemStatement = ({
-  caseStudy,
-  workProcess,
-}: CaseStudyAndWorkProcessProps) => {
+const CaseStudyProblemStatement = () => {
+  const { mainProject } = useCaseStudyContext();
   return (
     <>
       <section className="flex w-full flex-col items-center justify-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">
         <div className="flex flex-col gap-4 self-center md:max-w-3xl">
-          {caseStudy?.caseStudyDescription?.map((text, index) => (
-            <motion.p
-              initial={{ x: "25%", opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{
-                x: { duration: 0.5, delay: index * 0.2 },
-                opacity: { duration: 0.5, delay: index * 0.2 },
-              }}
-              viewport={{ once: true }}
-              key={index}
-              className="text-sm font-light text-white500 dark:text-white800 md:text-xl"
-            >
-              {text}
-            </motion.p>
-          ))}
+          {mainProject?.caseStudyDescription?.map(
+            (text: string, index: number) => (
+              <motion.p
+                initial={{ x: "25%", opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  x: { duration: 0.5, delay: index * 0.2 },
+                  opacity: { duration: 0.5, delay: index * 0.2 },
+                }}
+                viewport={{ once: true }}
+                key={index}
+                className="text-sm font-light text-white500 dark:text-white800 md:text-xl"
+              >
+                {text}
+              </motion.p>
+            )
+          )}
         </div>
       </section>
 
@@ -50,10 +50,10 @@ const CaseStudyProblemStatement = ({
               Problem Statement
             </p>
             <p className="mt-5 text-sm font-light text-white500 dark:text-white800 md:text-xl">
-              {caseStudy?.problemStatement}
+              {mainProject?.problemStatement}
             </p>
           </motion.div>
-          {caseStudy?.problemStatementImage && (
+          {mainProject?.problemStatementImage && (
             <motion.div
               initial={{ x: "-25%", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -65,9 +65,8 @@ const CaseStudyProblemStatement = ({
               className="mt-6 w-full max-w-3xl md:mt-8"
             >
               <Image
-                src={caseStudy.problemStatementImage.image}
+                src={mainProject.problemStatementImage.image}
                 alt="image underlying text in problem statement"
-                layout="responsive"
                 className="w-full rounded md:rounded-xl"
                 height={768}
                 width={500}

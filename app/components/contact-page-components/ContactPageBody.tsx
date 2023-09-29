@@ -1,13 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 import UnderlinedText from "../UnderlinedText";
 import ContactDetails from "./ContactDetails";
 import SendMessage from "./SendMessage";
-import SuccessScreen from "./SuccessScreen";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { ContactPageBodyProps } from "@/utils/interfaces";
 
 const ContactPageBody = ({
@@ -15,12 +14,13 @@ const ContactPageBody = ({
   socialMediaIcons,
 }: ContactPageBodyProps) => {
   const router = useRouter();
+
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleCloseClick = () => {
-    setShowSuccess(false);
-    router.push("/");
-  };
+  if (showSuccess) {
+    router.push("/success-screen");
+  }
+
   return (
     <main className="flex w-full flex-col items-center">
       <header className="flex w-full justify-center bg-white800 pb-12 pt-[7.5rem] dark:bg-black300 md:pb-20 md:pt-[11.25rem]">
@@ -52,7 +52,6 @@ const ContactPageBody = ({
           />
         </div>
       </section>
-      {showSuccess && <SuccessScreen setShowSuccess={handleCloseClick} />}
     </main>
   );
 };

@@ -1,17 +1,13 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
 import { Tooltip } from "@nextui-org/react";
-import { useState, useEffect } from "react";
-import { SocialMediaIconType } from "@/types";
-
-interface SocialMediaButtonProps {
-  button: SocialMediaIconType;
-}
+import { SocialMediaButtonProps } from "@/utils/interfaces";
 
 const SocialMediaButton = ({ button }: SocialMediaButtonProps) => {
   const pathname = usePathname();

@@ -14,7 +14,7 @@ const GraphicSliders = () => {
         }}
         d="M306.339 148.843H169.776V134.629H306.339V148.843Z"
         className="stroke-graphicPaleBlue"
-        stroke-width="2.3"
+        strokeWidth="2.3"
       />
       <motion.path
         animate={{

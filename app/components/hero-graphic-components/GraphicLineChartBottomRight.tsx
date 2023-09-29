@@ -12,9 +12,9 @@ const GraphicLineChartBottomRight = () => {
         }}
         d="M615.501 227.73H640.615"
         className="stroke-graphicDarkBlue"
-        stroke-width="4.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="4.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <motion.path
         initial={{ strokeDasharray: 1000, strokeDashoffset: 1000 }}
@@ -36,7 +36,7 @@ const GraphicLineChartBottomRight = () => {
         }}
         d="M559.033 369.801L550.34 376.647L537.932 378.88C537.932 378.88 526.192 378.136 525.078 378.136C523.963 378.136 516.013 371.736 516.013 371.736L501.302 366.377L491.123 370.173L479.086 367.568L460.957 366.377L443.645 373.224L429.305 375.457L416.451 379.624L402.111 380.741L386.657 368.684L372.317 366.005L357.606 374.34L345.941 378.136L332.641 377.764L315.923 387.959H305.967L289.101 393.839"
         className="stroke-graphicPaleRed"
-        stroke-width="0.13rem"
+        strokeWidth="0.13rem"
       />
       <motion.path
         animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
@@ -47,7 +47,7 @@ const GraphicLineChartBottomRight = () => {
         }}
         d="M289.398 394.137H559.404"
         stroke="white"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <motion.path
         animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
@@ -78,7 +78,7 @@ const GraphicLineChartBottomRight = () => {
         }}
         d="M559.182 394.137V371.289"
         stroke="white"
-        stroke-width="0.5"
+        strokeWidth="0.5"
       />
       <motion.path
         animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}

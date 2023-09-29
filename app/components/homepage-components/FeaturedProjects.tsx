@@ -53,11 +53,12 @@ const FeaturedProjects = ({ caseStudies }: FeaturedProjectsProps) => {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
         viewport={{ once: true }}
+        className="mb-0 mt-6 flex rounded-full lg:mb-14 lg:mt-12"
       >
-        <Link href="/case-studies" className="flex">
+        <Link href="/case-studies" className="flex rounded-full">
           <Button
             style="blueButton"
-            additionalStyles="mb-0 mt-6 gap-1.5 px-10 py-5 text-lg lg:mb-14 lg:mt-12"
+            additionalStyles="gap-1.5 px-10 py-5 text-lg rounded-full"
           >
             <p>See more case studies</p>
             <Image

@@ -5,6 +5,7 @@ import CaseStudyChallengesAndLearnings from "./CaseStudyChallengesAndLearnings";
 import CaseStudyHeader from "./CaseStudyHeader";
 import CaseStudyProblemStatement from "./CaseStudyProblemStatement";
 import CaseStudyTechStack from "./CaseStudyTechStack";
+import CaseStudyWebsiteLinks from "./CaseStudyWebsiteLinks";
 import SimilarProjectSmallCard from "./SimilarProjectSmallCard";
 
 export {
@@ -16,4 +17,5 @@ export {
   CaseStudyProblemStatement,
   CaseStudyTechStack,
   SimilarProjectSmallCard,
+  CaseStudyWebsiteLinks,
 };

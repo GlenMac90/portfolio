@@ -9,7 +9,7 @@ const FeaturedProjectCard = ({
 }: FeaturedProjectCardProps) => {
   return (
     <div
-      className="flex w-full max-w-[30rem] flex-col overflow-hidden rounded-xl px-6 py-12 lg:max-w-7xl lg:flex-row lg:pl-[7rem] lg:pt-[6rem]"
+      className="flex w-full max-w-xl flex-col overflow-hidden rounded-xl py-8 lg:max-w-7xl lg:flex-row lg:items-center lg:justify-between"
       style={{ backgroundColor: project.backgroundColour }}
     >
       {reverseLayout ? (

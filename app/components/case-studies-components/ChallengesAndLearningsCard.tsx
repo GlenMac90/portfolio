@@ -1,16 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-import Image, { StaticImageData } from "next/image";
-
-interface ChallengesAndLearningsCardProps {
-  image: StaticImageData;
-  additionalStyles?: string;
-  textColour: string;
-  text: string;
-  listText?: string[];
-}
+import { ChallengesAndLearningsCardProps } from "@/utils/interfaces";
 
 const ChallengesAndLearningsCard = ({
   image,

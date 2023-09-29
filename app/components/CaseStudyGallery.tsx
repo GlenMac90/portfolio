@@ -21,7 +21,7 @@ const CaseStudyGallery = ({ caseStudies }: CaseStudiesShortenedProps) => {
               opacity: { duration: 0.7, delay: index * 0.2 },
             }}
           >
-            <CaseStudyCard mainProject={project} />
+            <CaseStudyCard caseStudy={project} />
           </motion.div>
         ))}
       </div>

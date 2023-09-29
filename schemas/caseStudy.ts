@@ -24,6 +24,16 @@ const caseStudy = {
       type: "string",
     },
     {
+      name: "sourceCode",
+      title: "Source Code",
+      type: "string",
+    },
+    {
+      name: "websiteURL",
+      title: "Website URL",
+      type: "string",
+    },
+    {
       name: "startDate",
       title: "Start Date",
       type: "datetime",
@@ -100,8 +110,8 @@ const caseStudy = {
       type: "image",
     },
     {
-      name: "mobileImage",
-      title: "Mobile View Image",
+      name: "desktopMobileImage",
+      title: "Desktop & Mobile View Image",
       type: "image",
     },
     {

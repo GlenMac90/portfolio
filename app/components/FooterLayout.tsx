@@ -1,12 +1,9 @@
 "use client";
 
-import { SocialMediaIconType } from "@/types";
-import SocialMediaButton from "./contact-page-components/SocialMediaButton";
 import { usePathname } from "next/navigation";
 
-interface FooterLayoutProps {
-  socialMediaIcons: SocialMediaIconType[];
-}
+import SocialMediaButton from "./contact-page-components/SocialMediaButton";
+import { FooterLayoutProps } from "@/utils/interfaces";
 
 const FooterLayout = ({ socialMediaIcons }: FooterLayoutProps) => {
   const pathname = usePathname();
@@ -14,7 +11,9 @@ const FooterLayout = ({ socialMediaIcons }: FooterLayoutProps) => {
     <footer
       className={`bottom-0 flex h-[10rem] w-screen flex-col items-center justify-center border-t border-t-slate-200 bg-white800 dark:border-t-0 dark:bg-black200 lg:w-full lg:flex-row ${
         pathname === "/contact" ? "items-center" : "lg:justify-between lg:px-20"
-      }`}
+      }
+      ${pathname.startsWith("/studio") && "hidden"}
+      ${pathname === "/success-screen" && "hidden"}`}
     >
       <p className="text-lg text-black400 dark:text-white800">
         © {new Date().getFullYear()} Glen. All rights reserved.
