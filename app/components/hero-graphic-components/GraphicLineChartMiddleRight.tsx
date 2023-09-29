@@ -27,7 +27,7 @@ const GraphicLineChartMiddleRight = () => {
         }}
         d="M484.287 290.691C484.287 290.691 496.546 260.475 531.765 267.769C566.908 275.062 584.815 314.729 630.063 282.281"
         stroke="white"
-        stroke-width="2.5"
+        strokeWidth="2.5"
       />
       <motion.path
         animate={{ y: ["-0.1rem", "0.1rem", "-0.1rem"] }}
@@ -39,7 +39,7 @@ const GraphicLineChartMiddleRight = () => {
         d="M598.189 297.389H593.137V292.402H598.189V297.389Z"
         className="fill-graphicPaleBlue"
         stroke="white"
-        stroke-width="2.3"
+        strokeWidth="2.3"
       />
       <motion.path
         animate={{ y: ["-0.1rem", "0.1rem", "-0.1rem"] }}
@@ -51,7 +51,7 @@ const GraphicLineChartMiddleRight = () => {
         d="M522.254 268.885H517.202V263.824H522.254V268.885Z"
         className="fill-graphicPaleBlue"
         stroke="white"
-        stroke-width="2.3"
+        strokeWidth="2.3"
       />
       <path
         d="M490.38 266.355H554.055H490.38Z"
@@ -77,7 +77,7 @@ const GraphicLineChartMiddleRight = () => {
         }}
         d="M490.38 266.355H554.055"
         stroke="white"
-        stroke-width="1.1"
+        strokeWidth="1.1"
       />
       <path
         d="M563.863 296.272H627.538H563.863Z"
@@ -104,7 +104,7 @@ const GraphicLineChartMiddleRight = () => {
         }}
         d="M563.863 296.272H627.538"
         stroke="white"
-        stroke-width="1.1"
+        strokeWidth="1.1"
       />
 
       <path

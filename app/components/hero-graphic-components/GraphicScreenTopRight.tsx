@@ -71,7 +71,7 @@ const GraphicScreenTopRight = () => {
         }}
         d="M353.297 469.451H178.989V446.753H353.297V469.451Z"
         className="stroke-graphicPaleBlue"
-        stroke-width="2.3"
+        strokeWidth="2.3"
       />
       <motion.path
         animate={{
@@ -85,7 +85,7 @@ const GraphicScreenTopRight = () => {
         }}
         d="M271.417 319.79H263.096V268.29H271.417V319.79Z"
         className="stroke-graphicPaleBlue"
-        stroke-width="2.3"
+        strokeWidth="2.3"
       />
       <motion.path
         animate={{

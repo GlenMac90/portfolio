@@ -59,7 +59,7 @@ const GraphicCrosses = () => {
         }}
         d="M254.106 319.194H220.597V238.67H254.106V319.194Z"
         className="stroke-graphicPaleBlue"
-        stroke-width="2.3"
+        strokeWidth="2.3"
       />
     </>
   );
