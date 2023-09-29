@@ -6,3 +6,4 @@ export { default as star } from "./star.svg";
 export { default as whiteButtonArrow } from "./white-button-arrow.svg";
 export { default as tick } from "./tick.svg";
 export { default as customGraphic } from "./custom-graphic.svg";
+export { default as pageNotFound } from "./not-found-page-graphic.svg";
