@@ -14,6 +14,7 @@ export default async function Home() {
   const results = await getHomePageData();
   const { mySkills, services, workExperienceList, caseStudies, testimonials } =
     results;
+
   return (
     <main className="flex w-full flex-col items-center overflow-hidden bg-white800 dark:bg-black300">
       <Hero />
