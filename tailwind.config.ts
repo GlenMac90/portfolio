@@ -34,6 +34,7 @@ module.exports = {
         black400: "#778295",
         graphicOffWhite: "#F9FBFC",
         graphicOffWhite2: "#E5F1FF",
+        graphicOffWhite3: "#F7F7F7",
         graphicTurquoise: "#1AE5FF",
         graphicLighterBlue: "#A9CCEA",
         graphicPaleBlue: "#289DF2",
