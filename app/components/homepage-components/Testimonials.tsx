@@ -62,7 +62,7 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
           </p>
           <UnderlinedText
             text="they say"
-            additionalStyles="relative mx-3 flex w-fit flex-col self-center"
+            additionalStyles="whitespace-nowrap relative mx-3 flex w-fit flex-col self-center"
           />
         </div>
         <p className="text-4xl font-bold text-black200 dark:text-white900 md:text-[3rem]">
@@ -70,7 +70,7 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
         </p>
       </motion.div>
       <div className="relative mt-9 flex w-full flex-col items-center lg:max-w-7xl lg:px-20">
-        <div className="relative max-w-xl overflow-hidden lg:max-w-6xl">
+        <div className="relative w-full max-w-xl flex-initial overflow-hidden lg:max-w-5xl">
           <motion.div
             onMouseEnter={clearAutoAdvance}
             onMouseLeave={setAutoAdvance}
@@ -85,15 +85,15 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
             ))}
           </motion.div>
           <CarouselButtons
-            additionalClassesLeft="right-[4.5rem] top-1 flex lg:hidden"
-            additionalClassesRight="right-1 top-1 flex lg:hidden"
+            additionalClassesLeft="right-[4.5rem] top-2 flex lg:hidden p-4"
+            additionalClassesRight="right-1 top-2 flex lg:hidden p-4"
             previous={previous}
             next={next}
           />
         </div>
         <CarouselButtons
-          additionalClassesLeft="hidden lg:left-4 lg:top-[9rem] lg:flex"
-          additionalClassesRight="hidden lg:right-4 lg:top-[9rem] lg:flex"
+          additionalClassesLeft="hidden lg:left-4 lg:top-[9rem] lg:flex p-4"
+          additionalClassesRight="hidden lg:right-4 lg:top-[9rem] lg:flex p-4"
           previous={previous}
           next={next}
         />

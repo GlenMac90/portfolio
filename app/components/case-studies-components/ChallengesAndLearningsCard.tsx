@@ -20,11 +20,11 @@ const ChallengesAndLearningsCard = ({
       <div className="mt-6 flex flex-col gap-5 md:mt-[1.75rem]">
         {listText?.map((challenge, index) => (
           <motion.div
-            initial={{ x: "25%", opacity: 0 }}
+            initial={{ x: "15%", opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{
-              x: { duration: 0.5, delay: index * 0.2 + 0.3 },
-              opacity: { duration: 0.5, delay: index * 0.2 + 0.3 },
+              x: { duration: 0.5, delay: index * 0.15 + 0.3 },
+              opacity: { duration: 0.5, delay: index * 0.15 + 0.3 },
             }}
             viewport={{ once: true }}
             key={index}

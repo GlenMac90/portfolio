@@ -65,7 +65,7 @@ const CaseStudyTechStack = () => {
         >
           Tech Stack
         </motion.p>
-        <div className="mt-6 flex max-w-md flex-wrap items-center justify-center gap-5 self-center md:mt-11 md:max-w-3xl md:justify-center md:gap-9">
+        <div className="mt-6 flex max-w-md flex-wrap items-center justify-center gap-5 self-center sm:max-w-3xl md:mt-11 md:justify-center md:gap-9">
           {mainProject?.techStackCaseStudy?.map(
             (tech: TechStackItem, index: number) => (
               <motion.div

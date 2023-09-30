@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
 
-const revalidate = 10;
+const revalidate = 5;
 
 export async function getCaseStudy() {
   return client.fetch(

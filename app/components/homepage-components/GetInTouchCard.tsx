@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { whiteButtonArrow } from "@/public/svg-icons";
@@ -10,6 +11,15 @@ import CardPatterns from "./CardPatterns";
 import CardPatternsMobile from "./CardPatternsMobile";
 
 const GetInTouchCard = () => {
+  const router = useRouter();
+  const [animatePatterns, setAnimatePatterns] = useState(false);
+  const handleClick = () => {
+    setAnimatePatterns(true);
+
+    setTimeout(() => {
+      router.push("/contact");
+    }, 1500);
+  };
   return (
     <section className="flex w-full items-center justify-center bg-white900 px-6 py-12 dark:bg-black200 lg:py-[4.5rem]">
       <motion.div
@@ -23,7 +33,7 @@ const GetInTouchCard = () => {
           Have a project in mind that requires technical expertise?
         </p>
         <motion.div whileHover={{ scale: 1.05 }} className="z-10">
-          <Link href="/contact" className="mb-[5rem] mt-4 flex">
+          <div className="mb-[5rem] mt-4 flex" onClick={handleClick}>
             <Button
               style="blueButton"
               additionalStyles="w-full gap-1.5 py-3.5 text-lg lg:w-[20rem] lg:translate-y-16 lg:self-end lg:font-medium"
@@ -36,10 +46,10 @@ const GetInTouchCard = () => {
                 alt="link to more info"
               />
             </Button>
-          </Link>
+          </div>
         </motion.div>
-        <CardPatternsMobile />
-        <CardPatterns />
+        <CardPatternsMobile animate={animatePatterns} />
+        <CardPatterns animate={animatePatterns} />
       </motion.div>
     </section>
   );

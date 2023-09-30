@@ -86,7 +86,6 @@ export interface ChallengesAndLearningsCardProps {
 
 export interface SimilarProjectGalleryProps {
   current: number;
-  setCurrent: Dispatch<SetStateAction<number>>;
 }
 
 export interface CaseStudyProps {
@@ -157,4 +156,8 @@ export interface UnderlinedTextProps {
   header?: boolean;
   workExperience?: boolean;
   additionalStyles?: string;
+}
+
+export interface CardPatternsProps {
+  animate: boolean;
 }
