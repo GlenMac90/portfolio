@@ -1,39 +1,9 @@
 import { motion } from "framer-motion";
 
-const paths = ["M490.38 266.355H554.055", "M563.863 296.272H627.538"];
-
-const pathsTwo = [
-  {
-    path: "M444.759 270.448H409.095V265.536H444.759V270.448Z",
-    delay: 0.15,
-    colour: "fill-white",
-  },
-  {
-    path: "M444.759 281.388H409.095V276.476H444.759V281.388Z",
-    delay: 0.3,
-    colour: "fill-graphicLightRed",
-  },
-  {
-    path: "M422.544 292.402H409.095V287.491H422.544V292.402Z",
-    delay: 0.5,
-    colour: "fill-white",
-  },
-  {
-    path: "M432.277 303.715H409.095V298.803H432.277V303.715Z",
-    delay: 0.6,
-    colour: "fill-graphicLightRed",
-  },
-  {
-    path: "M424.773 314.729H409.095V309.743H424.773V314.729Z",
-    delay: 0.75,
-    colour: "fill-graphicLightRed",
-  },
-  {
-    path: "M424.773 325.669H409.095V320.757H424.773V325.669Z",
-    delay: 0.9,
-    colour: "fill-white",
-  },
-];
+import {
+  pathsOneErrorScreenRight,
+  pathsTwoErrorScreenRight,
+} from "@/constants/error-graphic-paths";
 
 const ErrorScreenRight = () => {
   return (
@@ -74,7 +44,7 @@ const ErrorScreenRight = () => {
         className="fill-graphicLightRed"
       />
 
-      {paths.map((path) => (
+      {pathsOneErrorScreenRight.map((path) => (
         <motion.path
           key={path}
           animate={{ rotate: [0, 15, -15, 0] }}
@@ -103,7 +73,7 @@ const ErrorScreenRight = () => {
         d="M454.642 339.958H406.644C402.632 339.958 399.363 336.683 399.363 332.664V260.476C399.363 256.457 402.632 253.182 406.644 253.182H454.642C458.654 253.182 461.923 256.457 461.923 260.476V332.664C461.923 336.683 458.654 339.958 454.642 339.958Z"
         className="fill-graphicDarkBlue"
       />
-      {pathsTwo.map((path) => (
+      {pathsTwoErrorScreenRight.map((path) => (
         <motion.path
           key={path.path}
           animate={{ opacity: [0.4, 1, 0.4] }}

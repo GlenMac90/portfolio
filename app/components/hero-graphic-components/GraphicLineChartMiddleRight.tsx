@@ -1,38 +1,10 @@
 import { motion } from "framer-motion";
 
-const paths = [
-  "M598.189 297.389H593.137V292.402H598.189V297.389Z",
-  "M522.254 268.885H517.202V263.824H522.254V268.885Z",
-];
-
-const pathsTwo = ["M490.38 266.355H554.055", "M563.863 296.272H627.538"];
-
-const pathsThree = [
-  {
-    path: "M444.759 270.448H409.095V265.536H444.759V270.448Z",
-    colour: "fill-white",
-  },
-  {
-    path: "M444.759 281.388H409.095V276.476H444.759V281.388Z",
-    colour: "fill-white",
-  },
-  {
-    path: "M422.544 292.402H409.095V287.491H422.544V292.402Z",
-    colour: "fill-white",
-  },
-  {
-    path: "M432.277 303.715H409.095V298.803H432.277V303.715Z",
-    colour: "fill-graphicPaleBlue",
-  },
-  {
-    path: "M424.773 314.729H409.095V309.743H424.773V314.729Z",
-    colour: "fill-graphicPaleBlue",
-  },
-  {
-    path: "M424.773 325.669H409.095V320.757H424.773V325.669Z",
-    colour: "fill-white",
-  },
-];
+import {
+  pathsOneGraphicLineChartMiddleRight,
+  pathsTwoGraphicLineChartMiddleRight,
+  pathsThreeGraphicLineChartMiddleRight,
+} from "@/constants/hero-graphic-paths";
 
 const GraphicLineChartMiddleRight = () => {
   return (
@@ -77,7 +49,7 @@ const GraphicLineChartMiddleRight = () => {
         strokeWidth="2.5"
       />
 
-      {paths.map((path) => (
+      {pathsOneGraphicLineChartMiddleRight.map((path) => (
         <motion.path
           key={path}
           animate={{ y: ["-0.1rem", "0.1rem", "-0.1rem"] }}
@@ -91,7 +63,7 @@ const GraphicLineChartMiddleRight = () => {
           strokeWidth="2.3"
         />
       ))}
-      {pathsTwo.map((path) => (
+      {pathsTwoGraphicLineChartMiddleRight.map((path) => (
         <motion.path
           key={path}
           animate={{
@@ -117,7 +89,7 @@ const GraphicLineChartMiddleRight = () => {
           strokeWidth="1.1"
         />
       ))}
-      {pathsThree.map((path, index) => (
+      {pathsThreeGraphicLineChartMiddleRight.map((path, index) => (
         <motion.path
           key={path.path}
           animate={{ opacity: [0, 1, 0] }}

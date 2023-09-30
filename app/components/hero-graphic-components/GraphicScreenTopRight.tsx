@@ -1,33 +1,14 @@
 import { motion } from "framer-motion";
 
-const paths = [
-  {
-    path: "M77.0488 196.547V189.254H117.914V196.547H77.0488Z",
-    colour: "fill-graphicLightBlue",
-  },
-  {
-    path: "M77.0488 209.72V202.352H138.644V209.72H77.0488Z",
-    colour: "fill-graphicLighterBlue",
-  },
-  {
-    path: "M77.0488 222.818V215.525H153.058V222.818H77.0488Z",
-    colour: "fill-graphicLighterBlue",
-  },
-  {
-    path: "M77.0488 235.916V228.623H106.1V235.916H77.0488Z",
-    colour: "fill-graphicLighterBlue",
-  },
-];
-
-const pathsTwo = [
-  "M601.309 381.857L589.793 386.025L601.309 390.192V394.509L584.889 388.257V383.792L601.309 377.541V381.857Z",
-  "M605.024 377.541L621.445 383.792V388.257L605.024 394.509V390.192L616.541 386.025L605.024 381.857V377.541Z",
-];
+import {
+  pathsOneGraphicScreenTopRight,
+  pathsTwoGraphicScreenTopRight,
+} from "@/constants/hero-graphic-paths";
 
 const GraphicScreenTopRight = () => {
   return (
     <>
-      {paths.map((path, index) => (
+      {pathsOneGraphicScreenTopRight.map((path, index) => (
         <motion.path
           key={path.path}
           animate={{
@@ -84,7 +65,7 @@ const GraphicScreenTopRight = () => {
         d="M632.293 384.536C632.293 400.537 619.365 413.486 603.39 413.486C587.416 413.486 574.488 400.537 574.488 384.536C574.488 368.61 587.416 355.661 603.39 355.661C619.365 355.661 632.293 368.61 632.293 384.536Z"
         className="fill-graphicLightRed"
       />
-      {pathsTwo.map((path) => (
+      {pathsTwoGraphicScreenTopRight.map((path) => (
         <motion.path
           key={path}
           animate={{

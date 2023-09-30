@@ -1,15 +1,10 @@
 import { motion } from "framer-motion";
-
-const paths = [
-  "M353.297 469.451H178.989V446.753H353.297V469.451Z",
-  "M271.417 319.79H263.096V268.29H271.417V319.79Z",
-  "M306.339 148.843H169.776V134.629H306.339V148.843Z",
-];
+import { pathsErrorBlueFrames } from "@/constants/error-graphic-paths";
 
 const ErrorBlueFrames = () => {
   return (
     <>
-      {paths.map((path) => (
+      {pathsErrorBlueFrames.map((path) => (
         <motion.path
           key={path}
           animate={{ scale: [1, 1.2, 1] }}

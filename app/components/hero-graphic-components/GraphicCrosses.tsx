@@ -1,35 +1,14 @@
 import { motion } from "framer-motion";
 
-const paths = [
-  {
-    path: "M633.408 260.773H579.169V255.415H633.408V260.773Z",
-    colour: "fill-white",
-  },
-  {
-    path: "M595.292 270.15H579.169V264.792H595.292V270.15Z",
-    colour: "fill-graphicMidBlue",
-  },
-];
-
-const pathsTwo = [
-  {
-    path: "M142.136 266.355H130.396V254.596H119.548V266.355H107.809V277.295H119.548V289.054H130.396V277.295H142.136V266.355Z",
-    duration: 5,
-    scale: [1, 1.4, 1],
-    colour: "fill-graphicTurquoise",
-  },
-  {
-    path: "M110.781 299.1H103.574V291.956H96.9614V299.1H89.8286V305.724H96.9614V312.943H103.574V305.724H110.781V299.1Z",
-    duration: 2,
-    scale: [1, 1.3, 1],
-    colour: "fill-graphicLightBlue",
-  },
-];
+import {
+  pathsGraphicCrosses,
+  pathsTwoGraphicCrosses,
+} from "@/constants/hero-graphic-paths";
 
 const GraphicCrosses = () => {
   return (
     <>
-      {paths.map((path, index) => (
+      {pathsGraphicCrosses.map((path, index) => (
         <motion.path
           key={path.path}
           animate={{ opacity: [0, 1, 0] }}
@@ -44,7 +23,7 @@ const GraphicCrosses = () => {
           className={path.colour}
         />
       ))}
-      {pathsTwo.map((path) => (
+      {pathsTwoGraphicCrosses.map((path) => (
         <motion.path
           key={path.path}
           animate={{ scale: path.scale }}

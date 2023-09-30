@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 
-const paths = [
-  "M288.359 239.117H286.353V237.107H288.359V239.117Z",
-  "M295.045 239.117H293.113V237.107H295.045V239.117Z",
-  "M301.732 239.117H299.801V237.107H301.732V239.117Z",
-];
+import { pathsGraphicSliders } from "@/constants/hero-graphic-paths";
 
 const GraphicSliders = () => {
   return (
@@ -84,7 +80,7 @@ const GraphicSliders = () => {
         d="M306.339 276.997H285.981V271.936H306.339V276.997Z"
         className="fill-graphicTurquoise"
       />
-      {paths.map((path, index) => (
+      {pathsGraphicSliders.map((path, index) => (
         <motion.path
           key={path}
           animate={{

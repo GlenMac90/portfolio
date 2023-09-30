@@ -1,41 +1,14 @@
 import { motion } from "framer-motion";
 
-const paths = [
-  {
-    path: "M209.972 206.743H160.562V195.878H209.972V206.743Z",
-    colour: "fill-graphicDarkBlue",
-  },
-  {
-    path: "M269.486 206.743H220.077V195.878H269.486V206.743Z",
-    colour: "fill-graphicDarkBlue",
-  },
-  {
-    path: "M364.59 206.743H276.173V195.878H364.59V206.743Z",
-    colour: "fill-graphicLightRed",
-  },
-  {
-    path: "M420.315 206.743H370.831V195.878H420.315V206.743Z",
-    colour: "fill-graphicDarkBlue",
-  },
-  {
-    path: "M514.527 206.743H426.184V195.878H514.527V206.743Z",
-    colour: "fill-graphicLightBlue",
-  },
-  {
-    path: "M571.07 206.743H521.66V195.878H571.07V206.743Z",
-    colour: "fill-graphicDarkBlue",
-  },
-];
-
-const pathsTwo = [
-  "M251.208 221.032H160.859V215.748H251.208V221.032Z",
-  "M187.681 230.409H160.859V225.125H187.681V230.409Z",
-];
+import {
+  pathsOneGraphicHorizontalBars,
+  pathsTwoGraphicHorizontalBars,
+} from "@/constants/hero-graphic-paths";
 
 const GraphicHorizontalBars = () => {
   return (
     <>
-      {paths.map((path, index) => (
+      {pathsOneGraphicHorizontalBars.map((path, index) => (
         <motion.path
           key={path.path}
           animate={{ opacity: [0, 1, 0] }}
@@ -81,7 +54,7 @@ const GraphicHorizontalBars = () => {
         className="fill-graphicLightBlue"
       />
 
-      {pathsTwo.map((path) => (
+      {pathsTwoGraphicHorizontalBars.map((path) => (
         <motion.path
           key={path}
           animate={{ opacity: [0.5, 1, 0.5] }}

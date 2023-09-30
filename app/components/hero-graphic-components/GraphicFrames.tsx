@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 
-const paths = [
-  "M189.465 477.712L179.954 487.238",
-  "M198.529 477.712L189.093 487.238",
-  "M207.668 477.712L198.158 487.238",
-  "M216.807 477.712L207.296 487.238",
-  "M225.871 477.712L216.435 487.238",
-];
+import { pathsGraphicFrames } from "@/constants/hero-graphic-paths";
 
 const GraphicFrames = () => {
   return (
@@ -38,7 +32,7 @@ const GraphicFrames = () => {
         className="stroke-graphicPaleBlue"
         strokeWidth="2.3"
       />
-      {paths.map((path, index) => (
+      {pathsGraphicFrames.map((path, index) => (
         <motion.path
           key={path}
           animate={{
