@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
 
+import {
+  pathsOneGraphicLineChartBottomRight,
+  pathsTwoGraphicLineChartBottomRight,
+} from "@/constants/hero-graphic-paths";
+
 const GraphicLineChartBottomRight = () => {
   return (
     <>
@@ -38,91 +43,41 @@ const GraphicLineChartBottomRight = () => {
         className="stroke-graphicPaleRed"
         strokeWidth="0.13rem"
       />
-      <motion.path
-        animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-        d="M289.398 394.137H559.404"
-        stroke="white"
-        strokeWidth="0.5"
-      />
-      <motion.path
-        animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-        d="M289.473 397.486H286.724V390.713H289.473V397.486Z"
-        fill="white"
-      />
-      <motion.path
-        animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-        d="M560.519 397.486H557.77V390.713H560.519V397.486Z"
-        fill="white"
-      />
-      <motion.path
-        animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-        d="M559.182 394.137V371.289"
-        stroke="white"
-        strokeWidth="0.5"
-      />
-      <motion.path
-        animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-        d="M560.668 370.173C560.668 371.364 559.702 372.331 558.513 372.331C557.325 372.331 556.359 371.364 556.359 370.173C556.359 368.982 557.325 368.015 558.513 368.015C559.702 368.015 560.668 368.982 560.668 370.173Z"
-        fill="white"
-      />
+      {pathsOneGraphicLineChartBottomRight.map((path) => (
+        <motion.path
+          key={path}
+          animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
+          transition={{
+            duration: 4,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+          d={path}
+          className="stroke-white"
+          strokeWidth="0.5"
+        />
+      ))}
+      {pathsTwoGraphicLineChartBottomRight.map((path) => (
+        <motion.path
+          key={path.path}
+          animate={{ y: ["-0.2rem", "0.2rem", "-0.2rem"] }}
+          transition={{
+            duration: 4,
+            ease: "easeInOut",
+            repeat: Infinity,
+          }}
+          d={path.path}
+          className={path.colour}
+        />
+      ))}
       <path
         d="M519.655 406.937H351.737V403.96H519.655V406.937Z"
         className="fill-graphicDarkerBlue"
       />
-      <motion.path
-        animate={{
-          y: ["-0.2rem", "0.2rem", "-0.2rem"],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-        d="M454.791 406.937H351.737V403.96H454.791V406.937Z"
-        className="fill-graphicLightRed"
-      />
+
       <path
         d="M434.284 412.742H351.737V409.765H434.284V412.742Z"
         className="fill-graphicDarkerBlue"
-      />
-      <motion.path
-        animate={{
-          y: ["-0.2rem", "0.2rem", "-0.2rem"],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-        d="M299.355 418.77H309.534L310.871 415.868H290.29V420.631H297.497L299.355 418.77Z"
-        className="fill-graphicLightRed"
       />
     </>
   );

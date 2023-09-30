@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import { pathsGraphicFrames } from "@/constants/hero-graphic-paths";
+
 const GraphicFrames = () => {
   return (
     <>
@@ -30,89 +32,25 @@ const GraphicFrames = () => {
         className="stroke-graphicPaleBlue"
         strokeWidth="2.3"
       />
-      {/* Frames bottom middle */}
-
-      {/* Cascading lines bottom left */}
-      <motion.path
-        animate={{
-          opacity: [0, 1, 1, 0],
-        }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: 0.3,
-        }}
-        d="M189.465 477.712L179.954 487.238"
-        className="stroke-graphicPaleBlue"
-        strokeWidth="2.3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <motion.path
-        animate={{
-          opacity: [0, 1, 1, 0],
-        }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: 0.6,
-        }}
-        d="M198.529 477.712L189.093 487.238"
-        className="stroke-graphicPaleBlue"
-        strokeWidth="2.3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <motion.path
-        animate={{
-          opacity: [0, 1, 1, 0],
-        }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: 0.9,
-        }}
-        d="M207.668 477.712L198.158 487.238"
-        className="stroke-graphicPaleBlue"
-        strokeWidth="2.3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <motion.path
-        animate={{
-          opacity: [0, 1, 1, 0],
-        }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: 1.2,
-        }}
-        d="M216.807 477.712L207.296 487.238"
-        className="stroke-graphicPaleBlue"
-        strokeWidth="2.3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <motion.path
-        animate={{
-          opacity: [0, 1, 1, 0],
-        }}
-        transition={{
-          duration: 4,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: 1.5,
-        }}
-        d="M225.871 477.712L216.435 487.238"
-        className="stroke-graphicPaleBlue"
-        strokeWidth="2.3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      {pathsGraphicFrames.map((path, index) => (
+        <motion.path
+          key={path}
+          animate={{
+            opacity: [0, 1, 1, 0],
+          }}
+          transition={{
+            duration: 4,
+            ease: "easeInOut",
+            repeat: Infinity,
+            delay: index * 0.3,
+          }}
+          d={path}
+          className="stroke-graphicPaleBlue"
+          strokeWidth="2.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      ))}
     </>
   );
 };

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import { pathsGraphicSliders } from "@/constants/hero-graphic-paths";
+
 const GraphicSliders = () => {
   return (
     <>
@@ -78,47 +80,23 @@ const GraphicSliders = () => {
         d="M306.339 276.997H285.981V271.936H306.339V276.997Z"
         className="fill-graphicTurquoise"
       />
-      <motion.path
-        animate={{
-          scale: [1, 2, 1],
-          y: ["0rem", "0.2rem", "0rem"],
-        }}
-        transition={{
-          duration: 3,
-          ease: "easeInOut",
-          repeat: Infinity,
-        }}
-        d="M288.359 239.117H286.353V237.107H288.359V239.117Z"
-        className="fill-graphicDarkBlue"
-      />
-      <motion.path
-        animate={{
-          scale: [1, 2, 1],
-          y: ["0rem", "0.2rem", "0rem"],
-        }}
-        transition={{
-          duration: 3,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: 1,
-        }}
-        d="M295.045 239.117H293.113V237.107H295.045V239.117Z"
-        className="fill-graphicDarkBlue"
-      />
-      <motion.path
-        animate={{
-          scale: [1, 2, 1],
-          y: ["0rem", "0.2rem", "0rem"],
-        }}
-        transition={{
-          duration: 3,
-          ease: "easeInOut",
-          repeat: Infinity,
-          delay: 2,
-        }}
-        d="M301.732 239.117H299.801V237.107H301.732V239.117Z"
-        className="fill-graphicDarkBlue"
-      />
+      {pathsGraphicSliders.map((path, index) => (
+        <motion.path
+          key={path}
+          animate={{
+            scale: [1, 2, 1],
+            y: ["0rem", "0.2rem", "0rem"],
+          }}
+          transition={{
+            duration: 3,
+            ease: "easeInOut",
+            repeat: Infinity,
+            delay: index,
+          }}
+          d={path}
+          className="fill-graphicDarkBlue"
+        />
+      ))}
     </>
   );
 };
