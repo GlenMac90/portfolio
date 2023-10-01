@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
 
-const revalidate = 5;
+const revalidate = 10;
 
 export async function getCaseStudy() {
   return client.fetch(
@@ -46,7 +46,8 @@ export async function getTestimonials() {
       },
       rating,
       text
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
 
@@ -73,7 +74,8 @@ export async function getWorkExperiences() {
         alt,
         "image": imagePrimaryDark.asset->url
       }
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
 
@@ -94,7 +96,8 @@ export async function getServicesProvided() {
       },
       title,
       description
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
 
@@ -106,7 +109,8 @@ export async function getMySkills() {
         "image": src.asset->url
       },
       text
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
 
@@ -121,7 +125,8 @@ export async function getContactDetails() {
         "image": imageSrcDark.asset->url
       },
       info
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
 
@@ -132,7 +137,8 @@ export async function getSocialMediaIcons() {
       iconDark {alt, "image": asset->url},
       title,
       url
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
 
@@ -141,6 +147,7 @@ export async function getWorkProcessSymbols() {
     groq`*[_type == "workProcessSymbol"]{
       title,
       image {"image": asset->url}
-    }`
+    }`,
+    { next: { revalidate } }
   );
 }
