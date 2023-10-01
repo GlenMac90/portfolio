@@ -26,6 +26,14 @@ const Navbar = () => {
     }, 400);
   };
 
+  const handleMenuButtonClick = () => {
+    if (!showMobileNav) {
+      setShowMobileNav(true);
+    } else {
+      handleCloseMobileNav();
+    }
+  };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -47,13 +55,13 @@ const Navbar = () => {
             : ""
         }`}
       >
-        <div className="initial_background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9">
-          <p className="font-semibold text-white900 md:text-xl">G</p>
-        </div>
-        <div
-          className="flex md:hidden"
-          onClick={() => setShowMobileNav((prev) => !prev)}
+        <Link
+          href="/"
+          className="initial_background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9"
         >
+          <p className="font-semibold text-white900 md:text-xl">G</p>
+        </Link>
+        <div className="flex md:hidden" onClick={handleMenuButtonClick}>
           <MenuButton />
         </div>
         <div className="hidden items-center gap-9 md:flex">

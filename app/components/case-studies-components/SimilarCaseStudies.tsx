@@ -22,15 +22,15 @@ const SimilarCaseStudies = () => {
     );
 
   return (
-    <section className="flex w-full flex-col items-center bg-white800 px-6 py-9 dark:bg-black300 md:py-[4.5rem]">
+    <section className="flex w-full flex-col items-center bg-white800 px-2 py-9 dark:bg-black300 md:py-[4.5rem]">
       <div className="relative flex w-full max-w-3xl justify-center">
-        <div className="flex w-full max-w-xl flex-col overflow-hidden">
+        <div className="flex w-full max-w-[38rem] flex-col overflow-hidden">
           <motion.div
             initial={{ y: "10%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="flex flex-col md:px-4"
+            className="z-10 flex flex-col px-4"
           >
             <p className="text-xs font-semibold text-primaryLight dark:text-primaryDark md:text-sm">
               Projects
@@ -38,11 +38,17 @@ const SimilarCaseStudies = () => {
             <p className="mt-2.5 text-[1.75rem] font-semibold text-black200 dark:text-white900 md:text-[2rem]">
               Other Case Studies
             </p>
+            <CarouselButtons
+              additionalClassesLeft="left-6 top-28 md:hidden flex p-2"
+              additionalClassesRight="right-6 top-28 md:hidden flex p-2"
+              previous={previous}
+              next={next}
+            />
           </motion.div>
-          <SimilarProjectsGallery current={current} setCurrent={setCurrent} />
+          <SimilarProjectsGallery current={current} />
           <CarouselButtons
-            additionalClassesLeft="self-center left-0 top-[50%] hidden md:flex"
-            additionalClassesRight="self-center right-0 top-[50%] hidden md:flex"
+            additionalClassesLeft="self-center left-0 top-[50%] hidden md:flex p-4"
+            additionalClassesRight="self-center right-0 top-[50%] hidden md:flex p-4"
             previous={previous}
             next={next}
           />

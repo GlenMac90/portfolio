@@ -19,7 +19,7 @@ const CarouselButtons = ({
         viewport={{ once: true }}
         whileHover={{ scale: 1.1 }}
         onClick={previous}
-        className={`absolute ${additionalClassesLeft} self-center rounded-full bg-white900 p-4 dark:bg-black200 `}
+        className={`absolute ${additionalClassesLeft} self-center rounded-full bg-white900/60  dark:bg-black200/60 md:bg-white900 md:dark:bg-black200`}
       >
         <ButtonTestimonial direction="left" />
       </motion.button>
@@ -30,7 +30,7 @@ const CarouselButtons = ({
         viewport={{ once: true }}
         whileHover={{ scale: 1.1 }}
         onClick={next}
-        className={`absolute ${additionalClassesRight} rounded-full bg-white900 p-4 dark:bg-black200`}
+        className={`absolute ${additionalClassesRight} self-center rounded-full bg-white900/60  dark:bg-black200/60 md:bg-white900 md:dark:bg-black200`}
       >
         <ButtonTestimonial direction="right" />
       </motion.button>

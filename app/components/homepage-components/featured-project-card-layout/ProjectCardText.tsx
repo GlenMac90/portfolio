@@ -18,10 +18,7 @@ const ProjectCardText = ({
       <div className="flex flex-col">
         <div className="flex flex-col md:flex-row">
           <p className="mr-1 text-[2rem] font-bold text-white900 lg:text-[3rem]">
-            {project.title} -{" "}
-            <span className="text-[2rem] font-bold lg:text-[3rem]">
-              {project.description}
-            </span>
+            {project.title} - {project.description}
           </p>
         </div>
       </div>
@@ -39,7 +36,7 @@ const ProjectCardText = ({
       </div>
       <Link
         href={`/case-studies/${project?.caseStudyLink}`}
-        className="mt-8 flex w-fit items-center"
+        className="mt-8 flex w-fit items-center gap-2"
       >
         <p className="text-lg font-semibold text-white900">
           See Detail Project

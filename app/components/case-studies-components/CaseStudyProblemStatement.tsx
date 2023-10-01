@@ -14,11 +14,11 @@ const CaseStudyProblemStatement = () => {
           {mainProject?.caseStudyDescription?.map(
             (text: string, index: number) => (
               <motion.p
-                initial={{ x: "25%", opacity: 0 }}
+                initial={{ x: "15%", opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{
-                  x: { duration: 0.5, delay: index * 0.2 },
-                  opacity: { duration: 0.5, delay: index * 0.2 },
+                  x: { duration: 0.5, delay: index * 0.15 },
+                  opacity: { duration: 0.5, delay: index * 0.15 },
                 }}
                 viewport={{ once: true }}
                 key={index}
@@ -34,7 +34,7 @@ const CaseStudyProblemStatement = () => {
       <section className="flex w-full flex-col items-center justify-center bg-white900 px-6 py-9 dark:bg-black200 md:py-[4.5rem]">
         <div className="flex w-full flex-col md:max-w-3xl">
           <motion.div
-            initial={{ x: "-25%", opacity: 0 }}
+            initial={{ x: "-15%", opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{
@@ -55,7 +55,7 @@ const CaseStudyProblemStatement = () => {
           </motion.div>
           {mainProject?.problemStatementImage && (
             <motion.div
-              initial={{ x: "-25%", opacity: 0 }}
+              initial={{ x: "-15%", opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{
