@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Link as ScrollTarget } from "react-scroll";
 import { usePathname } from "next/navigation";
 
 import MobileNavBar from "./MobileNavBar";
@@ -55,12 +56,21 @@ const Navbar = () => {
             : ""
         }`}
       >
-        <Link
-          href="/"
-          className="initial_background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9"
-        >
-          <p className="font-semibold text-white900 md:text-xl">G</p>
-        </Link>
+        {pathname === "/" ? (
+          <ScrollTarget to="hero" smooth={true} duration={1000} offset={-100}>
+            <div className="initial_background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9">
+              <p className="font-semibold text-white900 md:text-xl">G</p>
+            </div>
+          </ScrollTarget>
+        ) : (
+          <Link
+            href="/"
+            className="initial_background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9"
+          >
+            <p className="font-semibold text-white900 md:text-xl">G</p>
+          </Link>
+        )}
+
         <div className="flex md:hidden" onClick={handleMenuButtonClick}>
           <MenuButton />
         </div>

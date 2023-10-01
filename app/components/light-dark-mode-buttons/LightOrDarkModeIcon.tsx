@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const LightOrDarkModeIcon = () => {
   const { theme, setTheme } = useTheme();
-  const [iconSrc, setIconSrc] = useState<string>(lightModeIcon); // Set a default value if needed
+  const [iconSrc, setIconSrc] = useState<string>(lightModeIcon);
 
   useEffect(() => {
     if (theme === "light") {
