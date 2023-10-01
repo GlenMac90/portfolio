@@ -58,7 +58,7 @@ const Navbar = () => {
       >
         {pathname === "/" ? (
           <ScrollTarget to="hero" smooth={true} duration={1000} offset={-100}>
-            <div className="initial_background flex h-7 w-7 items-center justify-center rounded-full md:h-9 md:w-9">
+            <div className="initial_background flex h-7 w-7 cursor-pointer items-center justify-center rounded-full md:h-9 md:w-9">
               <p className="font-semibold text-white900 md:text-xl">G</p>
             </div>
           </ScrollTarget>
