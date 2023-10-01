@@ -16,7 +16,10 @@ interface FeaturedProjectsProps {
 
 const FeaturedProjects = ({ caseStudies }: FeaturedProjectsProps) => {
   return (
-    <section className="flex w-full flex-col items-center bg-white900 p-6 dark:bg-black200">
+    <section
+      id="myWork"
+      className="flex w-full flex-col items-center bg-white900 p-6 dark:bg-black200"
+    >
       <motion.div
         initial={{ y: "-25%", opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

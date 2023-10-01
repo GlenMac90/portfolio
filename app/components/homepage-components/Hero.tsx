@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link as ScrollTarget } from "react-scroll";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,7 +33,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative mx-4 mt-16 flex w-full max-w-7xl flex-col bg-white800 px-5 pt-12 dark:bg-black300 md:mt-24 lg:flex-row lg:justify-between lg:pb-24">
+    <section
+      id="hero"
+      className="relative mx-4 mt-16 flex w-full max-w-7xl flex-col bg-white800 px-5 pt-12 dark:bg-black300 md:mt-24 lg:flex-row lg:justify-between lg:pb-24"
+    >
       <motion.div
         initial={{ x: "-25%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -56,14 +59,14 @@ const Hero = () => {
           to excellence.
         </p>
         <div className="mt-9 flex flex-col md:flex-row md:gap-4">
-          <Link href="/case-studies">
+          <ScrollTarget to="myWork" smooth={true} duration={800} offset={-100}>
             <Button
               style="blueButton"
               additionalStyles="w-full py-3.5 text-sm md:w-[15rem] md:py-5 md:text-lg"
             >
               My Work
             </Button>
-          </Link>
+          </ScrollTarget>
           <Button
             style="custom"
             additionalStyles="mt-3.5 w-full justify-between gap-4 rounded-full bg-white900 px-4 py-3.5 text-white500 dark:bg-black200 dark:text-white900 md:w-[20rem] md:min-w-[20rem] md:mt-0 md:px-6 md:py-5"
